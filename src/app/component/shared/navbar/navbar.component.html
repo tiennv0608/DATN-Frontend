@@ -32,9 +32,13 @@
                 </nav>
               </div>
               <!-- Header-btn -->
-              <div class="header-btn d-none f-right d-lg-block">
-                <a href="#" class="btn head-btn1">Register</a>
-                <a href="#" class="btn head-btn2">Login</a>
+              <div class="header-btn d-none f-right d-lg-block" *ngIf="token === ''">
+                <a [routerLink]="['users','login']" class="btn head-btn1">User</a>
+                <a [routerLink]="['companies','login']" class="btn head-btn2">Company</a>
+              </div>
+              <div class="header-btn d-none f-right d-lg-block" *ngIf="token !== ''">
+                <a class="btn head-btn1">{{name}}</a>
+                <button (click)="logOut()" class="btn head-btn2">Logout</button>
               </div>
             </div>
           </div>

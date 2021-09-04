@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { PreloaderStartComponent } from './component/shared/preloader-start/preloader-start.component';
 import { NavbarComponent } from './component/shared/navbar/navbar.component';
 import { FooterComponent } from './component/shared/footer/footer.component';
+import { PostListComponent } from './component/post/post-list/post-list.component';
+import {UserModule} from './module/user/user.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     PreloaderStartComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
