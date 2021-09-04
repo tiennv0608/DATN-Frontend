@@ -7,7 +7,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
-              <h3 class="login-heading mb-4">Welcome back!</h3>
+              <h3 class="login-heading mb-4 text-center">Welcome user!</h3>
               <form [formGroup]="loginForm" (ngSubmit)="login()">
                 <div class="form-label-group">
                   <input type="text" id="email" class="form-control"
@@ -27,7 +27,7 @@
                   Đăng nhập
                 </button>
                 <div class="text-center pt-3">
-                  Bạn chưa có tài khoản? <a class="font-weight-bold" routerLink="/users/register">Đăng ký ngay</a>
+                  Bạn chưa có tài khoản? <a class="font-weight" routerLink="/users/register">Đăng ký ngay</a>
                 </div>
               </form>
               <hr class="my-4">

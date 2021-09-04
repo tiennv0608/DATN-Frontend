@@ -9,6 +9,8 @@ import { FooterComponent } from './component/shared/footer/footer.component';
 import { PostListComponent } from './component/post/post-list/post-list.component';
 import {UserModule} from './module/user/user.module';
 import {HttpClientModule} from '@angular/common/http';
+import { CompanyRegisterComponent } from './component/company/company-register/company-register.component';
+import { CompanyLoginComponent } from './component/company/company-login/company-login.component';
 
 @NgModule({
   declarations: [
