@@ -1,0 +1,23 @@
+<h1>List Players</h1>
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Phone</th>
+    <th>Type</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let users of  user; index as i" >
+    <td>{{i + 1}}</td>
+    <td>{{users.name}}</td>
+    <td>{{users.email}}</td>
+    <td>{{users.password}}</td>
+    <td>{{users.phone}}</td>
+    <td><a [routerLink]="['/users/edit/',users.id]">Edit</a></td>
+    <td><a [routerLink]="['/users/delete/',users.id]">Delete</a></td>
+  </tr>
+</table>
+

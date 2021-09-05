@@ -1,0 +1,27 @@
+<h1>Edit Address</h1>
+<form [formGroup] = "userForm"   (ngSubmit)="createUsers()">
+  <table>
+    <tr>
+      <th>Name:</th>
+      <td><input type="text" formControlName="name" ></td>
+      <td *ngIf="userForm.value.name.invalid && userForm.value.name.error"></td>
+    </tr>
+    <tr>
+      <th>Email:</th>
+      <td><input type="email" formControlName="email"  ></td>
+    </tr>
+    <tr>
+      <th>Password:</th>
+      <td><input type="password" formControlName="password" ></td>
+    </tr>
+    <tr>
+      <th>Phone:</th>
+      <td><input type="text" formControlName="phone" ></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Save</button></td>
+    </tr>
+  </table>
+</form>
+
