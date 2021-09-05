@@ -5,6 +5,7 @@ import {RegisterFormComponent} from '../../component/user/register-form/register
 import {CompanyLoginComponent} from '../../component/company/company-login/company-login.component';
 import {CompanyRegisterComponent} from '../../component/company/company-register/company-register.component';
 import {CompanyEditComponent} from '../../component/company/company-edit/company-edit.component';
+import {CompanyInfoEditComponent} from '../../component/company/company-info-edit/company-info-edit.component';
 
 const routes: Routes = [
   {
@@ -16,8 +17,8 @@ const routes: Routes = [
     component: CompanyRegisterComponent
   },
   {
-    path: 'edit/:id',
-    component: CompanyEditComponent
+    path: 'edit',
+    component: CompanyInfoEditComponent
   }
 ];
 

@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   token: string = '';
+  type: string = '';
   name?: string;
 
   constructor(private tokenService: TokenService,
@@ -20,6 +21,8 @@ export class NavbarComponent implements OnInit {
     if (this.tokenService.getToken()) {
       this.token = this.tokenService.getToken().token;
       this.name = this.tokenService.getToken().name;
+      this.type = this.tokenService.getToken().roles[0].authority;
+      console.log(this.type)
     }
   }
 
