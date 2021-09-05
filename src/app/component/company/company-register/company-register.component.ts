@@ -17,7 +17,7 @@ export class CompanyRegisterComponent implements OnInit {
     companyName: new FormControl('', [Validators.required]),
     shortName: new FormControl('', [Validators.required, Validators.maxLength(10)]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     confirmedPassword: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
   });
