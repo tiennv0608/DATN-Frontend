@@ -33,12 +33,23 @@
               </div>
               <!-- Header-btn -->
               <div class="header-btn d-none f-right d-lg-block" *ngIf="token === ''">
-                <a [routerLink]="['users','login']" class="btn head-btn2">User</a>
-                <a [routerLink]="['companies','login']" class="btn head-btn2">Company</a>
+                <a [routerLink]="['users','login']" class="btn btn-warning">Người tìm việc</a>
+                <a [routerLink]="['companies','login']" class="btn btn-success">Nhà tuyển dụng</a>
               </div>
               <div class="header-btn d-none f-right d-lg-block" *ngIf="token !== ''">
-                <a class="btn head-btn1">{{name}}</a>
-                <button (click)="logOut()" class="btn head-btn2">Logout</button>
+                <div class="main-menu">
+                  <nav class="d-none d-lg-block">
+                    <ul id="personal">
+                      <li><a>{{name}}</a>
+                        <ul class="submenu">
+                          <li><a href="blog.html">Thông tin cá nhân</a></li>
+                        </ul>
+                      </li>
+                      <button (click)="logOut()" class="btn btn-warning">Đăng xuất</button>
+                    </ul>
+                  </nav>
+                </div>
+
               </div>
             </div>
           </div>
