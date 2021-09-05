@@ -9,12 +9,17 @@ import { FooterComponent } from './component/shared/footer/footer.component';
 import { PostListComponent } from './component/post/post-list/post-list.component';
 import {UserModule} from './module/user/user.module';
 import {HttpClientModule} from '@angular/common/http';
-import { CompanyRegisterComponent } from './component/company/company-register/company-register.component';
-import { CompanyLoginComponent } from './component/company/company-login/company-login.component';
+import { CompanyEditComponent } from './component/company/company-edit/company-edit.component';
+import { MainComponent } from './component/post/main/main.component';
+import { SearchComponent } from './component/post/search/search.component';
+import { NewPostComponent } from './component/post/new-post/new-post.component';
+import { SideBarComponent } from './component/post/side-bar/side-bar.component';
+import { SummaryPostComponent } from './component/post/summary-post/summary-post.component';
 import {AngularFireStorageModule} from '@angular/fire/compat/storage';
 import {AngularFireModule} from '@angular/fire/compat';
 import {environment} from '../environments/environment.prod';
 import { CompanyInfoEditComponent } from './component/company/company-info-edit/company-info-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +28,12 @@ import { CompanyInfoEditComponent } from './component/company/company-info-edit/
     NavbarComponent,
     FooterComponent,
     PostListComponent,
+    CompanyEditComponent,
+    MainComponent,
+    SearchComponent,
+    NewPostComponent,
+    SideBarComponent,
+    SummaryPostComponent
     CompanyInfoEditComponent
   ],
   imports: [
