@@ -10,6 +10,11 @@ import { PostListComponent } from './component/post/post-list/post-list.componen
 import {UserModule} from './module/user/user.module';
 import {HttpClientModule} from '@angular/common/http';
 import { CompanyEditComponent } from './component/company/company-edit/company-edit.component';
+import { MainComponent } from './component/post/main/main.component';
+import { SearchComponent } from './component/post/search/search.component';
+import { NewPostComponent } from './component/post/new-post/new-post.component';
+import { SideBarComponent } from './component/post/side-bar/side-bar.component';
+import { SummaryPostComponent } from './component/post/summary-post/summary-post.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { CompanyEditComponent } from './component/company/company-edit/company-e
     NavbarComponent,
     FooterComponent,
     PostListComponent,
-    CompanyEditComponent
+    CompanyEditComponent,
+    MainComponent,
+    SearchComponent,
+    NewPostComponent,
+    SideBarComponent,
+    SummaryPostComponent
   ],
   imports: [
     BrowserModule,
