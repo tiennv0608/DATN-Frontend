@@ -15,7 +15,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment.prod';
 import {MainComponent} from './component/post/main/main.component';
 import {SideBarComponent} from './component/post/side-bar/side-bar.component';
+// @ts-ignore
 import {AngularFireStorageModule} from '@angular/fire/storage';
+// @ts-ignore
 import {AngularFireModule} from '@angular/fire';
 
 
@@ -33,7 +35,7 @@ import {AngularFireModule} from '@angular/fire';
     SearchComponent,
     NewPostComponent,
     SideBarComponent,
-    SummaryPostComponent
+    SummaryPostComponent,
   ],
   imports: [
     BrowserModule,
