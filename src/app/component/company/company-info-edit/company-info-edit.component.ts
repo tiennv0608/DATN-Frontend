@@ -25,6 +25,8 @@ export class CompanyInfoEditComponent implements OnInit {
   findById(id: string) {
     return this.companyService.findById(id).subscribe(company => {
       console.log(company);
+    }, error => {
+      console.log(error);
     });
   }
 
