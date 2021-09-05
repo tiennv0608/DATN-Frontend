@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Post} from '../model/post/post';
 import {environment} from '../../environments/environment.prod';
+import {Gender} from '../model/post/gender';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import {environment} from '../../environments/environment.prod';
 export class GenderService {
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Post[]> {
-    return this.http.get<Post[]>(environment.API_URL+'/genders');
+  getAll(): Observable<Gender[]> {
+    return this.http.get<Gender[]>(environment.API_URL+'/genders');
   }
 }

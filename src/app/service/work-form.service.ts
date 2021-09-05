@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Post} from '../model/post/post';
 import {environment} from '../../environments/environment.prod';
+import {WorkForm} from '../model/post/work-form';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import {environment} from '../../environments/environment.prod';
 export class WorkFormService {
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Post[]> {
-    return this.http.get<Post[]>(environment.API_URL+'/work-forms');
+  getAll(): Observable<WorkForm[]> {
+    return this.http.get<WorkForm[]>(environment.API_URL+'/work-forms');
   }
 }
