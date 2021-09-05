@@ -40,11 +40,17 @@
                 <div class="main-menu">
                   <nav class="d-none d-lg-block">
                     <ul id="personal">
-                      <li><a>{{name}}</a>
+                      <li *ngIf="type == 'User'"><a>{{name}}</a>
                         <ul class="submenu">
                           <li><a href="blog.html">Thông tin cá nhân</a></li>
                         </ul>
                       </li>
+                      <li *ngIf="type == 'Company'"><a>{{name}}</a>
+                        <ul class="submenu">
+                          <li><a routerLink="/companies/edit">Thông tin công ty</a></li>
+                        </ul>
+                      </li>
+
                       <button (click)="logOut()" class="btn btn-warning">Đăng xuất</button>
                     </ul>
                   </nav>
