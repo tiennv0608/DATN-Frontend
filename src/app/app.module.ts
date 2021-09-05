@@ -11,6 +11,10 @@ import {UserModule} from './module/user/user.module';
 import {HttpClientModule} from '@angular/common/http';
 import { CompanyRegisterComponent } from './component/company/company-register/company-register.component';
 import { CompanyLoginComponent } from './component/company/company-login/company-login.component';
+import {AngularFireStorageModule} from '@angular/fire/compat/storage';
+import {AngularFireModule} from '@angular/fire/compat';
+import {environment} from '../environments/environment.prod';
+import { CompanyInfoEditComponent } from './component/company/company-info-edit/company-info-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,16 @@ import { CompanyLoginComponent } from './component/company/company-login/company
     PreloaderStartComponent,
     NavbarComponent,
     FooterComponent,
-    PostListComponent
+    PostListComponent,
+    CompanyInfoEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
   providers: [],
   bootstrap: [AppComponent]
