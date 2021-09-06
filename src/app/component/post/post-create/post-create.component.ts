@@ -38,7 +38,7 @@ export class PostCreateComponent implements OnInit {
     expiredDate: new FormControl(''),
     description: new FormControl(''),
     quantity: new FormControl('', [Validators.required]),
-    gender: new FormControl(''),
+    gender: new FormControl('')
   });
 
 
@@ -81,10 +81,10 @@ export class PostCreateComponent implements OnInit {
       }
     }
     ;
-    this.postService.save(post).subscribe(() => {
+    this.postService.save(this.post).subscribe(() => {
       this.postForm.reset();
       alert('Tạo thành công');
-      this.router.navigate(['/players']);
+      this.router.navigate(['/']);
     }, e => {
       console.log(e);
     });

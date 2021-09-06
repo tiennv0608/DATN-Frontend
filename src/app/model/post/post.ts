@@ -19,5 +19,4 @@ export interface Post {
   code?: string;
   status?: string;
   company?: Company;
-
 }
