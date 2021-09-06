@@ -13,9 +13,9 @@ export class CompanyInfoEditComponent implements OnInit {
   infoEditForm: FormGroup = new FormGroup({
     companyName: new FormControl(),
     shortName: new FormControl(),
-    email: new FormControl(),
-    password: new FormControl(),
-    confirmedPassword: new FormControl(),
+    // email: new FormControl(),
+    // password: new FormControl(),
+    // confirmedPassword: new FormControl(),
     phone: new FormControl(),
     description: new FormControl(),
     address: new FormControl(),
@@ -46,9 +46,9 @@ export class CompanyInfoEditComponent implements OnInit {
       this.infoEditForm = new FormGroup({
         companyName: new FormControl(company.companyName, [Validators.required]),
         shortName: new FormControl(company.shortName),
-        email: new FormControl(company.email, [Validators.required]),
-        password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-        confirmedPassword: new FormControl('', [Validators.required]),
+        // email: new FormControl(company.email, [Validators.required]),
+        // password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+        // confirmedPassword: new FormControl('', [Validators.required]),
         phone: new FormControl(company.phone, [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
         description: new FormControl(company.description),
         address: new FormControl(company.address),
@@ -67,8 +67,8 @@ export class CompanyInfoEditComponent implements OnInit {
     const company = {
       companyName: this.infoEditForm.value.companyName,
       shortName: this.infoEditForm.value.shortName,
-      email: this.infoEditForm.value.email,
-      password: this.infoEditForm.value.password,
+      // email: this.infoEditForm.value.email,
+      // password: this.infoEditForm.value.password,
       image: this.image,
       phone: this.infoEditForm.value.phone,
       description: this.infoEditForm.value.description,
@@ -79,10 +79,8 @@ export class CompanyInfoEditComponent implements OnInit {
       website: this.infoEditForm.value.website,
     };
     this.companyService.update(id, company).subscribe(company => {
-      this.isUpdated = true;
-      this.message = 'Cập nhật thành công';
-      console.log(company);
-
+      localStorage.setItem('message', 'Cập nhật thông tin thành công');
+      this.router.navigate(['companies/info']);
     }, error => {
       console.log(error);
     });
