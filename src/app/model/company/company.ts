@@ -1,5 +1,3 @@
-import {Constant} from '../../common/constant';
-
 export interface Company {
   id?: string;
   companyName?: string;

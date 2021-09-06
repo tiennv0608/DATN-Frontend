@@ -14,8 +14,14 @@ export class PostListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.posts = [{
+      company: {
+        image: ''
+      }
+    }];
     this.postService.getAll().subscribe(result => {
         this.posts = result;
+
       }, error => {
         console.log(error);
       }
