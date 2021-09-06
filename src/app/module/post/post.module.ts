@@ -6,17 +6,22 @@ import {PostCreateComponent} from '../../component/post/post-create/post-create.
 import {PostEditComponent} from '../../component/post/post-edit/post-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {PostDetailComponent} from '../../component/post/post-detail/post-detail.component';
+import {SharedModule} from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
     PostCreateComponent,
     PostEditComponent,
-    PostDetailComponent,],
+    PostDetailComponent,
+    ],
   imports: [
     CommonModule,
     PostRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
+  ],
+  exports: [
   ]
 })
 export class PostModule { }
