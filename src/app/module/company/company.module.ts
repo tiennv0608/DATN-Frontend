@@ -10,12 +10,14 @@ import {AppModule} from '../../app.module';
 import {UploadComponent} from '../../component/upload/upload.component';
 import {AccountComponent} from '../../component/company/account/account.component';
 import {InfoComponent} from '../../component/company/info/info.component';
+import {CompanyEditAccountComponent} from '../../component/company/company-edit-account/company-edit-account.component';
 
 
 @NgModule({
   declarations: [CompanyLoginComponent,
     CompanyRegisterComponent,
     CompanyInfoEditComponent,
+    CompanyEditAccountComponent,
     UploadComponent,
     AccountComponent,
     InfoComponent],

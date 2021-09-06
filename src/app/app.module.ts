@@ -5,7 +5,7 @@ import {PreloaderStartComponent} from './component/shared/preloader-start/preloa
 import {NavbarComponent} from './component/shared/navbar/navbar.component';
 import {FooterComponent} from './component/shared/footer/footer.component';
 import {PostListComponent} from './component/post/post-list/post-list.component';
-import {CompanyEditComponent} from './component/company/company-edit/company-edit.component';
+import {CompanyEditAccountComponent} from './component/company/company-edit-account/company-edit-account.component';
 import {SearchComponent} from './component/post/search/search.component';
 import {NewPostComponent} from './component/post/new-post/new-post.component';
 import {SummaryPostComponent} from './component/post/summary-post/summary-post.component';
@@ -28,7 +28,6 @@ import {AngularFireModule} from '@angular/fire'
     NavbarComponent,
     FooterComponent,
     PostListComponent,
-    CompanyEditComponent,
     MainComponent,
     SearchComponent,
     NewPostComponent,

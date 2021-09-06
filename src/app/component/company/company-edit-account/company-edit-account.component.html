@@ -1,0 +1,95 @@
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <!--       style="background: url('../../../../assets/img/hero/h1_hero.jpg'); background-size: cover; background-repeat: no-repeat">-->
+    <div class="col-md-12 col-lg-12">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5 border">
+              <h2 class="login-heading text-center p-2">Thông tin tài khoản</h2>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row mt-3">
+                    <div class="col-3">
+                      <label class="font-italic">Tên công ty:</label>
+                    </div>
+                    <div class="col-9">
+                      <label class="font-weight-bold">{{companyName}}</label>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row mt-3">
+                    <div class="col-3">
+                      <label class="font-italic">Email:</label>
+                    </div>
+                    <div class="col-9">
+                      <label class="font-weight-bold">{{email}}</label>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row mt-3">
+                    <form [formGroup]="passwordForm" (ngSubmit)="changePassword()">
+                      <div class="row mt-3">
+                        <div class="input-group has-validation">
+                          <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
+                          <input [attr.type]="[isPassword]" class="form-control" formControlName="password"
+                                 placeholder="Password">
+                          <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()"
+                                style="background: skyblue"><i
+                            class="bi bi-eye"></i></span>
+                          <span class="input-group-text" [hidden]="(isPassword== 'password')" (click)="showPass()"
+                                style="background: skyblue"><i
+                            class="bi bi-eye-slash"></i></span>
+                          <div class="col-md-12 alert alert-danger" role="alert"
+                               *ngIf="passwordForm.get('password')?.invalid && passwordForm.get('password')?.touched">
+                            <div *ngIf="passwordForm.get('password')?.errors?.required">
+                              Mật khẩu không được để trống
+                            </div>
+                            <div *ngIf="passwordForm.get('password')?.errors?.minlength">
+                              Mật khẩu phải ít nhất 8 ký tự
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row mt-3">
+                        <div class="input-group has-validation">
+                          <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
+                          <input [attr.type]="[isConfirmedPassword]" class="form-control"
+                                 formControlName="confirmedPassword"
+                                 placeholder="Confirm password">
+                          <span class="input-group-text" [hidden]="(isConfirmedPassword== 'text')"
+                                (click)="showConfirmedPass()" style="background: skyblue"><i
+                            class="bi bi-eye"></i></span>
+                          <span class="input-group-text" [hidden]="(isConfirmedPassword== 'password')"
+                                (click)="showConfirmedPass()" style="background: skyblue"><i
+                            class="bi bi-eye-slash"></i></span>
+                          <div class="col-md-12 alert alert-danger" role="alert"
+                               *ngIf="passwordForm.get('confirmedPassword')?.invalid && passwordForm.get('confirmedPassword')?.touched">
+                            <div *ngIf="passwordForm.get('confirmedPassword')?.errors?.required">
+                              Xác nhận mật khẩu không được để trống
+                            </div>
+                          </div>
+                          <div class="col-md-12 alert alert-danger" role="alert"
+                               *ngIf="passwordForm.value.password != passwordForm.value.confirmedPassword">
+                            Xác nhận mật khẩu không trùng khớp
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mt-3">
+                        <button class="btn btn-success">Đổi mật khẩu</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
