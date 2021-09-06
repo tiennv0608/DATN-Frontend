@@ -11,6 +11,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Post} from '../../../model/post/post';
 import {Company} from '../../../model/company/company';
 import {TokenService} from '../../../service/token.service';
+import {City} from '../../../model/post/city';
+import {CityService} from '../../../service/city.service';
 
 
 @Component({
@@ -22,29 +24,35 @@ export class PostCreateComponent implements OnInit {
   categories: Category[] = [];
   genders: Gender[] = [];
   workForms: WorkForm[] = [];
+  cities?:City[];
   company?: Company;
   gender?: Gender;
   workForm?: WorkForm;
   category?: Category;
+  city?: City;
   post?: Post;
+  isUpdated = false;
+  message = '';
   postForm: FormGroup = new FormGroup({
     title: new FormControl(''),
-    category: new FormControl(''),
+    category: new FormControl('1'),
     salary: new FormControl(''),
     address: new FormControl(''),
     position: new FormControl(''),
     exp: new FormControl(''),
-    workForm: new FormControl(''),
+    workForm: new FormControl('1'),
     expiredDate: new FormControl(''),
     description: new FormControl(''),
     quantity: new FormControl('', [Validators.required]),
-    gender: new FormControl('')
+    gender: new FormControl('3'),
+    city:new FormControl('1')
   });
 
 
   constructor(private categoryService: CategoryService,
               private genderService: GenderService,
               private postService: PostService,
+              private cityService: CityService,
               private workformService: WorkFormService,
               private router: Router,
               private tokenService: TokenService) {
@@ -54,6 +62,7 @@ export class PostCreateComponent implements OnInit {
     this.getAllCategory();
     this.getAllGender();
     this.getAllWorkForm();
+    this.getAllCity();
   }
 
   submit() {
@@ -78,13 +87,16 @@ export class PostCreateComponent implements OnInit {
       },
       company: this.company = {
         id: idCompany
+      },
+      city: this.city={
+        id: this.postForm.value.city
       }
-    }
-    ;
+    };
     this.postService.save(this.post).subscribe(() => {
       this.postForm.reset();
-      alert('Tạo thành công');
-      this.router.navigate(['/']);
+      this.isUpdated = true;
+      window.location.reload();
+      this.message = 'Đăng kí thành công!';
     }, e => {
       console.log(e);
     });
@@ -107,5 +119,9 @@ export class PostCreateComponent implements OnInit {
       this.workForms = result;
     });
   }
-
+  getAllCity(){
+    this.cityService.getAll().subscribe(result=>{
+      this.cities = result;
+    })
+  }
 }
