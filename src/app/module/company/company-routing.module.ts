@@ -6,6 +6,7 @@ import {CompanyInfoEditComponent} from '../../component/company/company-info-edi
 import {AccountComponent} from '../../component/company/account/account.component';
 import {InfoComponent} from '../../component/company/info/info.component';
 import {CompanyEditAccountComponent} from '../../component/company/company-edit-account/company-edit-account.component';
+import {ListPostByIdComponent} from '../../component/post/list-post-by-id/list-post-by-id.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'edit-info',
     component: CompanyInfoEditComponent
+  },
+  {
+    path: 'find-all',
+    component: ListPostByIdComponent
   }
 ];
 

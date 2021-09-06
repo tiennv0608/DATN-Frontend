@@ -1,5 +1,7 @@
 <div class="container" >
+  <div class="alert alert-success" role="alert" *ngIf="isUpdated">{{message}}</div>
   <div class="col-9">
+
     <form [formGroup]="postForm" (ngSubmit)="submit()">
       <div class="form-group" >
         <label for="title">Tiêu đề</label>
@@ -62,7 +64,8 @@
           Số lượng không được để trống
         </div>
       </div>
-      <button [disabled]="postForm.invalid" type="submit" class="btn btn-primary">Sign in</button>
+      (*): Không được để trống số lượng <br>
+      <button [disabled]="postForm.invalid" type="submit" class="btn btn-primary">Đăng tin</button>
     </form>
   </div>
   <div class="col-3"></div>

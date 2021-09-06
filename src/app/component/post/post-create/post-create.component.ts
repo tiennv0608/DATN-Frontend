@@ -27,6 +27,8 @@ export class PostCreateComponent implements OnInit {
   workForm?: WorkForm;
   category?: Category;
   post?: Post;
+  isUpdated = false;
+  message = '';
   postForm: FormGroup = new FormGroup({
     title: new FormControl(''),
     category: new FormControl(''),
@@ -83,8 +85,8 @@ export class PostCreateComponent implements OnInit {
     ;
     this.postService.save(this.post).subscribe(() => {
       this.postForm.reset();
-      alert('Tạo thành công');
-      this.router.navigate(['/']);
+      localStorage.setItem('message', 'Đăng kí thành công');
+      window.location.reload();
     }, e => {
       console.log(e);
     });
