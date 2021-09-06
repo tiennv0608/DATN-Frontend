@@ -9,7 +9,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-7">
-                <p class="card-title" style="font-size: 10px">
+                <p class="card-title" style="font-size: 15px">
                   <a [routerLink]="['view',post.id]" style="font-size: 20px">{{post.title}}</a>
                   <br>
                   Số lượng tuyển :{{post.quantity}},
@@ -27,7 +27,7 @@
                 </span>
               </div>
               <div class="col-3">
-                <div> <a href="#" class="btn btn-primary" >Chỉnh sửa bài </a></div>
+                <div> <a [routerLink]="['/posts/edit',post.id]" class="btn btn-primary" >Chỉnh sửa bài </a></div>
                 <br>
                 <div> <a (click)="updateStatus(post.id)" class="btn btn-primary" >Thay đổi trạng thái</a></div>
               </div>

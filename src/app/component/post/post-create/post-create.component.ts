@@ -31,16 +31,16 @@ export class PostCreateComponent implements OnInit {
   message = '';
   postForm: FormGroup = new FormGroup({
     title: new FormControl(''),
-    category: new FormControl(''),
+    category: new FormControl('1'),
     salary: new FormControl(''),
     address: new FormControl(''),
     position: new FormControl(''),
     exp: new FormControl(''),
-    workForm: new FormControl(''),
+    workForm: new FormControl('1'),
     expiredDate: new FormControl(''),
     description: new FormControl(''),
     quantity: new FormControl('', [Validators.required]),
-    gender: new FormControl('')
+    gender: new FormControl('3')
   });
 
 
@@ -81,8 +81,7 @@ export class PostCreateComponent implements OnInit {
       company: this.company = {
         id: idCompany
       }
-    }
-    ;
+    };
     this.postService.save(this.post).subscribe(() => {
       this.postForm.reset();
       localStorage.setItem('message', 'Đăng kí thành công');
