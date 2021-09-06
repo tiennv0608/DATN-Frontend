@@ -27,7 +27,6 @@ export class NavbarComponent implements OnInit {
       this.type = this.tokenService.getToken().roles[0].authority;
       console.log(this.type);
     }
-    this.next();
   }
 
   logOut() {
@@ -40,7 +39,7 @@ export class NavbarComponent implements OnInit {
   next() {
     const idCompany = this.tokenService.getToken().id;
     this.companyService.findById(idCompany).subscribe(result => {
-      if (this.isValid(result)){
+      if (!this.isValid(result)){
         this.router.navigateByUrl('/posts/create');
       }else {
         this.router.navigateByUrl('/companies/edit');
