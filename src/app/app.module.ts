@@ -11,6 +11,13 @@ import {UserModule} from './module/user/user.module';
 import {HttpClientModule} from '@angular/common/http';
 import { CompanyRegisterComponent } from './component/company/company-register/company-register.component';
 import { CompanyLoginComponent } from './component/company/company-login/company-login.component';
+import { SearchbarComponent } from './component/shared/searchbar/searchbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
+import {MatOptionModule} from '@angular/material/core';
+import {FormsModule} from '@angular/forms';
+import { PostSearchComponent } from './component/post/post-search/post-search.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -18,14 +25,21 @@ import { CompanyLoginComponent } from './component/company/company-login/company
     PreloaderStartComponent,
     NavbarComponent,
     FooterComponent,
-    PostListComponent
+    PostListComponent,
+    SearchbarComponent,
+    PostSearchComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    UserModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        UserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatSelectModule,
+        MatOptionModule,
+        FormsModule,
+        MatPaginatorModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

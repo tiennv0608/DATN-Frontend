@@ -4,6 +4,8 @@ import {LoginFormComponent} from '../../component/user/login-form/login-form.com
 import {RegisterFormComponent} from '../../component/user/register-form/register-form.component';
 import {CompanyLoginComponent} from '../../component/company/company-login/company-login.component';
 import {CompanyRegisterComponent} from '../../component/company/company-register/company-register.component';
+import {MatSliderModule} from '@angular/material/slider';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -17,7 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), MatSliderModule, HttpClientModule],
   exports: [RouterModule]
 })
 export class CompanyRoutingModule {
