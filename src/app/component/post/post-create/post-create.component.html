@@ -57,15 +57,12 @@
         <label for="description">Mô tả</label>
         <textarea class="form-control" id="description" formControlName="description" placeholder="Phát triển sản phẩm Tap PMS - Sản phẩm chuyên cho các tập đoàn khách sạn, resort quy mô lớn hơn 300 phòng...."></textarea>
       </div>
-      <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
+      <div class="col-md-12 alert alert-danger" role="alert" *ngIf="postForm.get('quantity')?.invalid && postForm.get('quantity')?.touched">
+        <div *ngIf="postForm.get('quantity')?.errors?.required">
+          Số lượng không được để trống
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <button [disabled]="postForm.invalid" type="submit" class="btn btn-primary">Sign in</button>
     </form>
   </div>
   <div class="col-3"></div>

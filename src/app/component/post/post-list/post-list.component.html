@@ -1,16 +1,25 @@
 <div class="card mb-3" style="max-width: 770px;" *ngFor="let post of posts">
   <div class="row g-0" *ngIf="post?.status">
-    <div class="col-md-4" >
-      <img [src]="post.company?.image" class="img-fluid rounded-start p-3" alt="..." >
+    <div class="col-md-2">
+      <img [src]="post.company?.image" class="img-fluid rounded-start p-3" alt="..." style="width: 100px;height: 100px">
     </div>
-    <div class="col-md-8">
+    <div class="col-md-10" style="font-size: 10px">
       <div class="card-body">
-        <h5 class="card-title">
-          <a [routerLink]="['view',post.id]">{{post.title}}</a>
-        </h5>
-        <p class="card-text">{{post.description}}</p>
-        <a href="#" class="btn btn-primary" style="width: 150px;height: 40px">Apply Now</a>
-        <p class="card-text"><small class="text-muted">Thời gian kết thúc : {{post  .expiredDate | date : "dd/MM/yyyy"}}</small></p>
+        <div class="row">
+          <div class="col-9">
+            <p class="card-title" style="font-size: 10px">
+              <a [routerLink]="['view',post.id]" style="font-size: 20px">{{post.title}}</a>
+              <br>
+              Số lượng tuyển :{{post.quantity}},
+              Cấp bậc :{{post.position}},
+              Kinh nghiệm :{{post.exp}}<br>
+              Thời gian kết thúc : {{post.expiredDate | date : "dd/MM/yyyy"}}
+            </p>
+          </div>
+          <div class="col-3">
+            <a href="#" class="btn btn-primary" style="width: 110px;height: 40px">Apply Now</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
