@@ -16,8 +16,7 @@ import {environment} from '../environments/environment.prod';
 import {MainComponent} from './component/post/main/main.component';
 import {SideBarComponent} from './component/post/side-bar/side-bar.component';
 import {AngularFireStorageModule} from '@angular/fire/storage';
-import {AngularFireModule} from '@angular/fire';
-import { UploadComponent } from './component/upload/upload.component';
+import {AngularFireModule} from '@angular/fire'
 
 
 

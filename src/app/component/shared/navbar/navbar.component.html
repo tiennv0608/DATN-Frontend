@@ -42,10 +42,11 @@
                     <ul id="personal">
                       <li><a>{{name}}</a>
                         <ul class="submenu">
-                          <li><a href="blog.html">Thông tin cá nhân</a></li>
+                          <li><a href="#">Thông tin cá nhân</a></li>
+                          <li><a (click)="logOut()">Đăng xuất</a></li>
                         </ul>
                       </li>
-                      <button (click)="logOut()" class="btn btn-warning">Đăng xuất</button>
+                      <!--                      <button (click)="logOut()" class="btn btn-warning">Đăng xuất</button>-->
                     </ul>
                   </nav>
                 </div>
@@ -54,12 +55,14 @@
                 <div class="main-menu">
                   <nav class="d-none d-lg-block">
                     <ul id="personal1">
+                      <button routerLink="" class="btn btn-primary">Đăng tin</button>
                       <li><a>{{name}}</a>
                         <ul class="submenu">
-                          <li><a routerLink="/companies/edit">Thông tin công ty</a></li>
+                          <li><a routerLink="/companies/account">Quản lý tài khoản</a></li>
+                          <li><a routerLink="/companies/info">Thông tin công ty</a></li>
+                          <li><a (click)="logOut()">Đăng xuất</a></li>
                         </ul>
                       </li>
-                      <button (click)="logOut()" class="btn btn-warning">Đăng xuất</button>
                     </ul>
                   </nav>
                 </div>
