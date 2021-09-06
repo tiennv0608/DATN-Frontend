@@ -6,16 +6,32 @@ import {CompanyLoginComponent} from '../../component/company/company-login/compa
 import {CompanyRegisterComponent} from '../../component/company/company-register/company-register.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CompanyInfoEditComponent} from '../../component/company/company-info-edit/company-info-edit.component';
+import {AppModule} from '../../app.module';
+import {UploadComponent} from '../../component/upload/upload.component';
+import {AccountComponent} from '../../component/company/account/account.component';
+import {InfoComponent} from '../../component/company/info/info.component';
+import {CompanyEditAccountComponent} from '../../component/company/company-edit-account/company-edit-account.component';
 
 
 @NgModule({
-  declarations: [CompanyLoginComponent, CompanyRegisterComponent, CompanyInfoEditComponent],
+  declarations: [CompanyLoginComponent,
+    CompanyRegisterComponent,
+    CompanyInfoEditComponent,
+    CompanyEditAccountComponent,
+    UploadComponent,
+    AccountComponent,
+    InfoComponent],
   imports: [
     CommonModule,
     CompanyRoutingModule,
     ReactiveFormsModule
   ],
-  exports: [CompanyLoginComponent, CompanyRegisterComponent, CompanyInfoEditComponent]
+  exports: [CompanyLoginComponent,
+    CompanyRegisterComponent,
+    CompanyInfoEditComponent,
+    UploadComponent,
+    AccountComponent,
+    InfoComponent]
 })
 export class CompanyModule {
 }
