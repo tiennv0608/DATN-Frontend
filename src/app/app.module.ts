@@ -17,6 +17,8 @@ import {MainComponent} from './component/post/main/main.component';
 import {SideBarComponent} from './component/post/side-bar/side-bar.component';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire'
+import {AngularFireModule} from '@angular/fire';
+
 
 
 
@@ -32,7 +34,7 @@ import {AngularFireModule} from '@angular/fire'
     SearchComponent,
     NewPostComponent,
     SideBarComponent,
-    SummaryPostComponent
+    SummaryPostComponent,
   ],
   imports: [
     BrowserModule,

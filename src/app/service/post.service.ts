@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment.prod';
@@ -9,10 +9,15 @@ import {Post} from '../model/post/post';
 })
 export class PostService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getAll(): Observable<Post[]> {
-    return this.http.get<Post[]>(environment.API_URL+'/posts');
+    return this.http.get<Post[]>(environment.API_URL + '/posts');
+  }
+
+  save(post: Post): Observable<Post> {
+    return this.http.post<Post>(environment.API_URL + '/posts',post);
   }
 
   findById(id: any): Observable<Post> {
