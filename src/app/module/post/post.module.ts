@@ -5,12 +5,14 @@ import { PostRoutingModule } from './post-routing.module';
 import {PostCreateComponent} from '../../component/post/post-create/post-create.component';
 import {PostEditComponent} from '../../component/post/post-edit/post-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {PostDetailComponent} from '../../component/post/post-detail/post-detail.component';
 
 
 @NgModule({
   declarations: [
     PostCreateComponent,
-    PostEditComponent],
+    PostEditComponent,
+    PostDetailComponent,],
   imports: [
     CommonModule,
     PostRoutingModule,

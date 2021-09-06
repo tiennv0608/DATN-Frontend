@@ -15,9 +15,11 @@ import {HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment.prod';
 import {MainComponent} from './component/post/main/main.component';
 import {SideBarComponent} from './component/post/side-bar/side-bar.component';
+// @ts-ignore
 import {AngularFireStorageModule} from '@angular/fire/storage';
-import {AngularFireModule} from '@angular/fire'
+// @ts-ignore
 import {AngularFireModule} from '@angular/fire';
+import { PostDetailComponent } from './component/post/post-detail/post-detail.component';
 
 
 
@@ -45,7 +47,7 @@ import {AngularFireModule} from '@angular/fire';
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
-  exports: [
+  exports: [MainComponent
   ],
   bootstrap: [AppComponent]
 })
