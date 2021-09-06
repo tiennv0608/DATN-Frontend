@@ -19,6 +19,8 @@ import {SummaryPostComponent} from './component/post/summary-post/summary-post.c
 import {PreloaderStartComponent} from './component/shared/preloader-start/preloader-start.component';
 import {NavbarComponent} from './component/shared/navbar/navbar.component';
 import {FooterComponent} from './component/shared/footer/footer.component';
+import {JwPaginationComponent, JwPaginationModule} from 'jw-angular-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -32,7 +34,7 @@ import {FooterComponent} from './component/shared/footer/footer.component';
     SummaryPostComponent,
     PreloaderStartComponent,
     NavbarComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,9 @@ import {FooterComponent} from './component/shared/footer/footer.component';
     HttpClientModule,
     // SharedModule,
     AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    JwPaginationModule,
+    NgxPaginationModule
   ],
   providers: [],
   exports: [MainComponent],
