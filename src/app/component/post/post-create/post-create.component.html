@@ -1,7 +1,6 @@
 <div class="container" >
   <div class="alert alert-success" role="alert" *ngIf="isUpdated">{{message}}</div>
   <div class="col-9">
-
     <form [formGroup]="postForm" (ngSubmit)="submit()">
       <div class="form-group" >
         <label for="title">Tiêu đề</label>
@@ -41,7 +40,7 @@
           <input type="text" class="form-control" id="salary" formControlName="salary" placeholder="1000$">
         </div>
         <div class="form-group col-md-3">
-          <label for="quantity">Số lượng</label>
+          <label for="quantity">Số lượng (*)</label>
           <input type="text" class="form-control" id="quantity" formControlName="quantity" placeholder="20">
         </div>
       </div>

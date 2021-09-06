@@ -94,8 +94,9 @@ export class PostCreateComponent implements OnInit {
     };
     this.postService.save(this.post).subscribe(() => {
       this.postForm.reset();
-      localStorage.setItem('message', 'Đăng kí thành công');
+      this.isUpdated = true;
       window.location.reload();
+      this.message = 'Đăng kí thành công!';
     }, e => {
       console.log(e);
     });

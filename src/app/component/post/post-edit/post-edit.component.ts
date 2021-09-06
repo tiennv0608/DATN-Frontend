@@ -52,7 +52,8 @@ export class PostEditComponent implements OnInit {
               private workformService: WorkFormService,
               private activatedRoute: ActivatedRoute,
               private tokenService: TokenService,
-              private cityService:CityService) {
+              private cityService:CityService,
+              private router: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       // @ts-ignore
       this.id = +paramMap.get('id');
@@ -116,7 +117,7 @@ export class PostEditComponent implements OnInit {
     };
     this.postService.update(this.id, this.post).subscribe(() => {
       this.postForm.reset();
-      window.location.reload();
+      this.router.navigateByUrl('/companies/find-all');
     }, e => {
       console.log(e);
     });
