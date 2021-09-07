@@ -14,7 +14,7 @@ export class AdvancedComponent implements OnInit {
 
   provinces: Province[] = [];
   // @ts-ignore
-  postList: Post = [];
+  postList?: Post[] = [];
 
   constructor(private provinceService: ProvinceService, private postService: PostService) {
   }
@@ -26,6 +26,7 @@ export class AdvancedComponent implements OnInit {
     }, error => {
       console.log(error)
     });
+
   }
 
   search() {
@@ -37,13 +38,21 @@ export class AdvancedComponent implements OnInit {
     let salary = document.getElementById('salary').value;
     // @ts-ignore
     let address = document.getElementById('address').value;
-    console.log(title === '');
+    // @ts-ignore
+    let address2 = document.getElementById('address2').value;
+    // let address = address2+' '+address1;
+    console.log(address2)
+    console.log(title);
+    console.log(address);
+    console.log(exp);
+    console.log(salary);
     if (title === ''
       && exp === ''
       && salary === ''
       && address !== 'Tất cả các tỉnh') {
 // @ts-ignore
       this.postService.searchAddress(address).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -54,6 +63,7 @@ export class AdvancedComponent implements OnInit {
       && salary === ''
       && address == 'Tất cả các tỉnh') {
       this.postService.searchTitle(title).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -64,6 +74,7 @@ export class AdvancedComponent implements OnInit {
       && salary === ''
       && address == 'Tất cả các tỉnh') {
       this.postService.searchExp(exp).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -74,6 +85,7 @@ export class AdvancedComponent implements OnInit {
       && salary !== ''
       && address == 'Tất cả các tỉnh') {
       this.postService.searchSalary(salary).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -84,6 +96,7 @@ export class AdvancedComponent implements OnInit {
       && salary !== ''
       && address !== 'Tất cả các tỉnh') {
       this.postService.searchAddressAndSalary(address, salary).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -94,6 +107,7 @@ export class AdvancedComponent implements OnInit {
       && salary === ''
       && address !== 'Tất cả các tỉnh') {
       this.postService.searchAddressAndExp(address, exp).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -104,6 +118,7 @@ export class AdvancedComponent implements OnInit {
       && salary === ''
       && address !== 'Tất cả các tỉnh') {
       this.postService.searchAddressAndTitle(address, title).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -114,6 +129,7 @@ export class AdvancedComponent implements OnInit {
       && salary !== ''
       && address === 'Tất cả các tỉnh') {
       this.postService.searchSalaryAndExp(salary, exp).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -124,6 +140,7 @@ export class AdvancedComponent implements OnInit {
       && salary !== ''
       && address === 'Tất cả các tỉnh') {
       this.postService.searchSalaryAndTitle(salary, title).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -134,6 +151,7 @@ export class AdvancedComponent implements OnInit {
       && salary === ''
       && address === 'Tất cả các tỉnh') {
       this.postService.searchExpAndTitle(exp, title).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -144,6 +162,7 @@ export class AdvancedComponent implements OnInit {
       && salary !== ''
       && address !== 'Tất cả các tỉnh') {
       this.postService.searchAddressAndSalaryAndExp(address,salary,exp).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -154,6 +173,7 @@ export class AdvancedComponent implements OnInit {
       && salary !== ''
       && address !== 'Tất cả các tỉnh') {
       this.postService.searchAddressAndSalaryAndExpAndTitle(address,salary,exp,title).subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {
@@ -164,6 +184,18 @@ export class AdvancedComponent implements OnInit {
       && salary !== ''
       && address === 'Tất cả các tỉnh') {
       this.postService.searchSalaryAndExpAndTitle(salary,exp,title).subscribe(result => {
+        // @ts-ignore
+        this.postList = result
+        console.log(result)
+      }, error => {
+        console.log(error);
+      })
+    }else if (title === ''
+      && exp === ''
+      && salary === ''
+      && address === 'Tất cả các tỉnh') {
+      this.postService.search().subscribe(result => {
+        // @ts-ignore
         this.postList = result
         console.log(result)
       }, error => {

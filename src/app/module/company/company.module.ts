@@ -11,6 +11,7 @@ import {UploadComponent} from '../../component/upload/upload.component';
 import {AccountComponent} from '../../component/company/account/account.component';
 import {InfoComponent} from '../../component/company/info/info.component';
 import {CompanyEditAccountComponent} from '../../component/company/company-edit-account/company-edit-account.component';
+import {ListPostByIdComponent} from '../../component/post/list-post-by-id/list-post-by-id.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {CompanyEditAccountComponent} from '../../component/company/company-edit-
     CompanyEditAccountComponent,
     UploadComponent,
     AccountComponent,
+    ListPostByIdComponent,
     InfoComponent],
   imports: [
     CommonModule,

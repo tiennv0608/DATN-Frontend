@@ -27,6 +27,12 @@ export class PostService {
   update(id: string, post: Post): Observable<Post> {
     return this.http.put<Post>(environment.API_URL + `/posts/${id}`, post);
   }
+  getAllByIdCompany(id: any): Observable<Post[]> {
+    return this.http.get<Post[]>(environment.API_URL + `/posts/companies/${id}`);
+  }
+  updateStatus(id: string): Observable<Post> {
+    return this.http.get<Post>(environment.API_URL + `/posts/status/${id}`);
+  }
 
   delete(id: string) {
     return this.http.delete(environment.API_URL + `/posts/${id}`);
@@ -78,4 +84,8 @@ export class PostService {
   searchSalaryAndExpAndTitle(salary: string, exp: string,title:string) {
     return this.http.get(environment.API_URL + `/posts/search?salary=` + salary+`&exp=`+exp+`&title=`+title);
   }
+  search() {
+    return this.http.get(environment.API_URL + `/posts/search`);
+  }
+
 }

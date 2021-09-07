@@ -5,6 +5,8 @@ import { PostRoutingModule } from './post-routing.module';
 import {PostCreateComponent} from '../../component/post/post-create/post-create.component';
 import {PostEditComponent} from '../../component/post/post-edit/post-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {PostDetailComponent} from '../../component/post/post-detail/post-detail.component';
+import {SharedModule} from '../shared/shared.module';
 import {AdvancedComponent} from "../../component/advanced/advanced.component";
 
 
@@ -12,13 +14,19 @@ import {AdvancedComponent} from "../../component/advanced/advanced.component";
   declarations: [
     PostCreateComponent,
     PostEditComponent,
-    AdvancedComponent
+    AdvancedComponent,
+    PostDetailComponent
   ],
 
   imports: [
     CommonModule,
     PostRoutingModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    SharedModule,
+  ],
+  exports: [
+  PostEditComponent,
+  PostDetailComponent,
+]
 })
 export class PostModule { }
