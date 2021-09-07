@@ -4,6 +4,7 @@ import {AuthService} from '../../../service/auth.service';
 import {ResponseBody} from '../../../common/response-body';
 import {Constant} from '../../../common/constant';
 import {UserRegisterForm} from '../../../model/user/user-register-form';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
@@ -27,7 +28,8 @@ export class RegisterFormComponent implements OnInit {
   isPassword = 'password';
   isConfirmedPassword = 'password';
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -47,9 +49,13 @@ export class RegisterFormComponent implements OnInit {
         this.message = response.responseMessage;
       } else {
         this.message = response.responseMessage;
+        console.log('1');
       }
     }, error => {
       console.log('System error: ', error);
+      if (error.error.responseCode == Constant.EMAIL_IS_EXISTS){
+        this.message=error.error.responseMessage;
+      }
     });
   }
 
@@ -61,4 +67,7 @@ export class RegisterFormComponent implements OnInit {
     this.isConfirmedPassword = (this.isConfirmedPassword === 'password') ? 'text' : 'password';
   }
 
+  reload() {
+   // window.location.reload();
+  }
 }
