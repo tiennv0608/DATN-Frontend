@@ -20,6 +20,7 @@ import {MainComponent} from './component/post/main/main.component';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 // @ts-ignore
 import {AngularFireModule} from '@angular/fire';
+import {SharedModule} from './module/shared/shared.module';
 import {SearchComponent} from './component/post/search/search.component';
 import {NewPostComponent} from './component/post/new-post/new-post.component';
 import {SideBarComponent} from './component/post/side-bar/side-bar.component';
@@ -30,6 +31,9 @@ import {FooterComponent} from './component/shared/footer/footer.component';
 import {JwPaginationComponent, JwPaginationModule} from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ListPostByIdComponent } from './component/post/list-post-by-id/list-post-by-id.component';
+import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
+import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +50,8 @@ import { ListPostByIdComponent } from './component/post/list-post-by-id/list-pos
     PostListComponent,
     SearchbarComponent,
     PostSearchComponent,
-    FooterComponent
+    FooterComponent,
+    PostTopCompanyComponent,
   ],
   imports: [
     BrowserModule,

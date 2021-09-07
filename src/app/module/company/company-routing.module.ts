@@ -9,6 +9,7 @@ import {CompanyEditAccountComponent} from '../../component/company/company-edit-
 import {ListPostByIdComponent} from '../../component/post/list-post-by-id/list-post-by-id.component';
 import {MatSliderModule} from '@angular/material/slider';
 import {HttpClientModule} from '@angular/common/http';
+import {CompanyDetailsComponent} from '../../component/company/company-details/company-details.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'find-all',
     component: ListPostByIdComponent
+  },
+  {
+    path: 'view/:id',
+    component: CompanyDetailsComponent
   }
 ];
 

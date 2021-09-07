@@ -1,13 +1,14 @@
 <div class="container-fluid">
-  <div class="row no-gutter" style="background: url('../../../../assets/img/hero/h1_hero.jpg'); background-size: cover; background-repeat: no-repeat">
+  <div class="row no-gutter"
+       style="background: url('../../../../assets/img/hero/h1_hero.jpg'); background-size: cover; background-repeat: no-repeat">
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
               <h3 class="login-heading text-center">Đăng ký thành viên với tư cách nhà tuyển dụng</h3>
-              <div class="alert alert-success" role="alert" *ngIf="isRegistered">{{message}}</div>
-              <div class="alert alert-warning" role="alert" *ngIf="!isRegistered && (message != '')">{{message}}</div>
+              <!--              <div class="alert alert-success" role="alert" *ngIf="isRegistered">{{message}}</div>-->
+              <!--              <div class="alert alert-warning" role="alert" *ngIf="!isRegistered && (message != '')">{{message}}</div>-->
               <form [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
                 <div class="col mt-3">
                   <div class="input-group has-validation">
@@ -95,7 +96,8 @@
                 <div class="col mt-3">
                   <div class="input-group has-validation">
                     <span class="input-group-text" style="background: skyblue"><i class="bi bi-book"></i></span>
-                    <textarea type="text" class="form-control" formControlName="description" placeholder="Mô tả"></textarea>
+                    <textarea type="text" class="form-control" formControlName="description"
+                              placeholder="Mô tả"></textarea>
                     <div class="col-md-12 alert alert-danger" role="alert"
                          *ngIf="registerForm.get('description')?.errors?.required && registerForm.get('description')?.touched">
                       Mô tả không được để trống
@@ -109,7 +111,8 @@
 
                 <div class="col mt-3">
                   <button class="btn head-btn2 form-control"
-                          [disabled]="registerForm.invalid">Đăng ký
+                          [disabled]="registerForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal">Đăng
+                    ký
                   </button>
                 </div>
 
@@ -126,5 +129,24 @@
     </div>
   </div>
 </div>
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" *ngIf="!isRegistered && message !== ''">
+        Tài khoản đã tồn tại!
+      </div>
+      <div class="modal-body" *ngIf="isRegistered">
+        Đăng kí thành công
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="reload()" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
 
