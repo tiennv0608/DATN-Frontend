@@ -3,6 +3,7 @@ import {Constant} from '../../../common/constant';
 import {ResponseBody} from '../../../common/response-body';
 import {AuthService} from '../../../service/auth.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-company-register',
@@ -25,7 +26,8 @@ export class CompanyRegisterComponent implements OnInit {
   isPassword = 'password';
   isConfirmedPassword = 'password';
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -58,5 +60,9 @@ export class CompanyRegisterComponent implements OnInit {
 
   showConfirmedPass(): void {
     this.isConfirmedPassword = (this.isConfirmedPassword === 'password') ? 'text' : 'password';
+  }
+
+  reload() {
+    this.router.navigateByUrl('companies/login');
   }
 }
