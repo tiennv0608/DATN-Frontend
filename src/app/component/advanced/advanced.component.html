@@ -10,31 +10,27 @@
   <div class="col-6">
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label>Title</label>
-          <input type="text" class="form-control" id="title" placeholder="Title">
+          <label>Tiêu đề</label>
+          <input type="text" class="form-control" id="title" placeholder="Tiêu đề">
         </div>
         <div class="form-group col-md-6">
-          <label >Exp</label>
-          <input type="text" class="form-control" id="exp" placeholder="Exp">
+          <label >Kinh nghiêm</label>
+          <input type="text" class="form-control" id="exp" placeholder="Kinh nghiệm">
         </div>
       </div>
       <div class="form-group">
-        <label>Address</label>
+        <label>Địa chỉ</label>
         <select id="address" class="form-control">
-                    <option *ngFor="let provinces of provinces">{{provinces.name}}</option>
+                    <option *ngFor="let provinces of cities">{{provinces.name}}</option>
         </select>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label >Salary</label>
-          <input type="text" class="form-control" id="salary">
-        </div>
-        <div class="form-group col-md-6">
-          <label >Address 2</label>
-          <input type="text" class="form-control" id="address2" placeholder="Exp">
+          <label >Mức lương tối thiểu</label>
+          <input type="text" class="form-control" id="salary" placeholder="">
         </div>
       </div>
-      <button type="submit" class="btn btn-primary" (click)="search()">Search</button>
+      <button type="submit" class="btn btn-primary" (click)="search()">Tìm kiếm</button>
     <div class="card mb-3" style="max-width: 770px;" *ngFor="let postList of postList">
       <div class="row g-0" *ngIf="postList?.status">
         <div class="col-md-2">

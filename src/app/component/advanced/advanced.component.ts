@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 
 import {PostService} from "../../service/post.service";
 import {Post} from "../../model/post/post";
-import { Province } from 'src/app/model/province';
-import { ProvinceService } from 'src/app/service/province.service';
+import {City} from "../../model/post/city";
+import {CityService} from "../../service/city.service";
 
 
 @Component({
@@ -13,16 +13,16 @@ import { ProvinceService } from 'src/app/service/province.service';
 })
 export class AdvancedComponent implements OnInit {
 
-  provinces: Province[] = [];
+  cities: City[] = [];
   // @ts-ignore
   postList?: Post[] = [];
 
-  constructor(private provinceService: ProvinceService, private postService: PostService) {
+  constructor(private cityService: CityService, private postService: PostService) {
   }
 
   ngOnInit(): void {
-    this.provinceService.getAll().subscribe(result => {
-      this.provinces = result;
+    this.cityService.getAll().subscribe(result => {
+      this.cities = result;
       console.log(result);
     }, error => {
       console.log(error)
