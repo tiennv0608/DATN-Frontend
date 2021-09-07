@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row no-gutter"
        style="background: url('../../../../assets/img/hero/h1_hero.jpg'); background-size: cover; background-repeat: no-repeat">
     <div class="col-md-8 col-lg-6">
@@ -12,7 +12,7 @@
               <form [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
                 <div class="col mt-3">
                   <div class="input-group has-validation">
-                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-building"></i></span>
+                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-building">*</i></span>
                     <input type="text" class="form-control" formControlName="companyName" placeholder="Tên công ty">
                     <div class="col-md-12 alert alert-danger" role="alert"
                          *ngIf="registerForm.get('companyName')?.errors?.required && registerForm.get('companyName')?.touched">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col mt-3">
                   <div class="input-group has-validation">
-                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-building"></i></span>
+                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-building">*</i></span>
                     <input type="text" class="form-control" formControlName="shortName" placeholder="Tên viết tắt">
                     <div class="col-md-12 alert alert-danger" role="alert"
                          *ngIf="registerForm.get('shortName')?.errors?.required && registerForm.get('shortName')?.touched">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col mt-3">
                   <div class="input-group has-validation">
-                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-envelope"></i></span>
+                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-envelope">*</i></span>
                     <input type="email" class="form-control" formControlName="email" placeholder="Email">
                     <div class="col-md-12 alert alert-danger" role="alert"
                          *ngIf="registerForm.get('email')?.errors?.required && registerForm.get('email')?.touched">
@@ -50,9 +50,9 @@
 
                 <div class="col mt-3">
                   <div class="input-group has-validation">
-                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
+                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock">*</i></span>
                     <input [attr.type]="[isPassword]" class="form-control" formControlName="password"
-                           placeholder="Password">
+                           placeholder="Mật khẩu">
                     <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()"
                           style="background: skyblue"><i
                       class="bi bi-eye"></i></span>
@@ -73,9 +73,9 @@
 
                 <div class="col mt-3">
                   <div class="input-group has-validation">
-                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
+                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock">*</i></span>
                     <input [attr.type]="[isConfirmedPassword]" class="form-control" formControlName="confirmedPassword"
-                           placeholder="Confirm password">
+                           placeholder="Xác nhận mật khẩu">
                     <span class="input-group-text" [hidden]="(isConfirmedPassword== 'text')"
                           (click)="showConfirmedPass()" style="background: skyblue"><i class="bi bi-eye"></i></span>
                     <span class="input-group-text" [hidden]="(isConfirmedPassword== 'password')"
@@ -95,7 +95,7 @@
                 </div>
                 <div class="col mt-3">
                   <div class="input-group has-validation">
-                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-book"></i></span>
+                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-book">*</i></span>
                     <textarea type="text" class="form-control" formControlName="description"
                               placeholder="Mô tả"></textarea>
                     <div class="col-md-12 alert alert-danger" role="alert"
@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="col mt-3">
-                  <button class="btn head-btn2 form-control"
+                  <button class="btn btn-primary form-control"
                           [disabled]="registerForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal">Đăng
                     ký
                   </button>
@@ -134,8 +134,8 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
       </div>
       <div class="modal-body" *ngIf="!isRegistered && message !== ''">
         Tài khoản đã tồn tại!

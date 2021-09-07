@@ -53,8 +53,6 @@ export class CompanyEditAccountComponent implements OnInit {
 
   changePassword() {
     const id = this.tokenService.getToken().id;
-    console.log(this.currentCompany?.password)
-    console.log(this.passwordForm.value.password)
     if (this.passwordForm.value.password === this.currentCompany?.password) {
       localStorage.setItem('message', 'Mật khẩu trùng với mật khẩu cũ');
       this.router.navigate(['companies/account']);

@@ -37,8 +37,8 @@ export class LoginFormComponent implements OnInit {
 
   login() {
     this.authService.loginUser(this.loginForm.value).subscribe((response: ResponseBody) => {
+      this.isLogin = true;
       if (response.responseCode === Constant.SUCCESS) {
-        this.isLogin = true;
         this.message = 'Đăng nhập thành công';
         this.tokenService.setToken(response.responseData);
         this.router.navigate(['']).then(() => {
@@ -51,9 +51,12 @@ export class LoginFormComponent implements OnInit {
       console.log('Error system:' + error);
     });
   }
+
   reload() {
-    this.router.navigate(['']).then(() => {
-      window.location.reload();
-    });
+    if (this.isLogin) {
+      this.router.navigate(['']);
+    } else {
+      this.loginForm.reset();
+    }
   }
 }

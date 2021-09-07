@@ -46,9 +46,6 @@ export class CompanyInfoEditComponent implements OnInit {
       this.infoEditForm = new FormGroup({
         companyName: new FormControl(company.companyName, [Validators.required]),
         shortName: new FormControl(company.shortName),
-        // email: new FormControl(company.email, [Validators.required]),
-        // password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-        // confirmedPassword: new FormControl('', [Validators.required]),
         phone: new FormControl(company.phone, [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
         description: new FormControl(company.description),
         address: new FormControl(company.address),
@@ -79,8 +76,8 @@ export class CompanyInfoEditComponent implements OnInit {
       website: this.infoEditForm.value.website,
     };
     this.companyService.update(id, company).subscribe(company => {
-      localStorage.setItem('message', 'Cập nhật thông tin thành công');
-
+      // localStorage.setItem('message', 'Cập nhật thông tin thành công');
+      console.log("Cập nhật thành công");
     }, error => {
       console.log(error);
     });
