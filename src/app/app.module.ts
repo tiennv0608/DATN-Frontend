@@ -53,9 +53,9 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
     FooterComponent,
     PostListComponent,
     SearchbarComponent,
-    PostSearchComponent,
     FooterComponent,
     PostTopCompanyComponent,
+    PostSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {PostDetailComponent} from '../../component/post/post-detail/post-detail.component';
 import {SharedModule} from '../shared/shared.module';
 import {AdvancedComponent} from "../../component/advanced/advanced.component";
+import {PostSearchComponent} from '../../component/post/post-search/post-search.component';
 
 
 @NgModule({
