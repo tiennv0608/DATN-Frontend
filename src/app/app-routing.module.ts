@@ -1,5 +1,6 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import {PostSearchComponent} from './component/post/post-search/post-search.component';
 import {MainComponent} from './component/post/main/main.component';
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'companies',
     loadChildren: () => import('./module/company/company.module').then(module => module.CompanyModule)
+  },
+  {
+    path: 'home/search',
+    component: PostSearchComponent
   }
 ];
 
@@ -25,5 +30,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

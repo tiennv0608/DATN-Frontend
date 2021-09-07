@@ -2,6 +2,8 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {CompanyLoginComponent} from '../../component/company/company-login/company-login.component';
 import {CompanyRegisterComponent} from '../../component/company/company-register/company-register.component';
+import {MatSliderModule} from '@angular/material/slider';
+import {HttpClientModule} from '@angular/common/http';
 import {CompanyInfoEditComponent} from '../../component/company/company-info-edit/company-info-edit.component';
 import {AccountComponent} from '../../component/company/account/account.component';
 import {InfoComponent} from '../../component/company/info/info.component';
@@ -45,7 +47,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), MatSliderModule, HttpClientModule],
   exports: [RouterModule]
 })
 export class CompanyRoutingModule {

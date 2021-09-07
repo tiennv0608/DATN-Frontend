@@ -27,9 +27,11 @@ export class PostService {
   update(id: string, post: Post): Observable<Post> {
     return this.http.put<Post>(environment.API_URL + `/posts/${id}`, post);
   }
+
   getAllByIdCompany(id: any): Observable<Post[]> {
     return this.http.get<Post[]>(environment.API_URL + `/posts/companies/${id}`);
   }
+
   updateStatus(id: string): Observable<Post> {
     return this.http.get<Post>(environment.API_URL + `/posts/status/${id}`);
   }
@@ -41,4 +43,21 @@ export class PostService {
   getTop5Companies(): Observable<Post> {
     return this.http.get(environment.API_URL + `/posts/get-top-5-companies`);
   }
+
+  getSearchedPosts(params: any) {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(`${environment.API_URL}/home/search?` + params.toString());
+  }
+
+  getAllPosts(request: any) {
+    const params = request;
+    console.log('size:' + params);
+    return this.http.get(`${environment.API_URL}/home/findAll`, {params});
+  }
+
+  countPosts() {
+    return this.http.get(`${environment.API_URL}/home/count`);
+  }
+
 }
