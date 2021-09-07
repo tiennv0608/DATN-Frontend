@@ -37,4 +37,8 @@ export class PostService {
   delete(id: string) {
     return this.http.delete(environment.API_URL + `/posts/${id}`);
   }
+
+  getTop5Companies(): Observable<Post> {
+    return this.http.get(environment.API_URL + `/posts/get-top-5-companies`);
+  }
 }

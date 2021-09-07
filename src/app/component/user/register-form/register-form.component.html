@@ -6,8 +6,8 @@
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
               <h3 class="login-heading text-center">Đăng ký thành viên với tư cách người tìm việc</h3>
-              <div class="alert alert-success" role="alert" *ngIf="isRegistered">{{message}}</div>
-              <div class="alert alert-warning" role="alert" *ngIf="!isRegistered && (message != '')">{{message}}</div>
+<!--              <div class="alert alert-success" role="alert" *ngIf="isRegistered">{{message}}</div>-->
+<!--              <div class="alert alert-warning" role="alert" *ngIf="!isRegistered && (message != '')">{{message}}</div>-->
               <form [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
                 <div class="col mt-3">
                   <div class="input-group has-validation">

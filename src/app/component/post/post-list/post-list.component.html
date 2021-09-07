@@ -1,6 +1,6 @@
 <div class="card mb-3" style="max-width: 650px;"
-     *ngFor="let post of posts | paginate: {itemsPerPage: 3, currentPage: page}">
-  <div class="row g-0" >
+     *ngFor="let post of posts | paginate: {itemsPerPage: 5, currentPage: page}">
+  <div class="row g-0">
     <div class="col-md-2">
       <img [src]="post.company?.image" class="img-fluid rounded-start p-3" alt="..." style="width: 100px;height: 100px">
     </div>
