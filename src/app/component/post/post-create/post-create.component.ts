@@ -95,7 +95,6 @@ export class PostCreateComponent implements OnInit {
     this.postService.save(this.post).subscribe(() => {
       this.postForm.reset();
       this.isUpdated = true;
-      window.location.reload();
       this.message = 'Đăng kí thành công!';
     }, e => {
       console.log(e);
@@ -123,5 +122,9 @@ export class PostCreateComponent implements OnInit {
     this.cityService.getAll().subscribe(result=>{
       this.cities = result;
     })
+  }
+
+  reload() {
+    window.location.reload();
   }
 }

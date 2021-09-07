@@ -117,7 +117,6 @@ export class PostEditComponent implements OnInit {
     };
     this.postService.update(this.id, this.post).subscribe(() => {
       this.postForm.reset();
-      this.router.navigateByUrl('/companies/find-all');
     }, e => {
       console.log(e);
     });
@@ -144,5 +143,9 @@ export class PostEditComponent implements OnInit {
     this.cityService.getAll().subscribe(result=>{
       this.cities = result;
     })
+  }
+
+  reload() {
+    this.router.navigateByUrl('/companies/find-all');
   }
 }

@@ -80,7 +80,7 @@ export class CompanyInfoEditComponent implements OnInit {
     };
     this.companyService.update(id, company).subscribe(company => {
       localStorage.setItem('message', 'Cập nhật thông tin thành công');
-      this.router.navigate(['companies/info']);
+
     }, error => {
       console.log(error);
     });
@@ -97,5 +97,9 @@ export class CompanyInfoEditComponent implements OnInit {
 
   showConfirmedPass(): void {
     this.isConfirmedPassword = (this.isConfirmedPassword === 'password') ? 'text' : 'password';
+  }
+
+  reload() {
+    this.router.navigate(['companies/info']);
   }
 }

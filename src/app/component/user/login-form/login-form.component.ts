@@ -51,4 +51,9 @@ export class LoginFormComponent implements OnInit {
       console.log('Error system:' + error);
     });
   }
+  reload() {
+    this.router.navigate(['']).then(() => {
+      window.location.reload();
+    });
+  }
 }
