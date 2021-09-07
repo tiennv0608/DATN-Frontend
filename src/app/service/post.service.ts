@@ -27,6 +27,12 @@ export class PostService {
   update(id: string, post: Post): Observable<Post> {
     return this.http.put<Post>(environment.API_URL + `/posts/${id}`, post);
   }
+  getAllByIdCompany(id: any): Observable<Post[]> {
+    return this.http.get<Post[]>(environment.API_URL + `/posts/companies/${id}`);
+  }
+  updateStatus(id: string): Observable<Post> {
+    return this.http.get<Post>(environment.API_URL + `/posts/status/${id}`);
+  }
 
   delete(id: string) {
     return this.http.delete(environment.API_URL + `/posts/${id}`);
