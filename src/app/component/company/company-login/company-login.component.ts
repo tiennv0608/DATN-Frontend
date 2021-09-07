@@ -56,8 +56,12 @@ export class CompanyLoginComponent implements OnInit {
   }
 
   reload() {
-    this.router.navigate(['']).then(() => {
+    if (this.isLogin){
+      this.router.navigate(['']).then(() => {
+        window.location.reload();
+      });
+    }else {
       window.location.reload();
-    });
+    }
   }
 }
