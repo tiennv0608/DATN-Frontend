@@ -37,4 +37,8 @@ export class ListPostByIdComponent implements OnInit {
       window.location.reload();
     })
   }
+
+  close() {
+    this.router.navigateByUrl('/companies/find-all')
+  }
 }

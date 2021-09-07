@@ -88,4 +88,9 @@ export class PostService {
     return this.http.get(environment.API_URL + `/posts/search`);
   }
 
+
+  getTop5Companies(): Observable<Post> {
+    return this.http.get(environment.API_URL + `/posts/get-top-5-companies`);
+  }
+
 }

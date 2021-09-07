@@ -46,14 +46,18 @@ export class CompanyLoginComponent implements OnInit {
         this.isLogin = true;
         this.message = 'Đăng nhập thành công';
         this.tokenService.setToken(response.responseData);
-        this.router.navigate(['']).then(() => {
-          window.location.reload();
-        });
+
       } else {
         this.message = 'Đăng nhập thất bại! Hãy thử lại';
       }
     }, error => {
       console.log('Error system:' + error);
+    });
+  }
+
+  reload() {
+    this.router.navigate(['']).then(() => {
+      window.location.reload();
     });
   }
 }

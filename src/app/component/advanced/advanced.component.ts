@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {ProvinceService} from "../../service/province.service";
+
 import {PostService} from "../../service/post.service";
 import {Post} from "../../model/post/post";
-import {Province} from "../../model/province";
-import {error} from "@angular/compiler/src/util";
+import { Province } from 'src/app/model/province';
+import { ProvinceService } from 'src/app/service/province.service';
+
 
 @Component({
   selector: 'app-advanced',

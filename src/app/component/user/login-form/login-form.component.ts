@@ -20,7 +20,7 @@ export class LoginFormComponent implements OnInit {
   });
   isLogin = false;
   isPassword = 'password';
-  message = 'Please fill in the form to login';
+  message = 'Hãy điền vào form';
   jwtResponse: JwtResponse = {};
 
   constructor(private authService: AuthService,
@@ -39,16 +39,21 @@ export class LoginFormComponent implements OnInit {
     this.authService.loginUser(this.loginForm.value).subscribe((response: ResponseBody) => {
       if (response.responseCode === Constant.SUCCESS) {
         this.isLogin = true;
-        this.message = 'Login successfully';
+        this.message = 'Đăng nhập thành công';
         this.tokenService.setToken(response.responseData);
         this.router.navigate(['']).then(() => {
           window.location.reload();
         });
       } else {
-        this.message = 'Login failed! Please try again!';
+        this.message = 'Sai email hoặc mật khẩu, hãy nhập lại!';
       }
     }, error => {
       console.log('Error system:' + error);
+    });
+  }
+  reload() {
+    this.router.navigate(['']).then(() => {
+      window.location.reload();
     });
   }
 }

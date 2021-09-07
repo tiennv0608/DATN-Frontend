@@ -2,8 +2,6 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {PostListComponent} from './component/post/post-list/post-list.component';
-import {SearchComponent} from './component/post/search/search.component';
-import {NewPostComponent} from './component/post/new-post/new-post.component';
 import {SummaryPostComponent} from './component/post/summary-post/summary-post.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
@@ -15,6 +13,12 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire';
 
 
+
+
+import {SharedModule} from './module/shared/shared.module';
+import {SearchComponent} from './component/post/search/search.component';
+import {NewPostComponent} from './component/post/new-post/new-post.component';
+
 import {SideBarComponent} from './component/post/side-bar/side-bar.component';
 import {PreloaderStartComponent} from './component/shared/preloader-start/preloader-start.component';
 import {NavbarComponent} from './component/shared/navbar/navbar.component';
@@ -22,6 +26,9 @@ import {FooterComponent} from './component/shared/footer/footer.component';
 import {JwPaginationComponent, JwPaginationModule} from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ListPostByIdComponent } from './component/post/list-post-by-id/list-post-by-id.component';
+import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
+import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
+
 
 @NgModule({
   declarations: [
@@ -34,12 +41,14 @@ import { ListPostByIdComponent } from './component/post/list-post-by-id/list-pos
     SummaryPostComponent,
     PreloaderStartComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PostTopCompanyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    // SharedModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     JwPaginationModule,
