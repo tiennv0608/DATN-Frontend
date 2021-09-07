@@ -20,9 +20,19 @@
           </mat-form-field>
           <mat-form-field class="selectTerm" appearance="fill" >
             <mat-label>Chọn mức lương</mat-label>
-            <mat-select class="default" name="salary" [(ngModel)]="salary" [value]="-1">
-              <mat-option [value]='-1'>Tất cả mức lương</mat-option>
-              <mat-option *ngFor="let salary of salaries" [value]="salary.id">{{salary.name}}</mat-option>
+            <mat-select class="default" name="salary" [(ngModel)]="salaries" [value]="[-1,-1]">
+              <mat-option [value]= [-1,-1]>Tất cả mức lương</mat-option>
+              <mat-option [value]="[0,1]">Dưới 1Tr</mat-option>
+              <mat-option [value]="[1,3]">1Tr đến 3Tr</mat-option>
+              <mat-option [value]="[3,5]">3Tr đến 5Tr</mat-option>
+              <mat-option [value]="[5,7]">5Tr đến 7Tr</mat-option>
+              <mat-option [value]="[7,10]">7Tr đến 10Tr</mat-option>
+              <mat-option [value]="[10,15]">10Tr đến 15Tr</mat-option>
+              <mat-option [value]="[15,20]">15Tr đến 20Tr</mat-option>
+              <mat-option [value]="[20,30]">20Tr đến 30Tr</mat-option>
+              <mat-option [value]="[30,40]">30Tr đến 40Tr</mat-option>
+              <mat-option [value]="[40,50]">40Tr đến 50Tr</mat-option>
+              <mat-option [value]="[50,100]">Trêm 50Tr</mat-option>
             </mat-select>
           </mat-form-field>
           <button type="submit" class="searchButton" (click)="searchJob()">

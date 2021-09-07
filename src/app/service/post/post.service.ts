@@ -14,16 +14,16 @@ export class PostService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     // @ts-ignore
-    return this.httpClient.get(`${environment.baseUrl}/home/search?` + params.toString());
+    return this.httpClient.get(`${environment.baseUrl}/posts/search?` + params.toString());
   }
   // tslint:disable-next-line:typedef
-  getAllPosts(request: any){
-    const params = request;
-    console.log('size:' + params);
-    return this.httpClient.get(`${environment.baseUrl}/home/findAll`, {params});
-  }
+  // getAllPosts(request: any){
+  //   const params = request;
+  //   console.log('size:' + params);
+  //   return this.httpClient.get(`${environment.baseUrl}/posts/findAll`, {params});
+  // }
   // tslint:disable-next-line:typedef
   countPosts(){
-    return this.httpClient.get(`${environment.baseUrl}/home/count`);
+    return this.httpClient.get(`${environment.baseUrl}/posts/count`);
   }
 }

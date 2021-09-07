@@ -6,6 +6,7 @@ import {SalaryService} from '../../../service/salary/salary.service';
 import {PostService} from '../../../service/post/post.service';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../environments/environment';
+import {Post} from '../../../model/post/post';
 
 @Component({
   selector: 'app-searchbar',
@@ -16,10 +17,9 @@ export class SearchbarComponent implements OnInit {
   keyword = '';
   category = -1;
   city = -1;
-  salary = -1;
+  salaries: number[] = [-1, -1];
   categories: any;
   cities: any;
-  salaries: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private categoryService: CategoryService,
@@ -35,8 +35,6 @@ export class SearchbarComponent implements OnInit {
   ngOnInit(): void {
     this.getAllCities();
     this.getAllCategories();
-    this.getAllSalaries();
-
   }
 
   // tslint:disable-next-line:typedef
@@ -52,11 +50,6 @@ export class SearchbarComponent implements OnInit {
     });
   }
   // tslint:disable-next-line:typedef
-  getAllSalaries(){
-    this.salaryService.getAllSalaries().subscribe((salaries) => {
-      this.salaries = salaries;
-    });
-  }
   // tslint:disable-next-line:typedef
   searchJob(){
     const params: URLSearchParams = new URLSearchParams();
@@ -66,8 +59,11 @@ export class SearchbarComponent implements OnInit {
     // @ts-ignore
     params.set('city_id', this.city);
     // @ts-ignore
-    params.set('salary_id', this.salary);
+    params.set('salary1', this.salaries[0]);
+    // @ts-ignore
+    params.set('salary2', this.salaries[1]);
     console.log(params.toString());
+    console.log(this.salaries.toString());
     // @ts-ignore
     this.postService.getSearchedPosts(params).subscribe((data: any ) => {
       console.log(params.toString());

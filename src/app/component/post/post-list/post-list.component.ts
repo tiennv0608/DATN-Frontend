@@ -9,7 +9,7 @@ import {Post} from '../../../model/post/post';
 })
 export class PostListComponent implements OnInit {
   posts: Post[] = [];
-  page: number = 1;
+  page = 1;
 
   constructor(private postService: PostService) {
   }

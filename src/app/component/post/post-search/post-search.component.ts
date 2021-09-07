@@ -1,5 +1,6 @@
 import {Component, OnInit, SimpleChanges} from '@angular/core';
 import {Router} from '@angular/router';
+import {Post} from '../../../model/post/post';
 
 @Component({
   selector: 'app-post-search',
@@ -7,8 +8,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./post-search.component.scss']
 })
 export class PostSearchComponent implements OnInit {
-  allPost: any;
-
+  posts: Post[] = [];
+  page = 1;
 
   constructor(router: Router) {
     console.log(router.getCurrentNavigation());
@@ -18,7 +19,7 @@ export class PostSearchComponent implements OnInit {
     const data = localStorage.getItem('search');
     console.log(data);
     if (data !== null){
-      this.allPost = JSON.parse(data);
+      this.posts = JSON.parse(data);
       // localStorage.removeItem('search');
     }
   }
