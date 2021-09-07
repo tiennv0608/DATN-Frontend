@@ -2,7 +2,7 @@
   <!-- Header Start -->
   <div class="header-area header-transparrent">
     <div class="headder-top header-sticky">
-      <div class="container">
+      <div class="container-fluid" style="background-color: #27CFDB">
         <div class="row align-items-center">
           <div class="col-lg-3 col-md-2">
             <!-- Logo -->
@@ -16,7 +16,7 @@
               <div class="main-menu">
                 <nav class="d-none d-lg-block">
                   <ul id="navigation">
-                    <li><a href="../../../../index.html">Home</a></li>
+                    <li><a routerLink="/">Trang chủ</a></li>
                     <li><a href="job_listing.html">Find a Jobs </a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="#">Page</a>
@@ -33,12 +33,39 @@
               </div>
               <!-- Header-btn -->
               <div class="header-btn d-none f-right d-lg-block" *ngIf="token === ''">
-                <a [routerLink]="['users','login']" class="btn head-btn2">User</a>
-                <a [routerLink]="['companies','login']" class="btn head-btn2">Company</a>
+                <a [routerLink]="['users','login']" class="btn btn-warning">Người tìm việc</a>
+                <a [routerLink]="['companies','login']" class="btn btn-success">Nhà tuyển dụng</a>
               </div>
-              <div class="header-btn d-none f-right d-lg-block" *ngIf="token !== ''">
-                <a class="btn head-btn1">{{name}}</a>
-                <button (click)="logOut()" class="btn head-btn2">Logout</button>
+              <div class="header-btn d-none f-right d-lg-block" *ngIf="(token !== '') && (type === 'USER')">
+                <div class="main-menu">
+                  <nav class="d-none d-lg-block">
+                    <ul id="personal">
+                      <li><a>{{name}}</a>
+                        <ul class="submenu">
+                          <li><a href="#">Thông tin cá nhân</a></li>
+                          <li><a (click)="logOut()">Đăng xuất</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="header-btn d-none f-right d-lg-block" *ngIf="(token !== '') &&  (type === 'COMPANY')">
+                <div class="main-menu">
+                  <nav class="d-none d-lg-block">
+                    <ul id="personal1">
+                      <a (click)="next()" class="btn btn-success" >Đăng tin tuyển dụng</a>
+                      <li><a>{{name}}</a>
+                        <ul class="submenu">
+                          <li><a routerLink="/companies/account">Quản lý tài khoản</a></li>
+                          <li><a routerLink="/companies/info">Thông tin công ty</a></li>
+                          <li><a routerLink="/companies/find-all">Bài đăng của tôi</a></li>
+                          <li><a (click)="logOut()">Đăng xuất</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>

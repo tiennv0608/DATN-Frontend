@@ -1,0 +1,48 @@
+<div class="row"
+     style="background: url('../../../../assets/img/hero/h1_hero.jpg'); background-size: cover; background-repeat: no-repeat">
+  <div class="col-8">
+    <div class="card mb-3" style="max-width: 1300px;" *ngFor="let post of posts">
+      <div class="row g-0">
+        <div class="col-md-2">
+          <img [src]="post.company?.image" class="img-fluid rounded-start p-3" alt="..."
+               style="width: 100px;height: 100px">
+        </div>
+        <div class="col-md-10" style="font-size: 10px">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-7">
+                <p class="card-title" style="font-size: 15px;width: 465px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;">
+                  <a [routerLink]="['view',post.id]" style="font-size: 20px">{{post.title}}</a>
+                  <br>
+                  Số lượng tuyển :{{post.quantity}},
+                  Cấp bậc :{{post.position}},
+                  Kinh nghiệm :{{post.exp}}<br>
+                  Thời gian kết thúc : {{post.expiredDate | date : "dd/MM/yyyy"}}
+                </p>
+              </div>
+              <div class="col-2">Trạng thái :
+                <span *ngIf="post.status">
+                  Public
+                </span>
+                <span *ngIf="!post.status">
+                  Private
+                </span>
+              </div>
+              <div class="col-3">
+                <div><a [routerLink]="['/posts/edit',post.id]" class="btn btn-primary">Chỉnh sửa bài </a></div>
+                <br>
+                <div><a (click)="updateStatus(post.id)" class="btn btn-primary" style="color: snow ">Thay đổi trạng thái</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+
+  </div>
+</div>

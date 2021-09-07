@@ -1,0 +1,40 @@
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {environment} from '../../environments/environment.prod';
+import {Post} from '../model/post/post';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PostService {
+
+  constructor(private http: HttpClient) {
+  }
+
+  getAll(): Observable<Post[]> {
+    return this.http.get<Post[]>(environment.API_URL + '/posts');
+  }
+
+  save(post: Post): Observable<Post> {
+    return this.http.post<Post>(environment.API_URL + '/posts', post);
+  }
+
+  findById(id: any): Observable<Post> {
+    return this.http.get<Post>(environment.API_URL + `/posts/${id}`);
+  }
+
+  update(id: string, post: Post): Observable<Post> {
+    return this.http.put<Post>(environment.API_URL + `/posts/${id}`, post);
+  }
+  getAllByIdCompany(id: any): Observable<Post[]> {
+    return this.http.get<Post[]>(environment.API_URL + `/posts/companies/${id}`);
+  }
+  updateStatus(id: string): Observable<Post> {
+    return this.http.get<Post>(environment.API_URL + `/posts/status/${id}`);
+  }
+
+  delete(id: string) {
+    return this.http.delete(environment.API_URL + `/posts/${id}`);
+  }
+}

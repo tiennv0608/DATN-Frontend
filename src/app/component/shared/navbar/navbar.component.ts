@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {TokenService} from '../../../service/token.service';
 import {Router} from '@angular/router';
+import {Company} from '../../../model/company/company';
+import {CompanyService} from '../../../service/company.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,16 +12,19 @@ import {Router} from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   token: string = '';
+  type: string = '';
   name?: string;
 
   constructor(private tokenService: TokenService,
-              private router: Router) {
+              private router: Router,
+              private companyService: CompanyService) {
   }
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
       this.token = this.tokenService.getToken().token;
       this.name = this.tokenService.getToken().name;
+      this.type = this.tokenService.getToken().roles[0].authority;
     }
   }
 
@@ -30,4 +35,22 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  next() {
+    const idCompany = this.tokenService.getToken().id;
+    this.companyService.findById(idCompany).subscribe(result => {
+      if (!this.isValid(result)){
+        this.router.navigateByUrl('/posts/create');
+      }else {
+        this.router.navigateByUrl('/companies/edit');
+      }
+    });
+  }
+
+  isValid(company?: Company) {
+    const checkName = company?.companyName == ''|| company?.companyName == null;
+    const checkEmail = company?.email == ''|| company?.email == null;
+    const checkImage = company?.image == '' || company?.image == null;
+    const checkPassword = company?.password == ''|| company?.password == null;
+    return checkName && checkEmail && checkImage && checkPassword;
+  }
 }

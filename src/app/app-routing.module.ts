@@ -2,11 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {PostListComponent} from './component/post/post-list/post-list.component';
 import {PostSearchComponent} from './component/post/post-search/post-search.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {MainComponent} from './component/post/main/main.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: PostListComponent
+    component: MainComponent
+  },
+  {
+    path: 'posts',
+    loadChildren: () => import('./module/post/post.module').then(module => module.PostModule)
   },
   {
     path: 'users',
@@ -27,4 +34,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -1,56 +1,51 @@
 <body class="bg-white">
 <div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+  <div class="row no-gutter" style="background: url('../../../../assets/img/hero/h1_hero.jpg'); background-size: cover; background-repeat: no-repeat">
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
-              <h3 class="login-heading mb-4 text-center">Welcome user!</h3>
+              <h3 class="login-heading mb-4 text-center">Đăng nhập với tư cách người tìm việc</h3>
               <form [formGroup]="loginForm" (ngSubmit)="login()">
-                <div class="form-label-group">
-                  <input type="text" id="email" class="form-control"
-                         placeholder="Username" formControlName="email">
-                  <label for="email">Email</label>
+                <div class="col mt-3">
+                  <div class="input-group has-validation">
+                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-envelope"></i></span>
+                    <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                  </div>
                 </div>
-                <div class="form-label-group">
-                  <input type="password" id="password" class="form-control"
-                         placeholder="Password" formControlName="password">
-                  <label for="password">Password</label>
+                <div class="col mt-3">
+                  <div class="input-group has-validation">
+                    <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
+                    <input [attr.type]="[isPassword]" class="form-control" formControlName="password"
+                           placeholder="Password">
+                    <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()" style="background: skyblue"><i
+                      class="bi bi-eye"></i></span>
+                    <span class="input-group-text" [hidden]="(isPassword== 'password')" (click)="showPass()" style="background: skyblue"><i
+                      class="bi bi-eye-slash"></i></span>
+                  </div>
                 </div>
-                <div class="custom-control custom-checkbox mb-3">
+                <div class="custom-control custom-checkbox mt-3">
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
                   <label class="custom-control-label" for="customCheck1">Nhớ mật khẩu</label>
                 </div>
-                <button class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mt-3">
                   Đăng nhập
                 </button>
-                <div class="text-center pt-3">
-                  Bạn chưa có tài khoản? <a class="font-weight" routerLink="/users/register">Đăng ký ngay</a>
+                <div class="text-center mt-3 pt-3">
+                  Bạn chưa có tài khoản? <a class="font-weight-bold" routerLink="/users/register">Đăng ký ngay</a>
                 </div>
               </form>
-              <hr class="my-4">
-              <p class="text-center">ĐĂNG NHẬP BẰNG TÀI KHOẢN MXH</p>
-              <div class="row">
-                <div class="col pr-2">
-                  <button
-                    class="btn pl-1 pr-1 btn-lg btn-google font-weight-normal text-white btn-block text-uppercase"
-                    type="submit"><i class="fab fa-google mr-2"></i> Google
-                  </button>
-                </div>
-                <div class="col pl-2">
-                  <button
-                    class="btn pl-1 pr-1 btn-lg btn-facebook font-weight-normal text-white btn-block text-uppercase"
-                    type="submit"><i class="fab fa-facebook-f mr-2"></i> Facebook
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image">
+      <!--      <img src="../../../../assets/img/service/support-img.jpg">-->
+      <!--      <img src="../../../../assets/img/hero/h1_hero.jpg">-->
+    </div>
+
   </div>
 </div>
 

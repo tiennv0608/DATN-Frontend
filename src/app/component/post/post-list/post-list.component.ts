@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {PostService} from '../../../service/post/post.service';
-import {Router} from '@angular/router';
-import {PageEvent} from '@angular/material/paginator';
+import {Component, Input, OnInit} from '@angular/core';
+import {PostService} from '../../../service/post.service';
+import {Post} from '../../../model/post/post';
 
 @Component({
   selector: 'app-post-list',
@@ -9,40 +8,25 @@ import {PageEvent} from '@angular/material/paginator';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  allPost: any;
-  totalElements = 0;
-  constructor(private postService: PostService, private router: Router) { }
+  posts: Post[] = [];
+  page: number = 1;
+
+  constructor(private postService: PostService) {
+  }
 
   ngOnInit(): void {
-    this.countPosts();
-    this.getAllPostPage({page: 0, size: 6});
+    this.posts = [{
+      company: {
+        image: ''
+      }
+    }];
+    this.postService.getAll().subscribe(result => {
+        this.posts = result;
+      }, error => {
+        console.log(error);
+      }
+    );
   }
 
-  // tslint:disable-next-line:typedef
-  getAllPostPage(request: any){
-    console.log(request);
-    this.postService.getAllPosts(request).subscribe((data: any) => {
-      this.allPost = data.content;
-      console.log(data);
-    });
-  }
-
-  // tslint:disable-next-line:typedef
-  nextPageAll(event: PageEvent) {
-    const request = {};
-    // @ts-ignore
-    request.page = event.pageIndex.toString();
-    // @ts-ignore
-    request.size = event.pageSize.toString();
-    this.getAllPostPage(request);
-  }
-  // tslint:disable-next-line:typedef
-  private countPosts() {
-    // tslint:disable-next-line:variable-name
-    this.postService.countPosts().subscribe(number => {
-      console.log('num:' + number);
-      this.totalElements = (number as number);
-    });
-  }
 
 }
