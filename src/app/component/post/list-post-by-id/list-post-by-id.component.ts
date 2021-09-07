@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 })
 export class ListPostByIdComponent implements OnInit {
   posts: Post[] = [];
-
+id:any;
   constructor(private postService: PostService,
               private tokenService: TokenService,
               private router: Router) {
@@ -40,5 +40,8 @@ export class ListPostByIdComponent implements OnInit {
 
   close() {
     this.router.navigateByUrl('/companies/find-all')
+  }
+  updateId(id: any){
+    this.id= id;
   }
 }
