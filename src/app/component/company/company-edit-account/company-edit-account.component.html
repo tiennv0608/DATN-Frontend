@@ -31,9 +31,9 @@
                     <form [formGroup]="passwordForm" (ngSubmit)="changePassword()">
                       <div class="row mt-3">
                         <div class="input-group has-validation">
-                          <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
+                          <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock">*</i></span>
                           <input [attr.type]="[isPassword]" class="form-control" formControlName="password"
-                                 placeholder="Password">
+                                 placeholder="Mật khẩu">
                           <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()"
                                 style="background: skyblue"><i
                             class="bi bi-eye"></i></span>
@@ -54,10 +54,10 @@
 
                       <div class="row mt-3">
                         <div class="input-group has-validation">
-                          <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
+                          <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock">*</i></span>
                           <input [attr.type]="[isConfirmedPassword]" class="form-control"
                                  formControlName="confirmedPassword"
-                                 placeholder="Confirm password">
+                                 placeholder="Nhập lại mật khẩu">
                           <span class="input-group-text" [hidden]="(isConfirmedPassword== 'text')"
                                 (click)="showConfirmedPass()" style="background: skyblue"><i
                             class="bi bi-eye"></i></span>

@@ -20,10 +20,6 @@ const routes: Routes = [
   {
     path: 'companies',
     loadChildren: () => import('./module/company/company.module').then(module => module.CompanyModule)
-  },
-  {
-    path: 'home/search',
-    component: PostSearchComponent
   }
 
 ];

@@ -37,20 +37,16 @@ export class SearchbarComponent implements OnInit {
     this.getAllCategories();
   }
 
-  // tslint:disable-next-line:typedef
   getAllCities(){
     this.cityService.getAllCities().subscribe((cities) => {
       this.cities = cities;
     });
   }
-  // tslint:disable-next-line:typedef
   getAllCategories(){
     this.categoryService.getAllCategories().subscribe((categories) => {
       this.categories = categories;
     });
   }
-  // tslint:disable-next-line:typedef
-  // tslint:disable-next-line:typedef
   searchJob(){
     const params: URLSearchParams = new URLSearchParams();
     params.set('keyword', this.keyword);
@@ -68,7 +64,7 @@ export class SearchbarComponent implements OnInit {
     this.postService.getSearchedPosts(params).subscribe((data: any ) => {
       console.log(params.toString());
       localStorage.setItem('search', JSON.stringify(data));
-      this.router.navigateByUrl('/home/search').then(() => {
+      this.router.navigateByUrl('/posts/search').then(() => {
         location.reload();
       });
     });
