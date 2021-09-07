@@ -5,6 +5,15 @@ import {PostListComponent} from './component/post/post-list/post-list.component'
 import {AppRoutingModule} from './app-routing.module';
 import {UserModule} from './module/user/user.module';
 import {HttpClientModule} from '@angular/common/http';
+import { CompanyRegisterComponent } from './component/company/company-register/company-register.component';
+import { CompanyLoginComponent } from './component/company/company-login/company-login.component';
+import { SearchbarComponent } from './component/shared/searchbar/searchbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
+import {MatOptionModule} from '@angular/material/core';
+import {FormsModule} from '@angular/forms';
+import { PostSearchComponent } from './component/post/post-search/post-search.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import {environment} from '../environments/environment.prod';
 import {MainComponent} from './component/post/main/main.component';
 // @ts-ignore
@@ -38,6 +47,10 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
     PreloaderStartComponent,
     NavbarComponent,
     FooterComponent,
+    PostListComponent,
+    SearchbarComponent,
+    PostSearchComponent,
+    FooterComponent,
     PostTopCompanyComponent,
   ],
   imports: [
@@ -45,11 +58,14 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
     AppRoutingModule,
     UserModule,
     HttpClientModule,
-    // SharedModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     JwPaginationModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatOptionModule,
+    FormsModule
   ],
   providers: [],
   exports: [

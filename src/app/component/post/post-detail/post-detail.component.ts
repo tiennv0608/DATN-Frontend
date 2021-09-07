@@ -28,6 +28,7 @@ export class PostDetailComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
   findById(id: string) {
     this.postService.findById(id).subscribe(post => {
       this.post = post;
@@ -36,6 +37,7 @@ export class PostDetailComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
   checkLogin() {
     if (this.tokenService.getToken().token !== '') {
       this.isLogin = true;
