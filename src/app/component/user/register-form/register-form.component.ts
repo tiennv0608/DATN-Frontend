@@ -20,7 +20,7 @@ export class RegisterFormComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     confirmedPassword: new FormControl('', [Validators.required]),
     phone: new FormControl('', [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
   });
@@ -53,8 +53,8 @@ export class RegisterFormComponent implements OnInit {
       }
     }, error => {
       console.log('System error: ', error);
-      if (error.error.responseCode == Constant.EMAIL_IS_EXISTS){
-        this.message=error.error.responseMessage;
+      if (error.error.responseCode == Constant.EMAIL_IS_EXISTS) {
+        this.message = error.error.responseMessage;
       }
     });
   }
@@ -68,6 +68,11 @@ export class RegisterFormComponent implements OnInit {
   }
 
   reload() {
-   // window.location.reload();
+    if (this.isRegistered) {
+      this.router.navigate(['users/login']);
+    } else {
+      window.location.reload();
+    }
+
   }
 }
