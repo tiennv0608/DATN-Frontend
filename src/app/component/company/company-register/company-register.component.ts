@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Constant} from '../../../common/constant';
 import {ResponseBody} from '../../../common/response-body';
 import {AuthService} from '../../../service/auth.service';
@@ -51,6 +51,9 @@ export class CompanyRegisterComponent implements OnInit {
       }
     }, error => {
       console.log('System error: ', error);
+      if (error.error.responseCode == Constant.EMAIL_IS_EXISTS) {
+        this.message = error.error.responseMessage;
+      }
     });
   }
 

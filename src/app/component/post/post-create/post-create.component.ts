@@ -11,8 +11,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Post} from '../../../model/post/post';
 import {Company} from '../../../model/company/company';
 import {TokenService} from '../../../service/token.service';
-import {City} from '../../../model/post/city';
 import {CityService} from '../../../service/city.service';
+import {City} from '../../../model/post/city';
 
 
 @Component({

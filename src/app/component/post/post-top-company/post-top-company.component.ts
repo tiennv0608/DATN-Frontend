@@ -11,6 +11,7 @@ import {Post} from '../../../model/post/post';
 export class PostTopCompanyComponent implements OnInit {
 
   posts: Post[] = [];
+  firstPost: Post = {};
 
   constructor(private postService: PostService) {
   }
@@ -23,7 +24,8 @@ export class PostTopCompanyComponent implements OnInit {
     this.postService.getTop5Companies().subscribe(posts => {
       // @ts-ignore
       this.posts = posts;
-      // console.log(posts);
+      this.firstPost = this.posts[0];
+      this.posts.shift();
     }, error => {
       console.log(error);
     });
