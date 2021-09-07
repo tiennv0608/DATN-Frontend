@@ -7,16 +7,17 @@ import {PostEditComponent} from '../../component/post/post-edit/post-edit.compon
 import {ReactiveFormsModule} from '@angular/forms';
 import {PostDetailComponent} from '../../component/post/post-detail/post-detail.component';
 import {SharedModule} from '../shared/shared.module';
-import {FooterComponent} from '../../component/shared/footer/footer.component';
-import {JwPaginationComponent} from 'jw-angular-pagination';
+import {AdvancedComponent} from "../../component/advanced/advanced.component";
 
 
 @NgModule({
   declarations: [
     PostCreateComponent,
     PostEditComponent,
-    PostDetailComponent,
-    ],
+    AdvancedComponent,
+    PostDetailComponent
+  ],
+
   imports: [
     CommonModule,
     PostRoutingModule,
@@ -24,6 +25,8 @@ import {JwPaginationComponent} from 'jw-angular-pagination';
     SharedModule,
   ],
   exports: [
-  ]
+  PostEditComponent,
+  PostDetailComponent,
+]
 })
 export class PostModule { }

@@ -26,7 +26,7 @@ export class PostTopCompanyComponent implements OnInit {
       this.posts = posts;
       this.firstPost = this.posts[0];
       this.posts.shift();
-    }, error => {
+    },error => {
       console.log(error);
     });
   }
