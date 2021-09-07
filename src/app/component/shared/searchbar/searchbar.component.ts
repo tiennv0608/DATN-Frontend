@@ -47,26 +47,5 @@ export class SearchbarComponent implements OnInit {
       this.categories = categories;
     });
   }
-  searchJob(){
-    const params: URLSearchParams = new URLSearchParams();
-    params.set('keyword', this.keyword);
-    // @ts-ignore
-    params.set('cat_id', this.category);
-    // @ts-ignore
-    params.set('city_id', this.city);
-    // @ts-ignore
-    params.set('salary1', this.salaries[0]);
-    // @ts-ignore
-    params.set('salary2', this.salaries[1]);
-    console.log(params.toString());
-    console.log(this.salaries.toString());
-    // @ts-ignore
-    this.postService.getSearchedPosts(params).subscribe((data: any ) => {
-      console.log(params.toString());
-      localStorage.setItem('search', JSON.stringify(data));
-      this.router.navigateByUrl('/posts/search').then(() => {
-        location.reload();
-      });
-    });
-  }
+
 }

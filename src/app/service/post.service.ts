@@ -88,9 +88,13 @@ export class PostService {
     return this.http.get(environment.API_URL + `/posts/search`);
   }
 
-
   getTop5Companies(): Observable<Post> {
     return this.http.get(environment.API_URL + `/posts/get-top-5-companies`);
   }
-
+  getSearchedPosts(params: any){
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    // @ts-ignore
+    return this.httpClient.get(`${environment.baseUrl}/posts/find?` + params.toString());
+  }
 }

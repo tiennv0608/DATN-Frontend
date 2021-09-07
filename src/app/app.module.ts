@@ -37,6 +37,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { ListPostByIdComponent } from './component/post/list-post-by-id/list-post-by-id.component';
 import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
 import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
+import {PostModule} from './module/post/post.module';
 
 
 @NgModule({
@@ -52,7 +53,6 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
     NavbarComponent,
     FooterComponent,
     PostListComponent,
-    SearchbarComponent,
     FooterComponent,
     PostTopCompanyComponent,
     PostSearchComponent
@@ -68,7 +68,8 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
     BrowserAnimationsModule,
     MatSelectModule,
     MatOptionModule,
-    FormsModule
+    FormsModule,
+    PostModule
   ],
   providers: [],
   exports: [
