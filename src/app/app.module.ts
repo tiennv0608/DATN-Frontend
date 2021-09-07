@@ -5,22 +5,16 @@ import {PreloaderStartComponent} from './component/shared/preloader-start/preloa
 import {NavbarComponent} from './component/shared/navbar/navbar.component';
 import {FooterComponent} from './component/shared/footer/footer.component';
 import {PostListComponent} from './component/post/post-list/post-list.component';
-import {CompanyEditAccountComponent} from './component/company/company-edit-account/company-edit-account.component';
 import {SearchComponent} from './component/post/search/search.component';
 import {NewPostComponent} from './component/post/new-post/new-post.component';
 import {SummaryPostComponent} from './component/post/summary-post/summary-post.component';
 import {AppRoutingModule} from './app-routing.module';
-import {UserModule} from './module/user/user.module';
 import {HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment.prod';
 import {MainComponent} from './component/post/main/main.component';
 import {SideBarComponent} from './component/post/side-bar/side-bar.component';
 import {AngularFireStorageModule} from '@angular/fire/storage';
-import {AngularFireModule} from '@angular/fire'
 import {AngularFireModule} from '@angular/fire';
-
-
-
 
 
 @NgModule({
@@ -39,7 +33,6 @@ import {AngularFireModule} from '@angular/fire';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserModule,
     HttpClientModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)

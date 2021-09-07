@@ -17,7 +17,7 @@ export class PostService {
   }
 
   save(post: Post): Observable<Post> {
-    return this.http.post<Post>(environment.API_URL + '/posts',post);
+    return this.http.post<Post>(environment.API_URL + '/posts', post);
   }
 
   findById(id: any): Observable<Post> {
@@ -30,5 +30,52 @@ export class PostService {
 
   delete(id: string) {
     return this.http.delete(environment.API_URL + `/posts/${id}`);
+  }
+
+  searchAddress(address: string) {
+    return this.http.get(environment.API_URL + `/posts/search?address=` + address);
+  }
+
+  searchExp(exp: string) {
+    return this.http.get(environment.API_URL + `/posts/search?exp=` + exp);
+  }
+
+  searchSalary(salary: string) {
+    return this.http.get(environment.API_URL + `/posts/search?salary=` + salary);
+  }
+
+  searchTitle(title: string) {
+    return this.http.get(environment.API_URL + `/posts/search?title=` + title);
+  }
+
+  searchAddressAndExp(address: string, exp: string) {
+    return this.http.get(environment.API_URL + `/posts/search?address=` + address+`&exp=`+exp);
+  }
+
+  searchAddressAndSalary(address: string, salary: string) {
+    return this.http.get(environment.API_URL + `/posts/search?address=` + address+`&salary=`+salary);
+  }
+
+  searchAddressAndTitle(address: string,title: string) {
+    return this.http.get(environment.API_URL + `/posts/search?address=` + address+`&title=`+title);
+  }
+
+  searchSalaryAndExp(salary: string, exp: string) {
+    return this.http.get(environment.API_URL + `/posts/search?salary=` + salary+`&exp=`+exp);
+  }
+  searchSalaryAndTitle(salary: string, title: string) {
+    return this.http.get(environment.API_URL + `/posts/search?salary=` + salary+`&title=`+title);
+  }
+  searchExpAndTitle(exp: string, title: string) {
+    return this.http.get(environment.API_URL + `/posts/search?exp=` + exp+`&title=`+title);
+  }
+  searchAddressAndSalaryAndExp(address:string,salary: string, exp: string) {
+    return this.http.get(environment.API_URL + `/posts/search?address=` + address+`&salary=`+salary+ `&exp=`+exp);
+  }
+  searchAddressAndSalaryAndExpAndTitle(address:string,salary: string, exp: string,title:string) {
+    return this.http.get(environment.API_URL + `/posts/search?address=` + address+`&salary=`+salary+ `&exp=`+exp+`&title=`+title);
+  }
+  searchSalaryAndExpAndTitle(salary: string, exp: string,title:string) {
+    return this.http.get(environment.API_URL + `/posts/search?salary=` + salary+`&exp=`+exp+`&title=`+title);
   }
 }
