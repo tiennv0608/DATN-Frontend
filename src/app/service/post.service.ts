@@ -17,7 +17,7 @@ export class PostService {
   }
 
   save(post: Post): Observable<Post> {
-    return this.http.post<Post>(environment.API_URL + '/posts',post);
+    return this.http.post<Post>(environment.API_URL + '/posts', post);
   }
 
   findById(id: any): Observable<Post> {
@@ -30,5 +30,9 @@ export class PostService {
 
   delete(id: string) {
     return this.http.delete(environment.API_URL + `/posts/${id}`);
+  }
+
+  getTop5Companies(): Observable<Post> {
+    return this.http.get(environment.API_URL + `/posts/get-top-5-companies`);
   }
 }

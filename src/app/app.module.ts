@@ -11,7 +11,6 @@ import {MainComponent} from './component/post/main/main.component';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 // @ts-ignore
 import {AngularFireModule} from '@angular/fire';
-import {SharedModule} from './module/shared/shared.module';
 import {SearchComponent} from './component/post/search/search.component';
 import {NewPostComponent} from './component/post/new-post/new-post.component';
 import {SideBarComponent} from './component/post/side-bar/side-bar.component';
@@ -19,8 +18,8 @@ import {SummaryPostComponent} from './component/post/summary-post/summary-post.c
 import {PreloaderStartComponent} from './component/shared/preloader-start/preloader-start.component';
 import {NavbarComponent} from './component/shared/navbar/navbar.component';
 import {FooterComponent} from './component/shared/footer/footer.component';
-import {JwPaginationComponent, JwPaginationModule} from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
 
 
 @NgModule({
@@ -34,17 +33,16 @@ import {NgxPaginationModule} from 'ngx-pagination';
     SummaryPostComponent,
     PreloaderStartComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PostTopCompanyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserModule,
     HttpClientModule,
-    // SharedModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    JwPaginationModule,
     NgxPaginationModule
   ],
   providers: [],

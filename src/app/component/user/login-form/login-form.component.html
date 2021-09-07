@@ -1,11 +1,16 @@
 <body class="bg-white">
 <div class="container-fluid">
-  <div class="row no-gutter" style="background: url('../../../../assets/img/hero/h1_hero.jpg'); background-size: cover; background-repeat: no-repeat">
+  <div class="row no-gutter"
+       style="background: url('../../../../assets/img/hero/h1_hero.jpg'); background-size: cover; background-repeat: no-repeat">
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
+<!--              <div *ngIf="!isLogin">-->
+<!--                <div class="alert alert-success" role="alert" *ngIf="message == 'Hãy điền vào form'">{{message}}</div>-->
+<!--                <div class="alert alert-danger" role="alert" *ngIf="message == 'Sai email hoặc mật khẩu, hãy nhập lại!'">{{message}}</div>-->
+<!--              </div>-->
               <h3 class="login-heading mb-4 text-center">Đăng nhập với tư cách người tìm việc</h3>
               <form [formGroup]="loginForm" (ngSubmit)="login()">
                 <div class="col mt-3">
@@ -19,9 +24,11 @@
                     <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
                     <input [attr.type]="[isPassword]" class="form-control" formControlName="password"
                            placeholder="Password">
-                    <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()" style="background: skyblue"><i
+                    <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()"
+                          style="background: skyblue"><i
                       class="bi bi-eye"></i></span>
-                    <span class="input-group-text" [hidden]="(isPassword== 'password')" (click)="showPass()" style="background: skyblue"><i
+                    <span class="input-group-text" [hidden]="(isPassword== 'password')" (click)="showPass()"
+                          style="background: skyblue"><i
                       class="bi bi-eye-slash"></i></span>
                   </div>
                 </div>
