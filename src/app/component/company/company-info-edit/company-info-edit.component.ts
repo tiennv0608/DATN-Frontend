@@ -52,7 +52,7 @@ export class CompanyInfoEditComponent implements OnInit {
         phone: new FormControl(company.phone, [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
         description: new FormControl(company.description),
         address: new FormControl(company.address),
-        numberOfStaff: new FormControl(''),
+        numberOfStaff: new FormControl(company.numberOfStaff),
         branch: new FormControl(company.branch),
         linkGoogle: new FormControl(company.linkGoogle),
         website: new FormControl(company.website)
