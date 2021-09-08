@@ -11,7 +11,7 @@ export class PostSearchComponent implements OnInit {
   posts: Post[] = [];
   page = 1;
 
-  constructor(router: Router) {
+  constructor(private router: Router) {
     console.log(router.getCurrentNavigation());
   }
 

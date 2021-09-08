@@ -26,4 +26,9 @@ export class PostService {
   countPosts(){
     return this.httpClient.get(`${environment.baseUrl}/posts/count`);
   }
+  getSuggestedPosts(cat_id:number){
+    return this.httpClient.get(`http://localhost:8080/posts/company-category/${cat_id}`)
+  }
+
+
 }

@@ -9,6 +9,7 @@ import {PostDetailComponent} from '../../component/post/post-detail/post-detail.
 import {SharedModule} from '../shared/shared.module';
 import {FooterComponent} from '../../component/shared/footer/footer.component';
 import {JwPaginationComponent} from 'jw-angular-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -17,12 +18,13 @@ import {JwPaginationComponent} from 'jw-angular-pagination';
     PostEditComponent,
     PostDetailComponent,
     ],
-  imports: [
-    CommonModule,
-    PostRoutingModule,
-    ReactiveFormsModule,
-    SharedModule,
-  ],
+    imports: [
+        CommonModule,
+        PostRoutingModule,
+        ReactiveFormsModule,
+        SharedModule,
+        NgxPaginationModule,
+    ],
   exports: [
   ]
 })
