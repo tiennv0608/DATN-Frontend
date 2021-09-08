@@ -14,7 +14,7 @@ export class PostService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     // @ts-ignore
-    return this.httpClient.get(`${environment.baseUrl}/posts/search?` + params.toString());
+    return this.httpClient.get(`${environment.baseUrl}/posts/find?` + params.toString());
   }
   // tslint:disable-next-line:typedef
   // getAllPosts(request: any){
