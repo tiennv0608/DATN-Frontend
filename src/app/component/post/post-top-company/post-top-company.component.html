@@ -5,10 +5,10 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <a [routerLink]="['companies/view',firstPost.id]"><img [src]="firstPost.company?.image" class="w-25" alt="..."></a>
+          <a (click)="viewDetail(firstPost.company?.id)"><img [src]="firstPost.company?.image" style="width: 100%" alt="..."></a>
         </div>
         <div class="carousel-item" *ngFor="let post of posts">
-          <a [routerLink]="['companies/view',post.id]"><img [src]="post.company?.image" class="w-25" alt="..."></a>
+          <a (click)="viewDetail(post.company?.id)"><img [src]="post.company?.image" style="width: 100%" alt="..."></a>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"

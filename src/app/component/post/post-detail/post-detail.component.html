@@ -7,15 +7,15 @@
         <div class="single-job-items mb-50">
           <div class="job-items">
             <div class="col-3 company-img company-img-details">
-              <a href="#"><img [src]="post.company?.image" width="85px" height="85px"></a>
+              <a ><img [src]="post.company?.image" width="85px" height="85px"></a>
             </div>
             <div class=" col-9 job-tittle">
-              <a href="#">
+              <a>
                 <h4>{{post.title}}</h4>
               </a>
-              <p>{{post.position}}</p>
-              <p><i class="fas fa-map-marker-alt"></i>{{post.company?.address}}</p>
-              <p *ngIf="isLogin">{{post.salary}}</p>
+              <p>Vị trí: {{post.position}}</p>
+              <p><i class="fas fa-map-marker-alt"></i> Địa chỉ: {{post.company?.address}}</p>
+              <p *ngIf="isLogin">Lương: {{post.salary}} VNĐ</p>
               <p *ngIf="!isLogin"><a routerLink="/users/login" class="btn btn-primary">Đăng nhập để xem lương</a></p>
             </div>
           </div>
