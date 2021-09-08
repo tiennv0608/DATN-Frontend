@@ -68,6 +68,10 @@ export class RegisterFormComponent implements OnInit {
   }
 
   reload() {
-   // window.location.reload();
+    if (this.isRegistered){
+      this.router.navigateByUrl('users/login');
+    }else {
+      this.registerForm.reset();
+    }
   }
 }

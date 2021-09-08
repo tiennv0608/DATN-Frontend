@@ -11,7 +11,7 @@ export class PostSearchComponent implements OnInit {
   posts: Post[] = [];
   page = 1;
 
-  constructor(router: Router) {
+  constructor( private router: Router) {
     console.log(router.getCurrentNavigation());
   }
 
@@ -22,5 +22,9 @@ export class PostSearchComponent implements OnInit {
       this.posts = JSON.parse(data);
       // localStorage.removeItem('search');
     }
+  }
+
+  viewDetail(id: any) {
+    this.router.navigateByUrl('/posts/view/'+id);
   }
 }

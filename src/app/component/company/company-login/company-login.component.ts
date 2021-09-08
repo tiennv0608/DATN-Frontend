@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {JwtResponse} from '../../../model/jwt-response';
 import {AuthService} from '../../../service/auth.service';
 import {TokenService} from '../../../service/token.service';
@@ -15,8 +15,8 @@ import {CompanyLoginForm} from '../../../model/company/company-login-form';
 })
 export class CompanyLoginComponent implements OnInit {
   loginForm = new FormGroup({
-    email: new FormControl(),
-    password: new FormControl(),
+    email: new FormControl('',[Validators.required]),
+    password: new FormControl('',[Validators.required, Validators.minLength(8)]),
   });
   isLogin = false;
   isPassword = 'password';
@@ -56,8 +56,12 @@ export class CompanyLoginComponent implements OnInit {
   }
 
   reload() {
-    this.router.navigate(['']).then(() => {
+    if (this.isLogin){
+      this.router.navigate(['']).then(() => {
+        window.location.reload();
+      });
+    }else {
       window.location.reload();
-    });
+    }
   }
 }

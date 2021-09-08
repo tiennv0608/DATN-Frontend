@@ -4,6 +4,7 @@ import {PostCreateComponent} from '../../component/post/post-create/post-create.
 import {PostEditComponent} from '../../component/post/post-edit/post-edit.component';
 import {PostDetailComponent} from '../../component/post/post-detail/post-detail.component';
 import {AdvancedComponent} from "../../component/advanced/advanced.component";
+import {PostSearchComponent} from '../../component/post/post-search/post-search.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'edit/:id',
     component: PostEditComponent
+  },
+  {
+    path: 'search',
+    component: PostSearchComponent
   }
 ];
 

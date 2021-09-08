@@ -7,15 +7,15 @@
         <div class="single-job-items mb-50">
           <div class="job-items">
             <div class="col-3 company-img company-img-details">
-              <a href="#"><img [src]="post.company?.image" width="85px" height="85px"></a>
+              <a ><img [src]="post.company?.image" width="85px" height="85px"></a>
             </div>
             <div class=" col-9 job-tittle">
-              <a href="#">
+              <a>
                 <h4>{{post.title}}</h4>
               </a>
-              <p>{{post.position}}</p>
-              <p><i class="fas fa-map-marker-alt"></i>{{post.company?.address}}</p>
-              <p *ngIf="isLogin">{{post.salary}}</p>
+              <p>Vị trí: {{post.position}}</p>
+              <p><i class="fas fa-map-marker-alt"></i> Địa chỉ: {{post.company?.address}}</p>
+              <p *ngIf="isLogin">Lương: {{post.salary}} VNĐ</p>
               <p *ngIf="!isLogin"><a routerLink="/users/login" class="btn btn-primary">Đăng nhập để xem lương</a></p>
             </div>
           </div>
@@ -29,32 +29,6 @@
               <h4>Mô tả công việc</h4>
             </div>
             <p>{{post.description}}</p>
-          </div>
-          <div class="post-details2  mb-50">
-            <!-- Small Section Tittle -->
-            <!--            <div class="small-section-tittle">-->
-            <!--              <h4>Required Knowledge, Skills, and Abilities</h4>-->
-            <!--            </div>-->
-            <!--            <ul>-->
-            <!--              <li>System Software Development</li>-->
-            <!--              <li>Mobile Applicationin iOS/Android/Tizen or other platform</li>-->
-            <!--              <li>Research and code , libraries, APIs and frameworks</li>-->
-            <!--              <li>Strong knowledge on software development life cycle</li>-->
-            <!--              <li>Strong problem solving and debugging skills</li>-->
-            <!--            </ul>-->
-          </div>
-          <div class="post-details2  mb-50">
-            <!-- Small Section Tittle -->
-            <!--            <div class="small-section-tittle">-->
-            <!--              <h4>Education + Experience</h4>-->
-            <!--            </div>-->
-            <!--            <ul>-->
-            <!--              <li>3 or more years of professional design experience</li>-->
-            <!--              <li>Direct response email experience</li>-->
-            <!--              <li>Ecommerce website design experience</li>-->
-            <!--              <li>Familiarity with mobile and web apps preferred</li>-->
-            <!--              <li>Experience using Invision a plus</li>-->
-            <!--            </ul>-->
           </div>
         </div>
 
@@ -70,7 +44,7 @@
             <li>Nơi làm việc : <span>{{post.address}}</span></li>
             <li>Số lượng : <span>{{post.quantity}}</span></li>
             <li>Hình thức làm việc : <span>{{post.workForm?.name}}</span></li>
-            <li>Ngày hết hạn : <span>{{post.expiredDate }}</span></li>
+            <li>Ngày hết hạn : <span>{{post.expiredDate | date :"dd/MM/yyyy"}}</span></li>
           </ul>
           <div class="apply-btn2">
             <a class="btn btn-primary" style="color: white">Apply Now</a>
