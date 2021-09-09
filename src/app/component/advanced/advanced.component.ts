@@ -40,13 +40,7 @@ export class AdvancedComponent implements OnInit {
     // @ts-ignore
     let address = document.getElementById('address').value;
     // @ts-ignore
-    let address2 = document.getElementById('address2').value;
-    // let address = address2+' '+address1;
-    console.log(address2)
-    console.log(title);
-    console.log(address);
-    console.log(exp);
-    console.log(salary);
+
     if (title === ''
       && exp === ''
       && salary === ''
