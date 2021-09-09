@@ -10,21 +10,21 @@ import {Post} from '../../../model/post/post';
 export class PostSearchComponent implements OnInit {
   posts: Post[] = [];
   page = 1;
+  message: any;
 
-  constructor( private router: Router) {
+  constructor(private router: Router) {
     console.log(router.getCurrentNavigation());
   }
 
   ngOnInit(): void {
     const data = localStorage.getItem('search');
     console.log(data);
-    if (data !== null){
+    if (data !== null) {
       this.posts = JSON.parse(data);
-      // localStorage.removeItem('search');
     }
   }
 
   viewDetail(id: any) {
-    this.router.navigateByUrl('/posts/view/'+id);
+    this.router.navigateByUrl('/posts/view/' + id);
   }
 }

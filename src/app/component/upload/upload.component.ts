@@ -14,6 +14,7 @@ export class UploadComponent implements OnInit {
   @Output()
   givenURLtoCreate = new EventEmitter<string>();
 
+
   constructor(private angularFireStore: AngularFireStorage) {
   }
 
@@ -29,19 +30,26 @@ export class UploadComponent implements OnInit {
     this.checkUploadFile = true;
     // @ts-ignore
     const name = this.selectedFile.name;
-    this.ref = this.angularFireStore.ref(name);
-    this.ref.put(this.selectedFile)
-      .then(snapshot => {
-        return snapshot.ref.getDownloadURL();
-      })
-      .then(downloadURL => {
-        this.downloadURL = downloadURL;
-        this.givenURLtoCreate.emit(this.downloadURL);
-        this.checkUploadFile = false;
-        return downloadURL;
-      })
-      .catch(error => {
-        console.log(`Failed to upload avatar and get link ${error}`);
-      });
+    const allowedExtensions =
+      /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    if (!allowedExtensions.exec(name)) {
+        alert("sai form rồi đ m" )
+    }else {
+      this.ref = this.angularFireStore.ref(name);
+      this.ref.put(this.selectedFile)
+        .then(snapshot => {
+          return snapshot.ref.getDownloadURL();
+        })
+        .then(downloadURL => {
+          this.downloadURL = downloadURL;
+          this.givenURLtoCreate.emit(this.downloadURL);
+          this.checkUploadFile = false;
+          return downloadURL;
+        })
+        .catch(error => {
+          console.log(`Failed to upload avatar and get link ${error}`);
+        });
+    }
   }
+
 }
