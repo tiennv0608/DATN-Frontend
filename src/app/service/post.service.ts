@@ -92,5 +92,25 @@ export class PostService {
   getTop5Companies(): Observable<Post> {
     return this.http.get(environment.API_URL + `/posts/get-top-5-companies`);
   }
-
+  // tslint:disable-next-line:typedef
+  getSearchedPosts(params: any){
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    // @ts-ignore
+    return this.http.get(`${environment.baseUrl}/posts/search?` + params.toString());
+  }
+  
+  countPosts(){
+    // @ts-ignore
+    return this.http.get(`${environment.baseUrl}/posts/count`);
+  }
+  getSuggestedPosts(cat_id:number, id:number){
+    console.log(environment.API_URL);
+    // @ts-ignore
+    return this.http.get(`${environment.API_URL}/posts/${id}/${cat_id}`)
+  }
+  getNewestPosts() {
+    // @ts-ignore
+    return this.http.get(`http://localhost:8080/posts/new`);
+  }
 }

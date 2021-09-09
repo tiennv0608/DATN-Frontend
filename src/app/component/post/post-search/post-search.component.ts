@@ -8,10 +8,12 @@ import {Post} from '../../../model/post/post';
   styleUrls: ['./post-search.component.scss']
 })
 export class PostSearchComponent implements OnInit {
-  posts: Post[] = [];
+  posts: any[] = [];
   page = 1;
+  url = "/posts/view/";
 
-  constructor( private router: Router) {
+
+  constructor(private router: Router) {
     console.log(router.getCurrentNavigation());
   }
 
@@ -19,8 +21,11 @@ export class PostSearchComponent implements OnInit {
     const data = localStorage.getItem('search');
     console.log(data);
     if (data !== null){
-      this.posts = JSON.parse(data);
-      // localStorage.removeItem('search');
+      for (let post of JSON.parse(data)) {
+        if (post.status){
+          this.posts.push(post);
+        }
+      }
     }
   }
 

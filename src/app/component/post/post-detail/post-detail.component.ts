@@ -12,6 +12,9 @@ import {TokenService} from '../../../service/token.service';
 export class PostDetailComponent implements OnInit {
   post: Post = {};
   isLogin = false;
+  posts: any[] = [];
+  page = 1;
+  url = "/posts/view/";
 
   constructor(private postService: PostService,
               private tokenService: TokenService,
@@ -21,6 +24,7 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      console.log(this.router.url);
       const id = paramMap.get('id');
       // @ts-ignore
       this.findById(id);
@@ -32,6 +36,8 @@ export class PostDetailComponent implements OnInit {
   findById(id: string) {
     this.postService.findById(id).subscribe(post => {
       this.post = post;
+      // @ts-ignore
+      this.findByCat_id(this.post.category?.id,this.post.id);
     }, error => {
       console.log(error);
     });
@@ -44,4 +50,22 @@ export class PostDetailComponent implements OnInit {
     }
   }
 
+  findByCat_id(cat_id: number,id: number){
+    this.postService.getSuggestedPosts(cat_id,id).subscribe(data => {
+        // @ts-ignore
+      for (let post of data) {
+          if (post.status){
+            this.posts.push(post);
+          }
+        }
+      console.log(this.posts);
+
+        // console.log(this.post.category?.id);
+        // console.log(data);
+      }, error => {
+        console.log(error);
+      console.log("error");
+      }
+    );
+  }
 }
