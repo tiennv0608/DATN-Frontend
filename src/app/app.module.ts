@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {PostListComponent} from './component/post/post-list/post-list.component';
+import {SummaryPostComponent} from './component/post/summary-post/summary-post.component';
 import {AppRoutingModule} from './app-routing.module';
-import {UserModule} from './module/user/user.module';
 import {HttpClientModule} from '@angular/common/http';
 import { CompanyRegisterComponent } from './component/company/company-register/company-register.component';
 import { CompanyLoginComponent } from './component/company/company-login/company-login.component';
@@ -20,11 +20,15 @@ import {MainComponent} from './component/post/main/main.component';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 // @ts-ignore
 import {AngularFireModule} from '@angular/fire';
+
+
+
+
 import {SharedModule} from './module/shared/shared.module';
 import {SearchComponent} from './component/post/search/search.component';
 import {NewPostComponent} from './component/post/new-post/new-post.component';
+
 import {SideBarComponent} from './component/post/side-bar/side-bar.component';
-import {SummaryPostComponent} from './component/post/summary-post/summary-post.component';
 import {PreloaderStartComponent} from './component/shared/preloader-start/preloader-start.component';
 import {NavbarComponent} from './component/shared/navbar/navbar.component';
 import {FooterComponent} from './component/shared/footer/footer.component';
@@ -49,14 +53,13 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
     FooterComponent,
     PostListComponent,
     SearchbarComponent,
-    PostSearchComponent,
     FooterComponent,
     PostTopCompanyComponent,
+    PostSearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserModule,
     HttpClientModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

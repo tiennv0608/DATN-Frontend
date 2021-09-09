@@ -6,23 +6,40 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
-              <h3 class="login-heading mb-4 text-center">Đăng nhập với tư cách nhà tuyển dụng</h3>
+              <h2 class="login-heading mb-4 text-center font-weight-bold">Đăng nhập với tư cách nhà tuyển dụng</h2>
               <form [formGroup]="loginForm" (ngSubmit)="login()">
                 <div class="col mt-3">
                   <div class="input-group has-validation">
                     <span class="input-group-text" style="background: skyblue"><i class="bi bi-envelope"></i></span>
                     <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                    <div class="col-md-12 alert alert-danger" role="alert"
+                         *ngIf="loginForm.get('email')?.errors?.required && loginForm.get('email')?.touched">
+                      Email không được để trống
+                    </div>
+                    <div class="col-md-12 alert alert-danger" role="alert"
+                         *ngIf="loginForm.get('email')?.errors?.email">
+                      Email sai định dạng (VD: abc@gmail.com)
+                    </div>
                   </div>
                 </div>
                 <div class="col mt-3">
                   <div class="input-group has-validation">
                     <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
                     <input [attr.type]="[isPassword]" class="form-control" formControlName="password"
-                           placeholder="Password">
+                           placeholder="Mật khẩu">
                     <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()" style="background: skyblue"><i
                       class="bi bi-eye"></i></span>
                     <span class="input-group-text" [hidden]="(isPassword== 'password')" (click)="showPass()" style="background: skyblue"><i
                       class="bi bi-eye-slash"></i></span>
+                  </div>
+                  <div class="col-md-12 alert alert-danger" role="alert"
+                       *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                    <div *ngIf="loginForm.get('password')?.errors?.required">
+                      Mật khẩu không được để trống
+                    </div>
+                    <div *ngIf="loginForm.get('password')?.errors?.minlength">
+                      Mật khẩu phải ít nhất 8 ký tự
+                    </div>
                   </div>
                 </div>
                 <div class="custom-control custom-checkbox mt-3">
@@ -56,10 +73,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" *ngIf="isLogin">
         Đăng nhập thành công
+      </div>
+      <div class="modal-body" *ngIf="!isLogin">
+        Đăng nhập thất bại
       </div>
       <div class="modal-footer">
         <button type="button" (click)="reload()" class="btn btn-primary" data-bs-dismiss="modal">OK</button>

@@ -12,6 +12,7 @@ export class PostSearchComponent implements OnInit {
   page = 1;
   url = "/posts/view/";
 
+
   constructor(private router: Router) {
     console.log(router.getCurrentNavigation());
   }
@@ -26,5 +27,9 @@ export class PostSearchComponent implements OnInit {
         }
       }
     }
+  }
+
+  viewDetail(id: any) {
+    this.router.navigateByUrl('/posts/view/'+id);
   }
 }

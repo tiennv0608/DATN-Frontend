@@ -1,13 +1,10 @@
 <div class="container">
   <div class="row">
-    <app-search></app-search>
   </div>
   <div class="row">
-    <div class="col-3">
-      <app-side-bar></app-side-bar>
-    </div>
-    <div class="col-7">
-      <div class="card mb-3" style="max-width: 770px;" *ngFor="let post of posts | paginate: {itemsPerPage: 5, currentPage: page}">
+
+    <div class="col-8">
+      <div class="card mb-3" style="max-width: 770px;" *ngFor="let post of posts | paginate: {itemsPerPage: 6, currentPage: page}">
         <div class="row g-0" >
           <div class="col-md-2">
             <img [src]="post.company?.image" class="img-fluid rounded-start p-3" alt="..." style="width: 100px;height: 100px">
@@ -17,7 +14,7 @@
               <div class="row">
                 <div class="col-9">
                   <p class="card-title" style="font-size: 10px">
-                    <a [href]="url+post.id" style="font-size: 20px">{{post.title}}</a>
+                    <a (click)="viewDetail(post.id)" style="font-size: 20px; text-decoration: underline">{{post.title}}</a>
                     <br>
                     Số lượng tuyển :{{post.quantity}},
                     Cấp bậc :{{post.position}},
@@ -34,10 +31,9 @@
         </div>
       </div>
       <pagination-controls (pageChange)="page = $event"></pagination-controls>
-      <app-new-post></app-new-post>
     </div>
-    <div class="col-2">
-      <app-summary-post></app-summary-post>
+    <div class="col-4">
+      <app-post-top-company></app-post-top-company>
     </div>
   </div>
 </div>

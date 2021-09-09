@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Company} from '../../../model/company/company';
 import {PostService} from '../../../service/post.service';
 import {Post} from '../../../model/post/post';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-post-top-company',
@@ -13,7 +14,8 @@ export class PostTopCompanyComponent implements OnInit {
   posts: Post[] = [];
   firstPost: Post = {};
 
-  constructor(private postService: PostService) {
+  constructor(private postService: PostService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -26,8 +28,12 @@ export class PostTopCompanyComponent implements OnInit {
       this.posts = posts;
       this.firstPost = this.posts[0];
       this.posts.shift();
-    }, error => {
+    },error => {
       console.log(error);
     });
+  }
+
+  viewDetail(id: string | undefined) {
+    this.router.navigateByUrl('companies/view/'+id)
   }
 }
