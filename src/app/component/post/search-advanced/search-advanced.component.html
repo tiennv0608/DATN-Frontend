@@ -1,0 +1,19 @@
+<!-- Hero Area Start-->
+<div class="container">
+  <div class="row">
+    <div class="hero-cap text-center">
+      <div class="search">
+        <input type="text" class="searchTerm" placeholder="Tiêu đề" [(ngModel)]="title" [value]="title">
+        <mat-select class="default" name="city" [(ngModel)]="city" [value]="-1">
+          <mat-option [value]='-1'>Tất cả thành phố</mat-option>
+          <mat-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</mat-option>
+        </mat-select>
+        <input type="text" class="searchTerm" placeholder="Mức lương tối thiểu" [(ngModel)]="salary" [value]="salary">
+        <input type="text" class="searchTerm" placeholder="Kinh nghiệm làm việc" [(ngModel)]="exp" [value]="exp">
+        <button type="submit" class="searchButton" (click)="searchAdvanced()">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
