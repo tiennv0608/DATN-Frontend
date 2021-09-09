@@ -84,7 +84,7 @@ export class PostService {
   // searchSalaryAndExpAndTitle(salary: string, exp: string,title:string) {
   //   return this.http.get(environment.API_URL + `/posts/search?salary=` + salary+`&exp=`+exp+`&title=`+title);
   // }
-  search(params: URLSearchParams) {
+  search(params: URLSearchParams): Observable<Post> {
     return this.http.get(environment.API_URL + `/posts/search?${params.toString()}`);
   }
 

@@ -8,8 +8,7 @@ import {CityService} from '../../../service/city.service';
   styleUrls: ['./search-advanced.component.scss']
 })
 export class SearchAdvancedComponent implements OnInit {
-  city = -1;
-  cities: any;
+  address: string = '';
   title: string = '';
   exp: string = '';
   salary: string = '';
@@ -18,9 +17,6 @@ export class SearchAdvancedComponent implements OnInit {
               private cityService: CityService) { }
 
   ngOnInit(): void {
-    this.cityService.getAll().subscribe(data => {
-      this.cities = data;
-    })
   }
 
   searchAdvanced() {
