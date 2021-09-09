@@ -11,7 +11,7 @@ import { SearchbarComponent } from './component/shared/searchbar/searchbar.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PostSearchComponent } from './component/post/post-search/post-search.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {environment} from '../environments/environment.prod';
@@ -34,9 +34,10 @@ import {NavbarComponent} from './component/shared/navbar/navbar.component';
 import {FooterComponent} from './component/shared/footer/footer.component';
 import {JwPaginationComponent, JwPaginationModule} from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { ListPostByIdComponent } from './component/post/list-post-by-id/list-post-by-id.component';
 import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
-import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
+import {CompanyModule} from './module/company/company.module';
+import { UploadCvComponent } from './component/upload-cv/upload-cv.component';
+
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
     SearchbarComponent,
     FooterComponent,
     PostTopCompanyComponent,
-    PostSearchComponent
+    PostSearchComponent,
+    UploadCvComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,9 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
     BrowserAnimationsModule,
     MatSelectModule,
     MatOptionModule,
-    FormsModule
+    FormsModule,
+    CompanyModule,
+    ReactiveFormsModule
   ],
   providers: [],
   exports: [

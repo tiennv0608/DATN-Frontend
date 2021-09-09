@@ -3,6 +3,7 @@ import {TokenService} from '../../../service/token.service';
 import {Router} from '@angular/router';
 import {Company} from '../../../model/company/company';
 import {CompanyService} from '../../../service/company.service';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,13 @@ export class NavbarComponent implements OnInit {
   token: string = '';
   type: string = '';
   name?: string;
-
+  linkCv? = '';
+  checkValid = false;
+  UpCVForm: FormGroup = new FormGroup({
+    user: new FormControl(),
+    link: new FormControl(),
+    name: new FormControl(),
+  });
   constructor(private tokenService: TokenService,
               private router: Router,
               private companyService: CompanyService) {
@@ -52,5 +59,22 @@ export class NavbarComponent implements OnInit {
     const checkImage = company?.image == '' || company?.image == null;
     const checkPassword = company?.password == ''|| company?.password == null;
     return checkName && checkEmail && checkImage && checkPassword;
+  }
+
+
+  // @ts-ignore
+  onChangeCv($event) {
+    this.linkCv = $event
+    this.checkValid = true;
+  }
+
+  check(){
+    this.checkValid = false;
+    this.linkCv = '';
+  }
+
+  save() {
+    const id = this.tokenService.getToken().id;
+
   }
 }
