@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {PostService} from '../../../service/post.service';
+import {Post} from '../../../model/post/post';
 
 @Component({
   selector: 'app-new-post',
@@ -6,10 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-post.component.scss']
 })
 export class NewPostComponent implements OnInit {
+  posts: any[] = [];
 
-  constructor() { }
+  constructor(private router:Router, private postService: PostService ) { }
 
   ngOnInit(): void {
+    this.postService.getNewestPosts().subscribe( data => {
+      // @ts-ignore
+        console.log(data)
+      // @ts-ignore
+        for (const post of  data) {
+        if (post.status){
+          this.posts.push(post);
+        }
+      }
+    }, error => {
+        console.log(error);
+      }
+    );
   }
+
 
 }

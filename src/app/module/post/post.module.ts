@@ -7,24 +7,26 @@ import {PostEditComponent} from '../../component/post/post-edit/post-edit.compon
 import {ReactiveFormsModule} from '@angular/forms';
 import {PostDetailComponent} from '../../component/post/post-detail/post-detail.component';
 import {SharedModule} from '../shared/shared.module';
-import {AdvancedComponent} from "../../component/advanced/advanced.component";
+import {FooterComponent} from '../../component/shared/footer/footer.component';
+import {JwPaginationComponent} from 'jw-angular-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 import {PostSearchComponent} from '../../component/post/post-search/post-search.component';
+
 
 
 @NgModule({
   declarations: [
     PostCreateComponent,
     PostEditComponent,
-    AdvancedComponent,
-    PostDetailComponent
-  ],
-
-  imports: [
-    CommonModule,
-    PostRoutingModule,
-    ReactiveFormsModule,
-    SharedModule,
-  ],
+    PostDetailComponent,
+    ],
+    imports: [
+        CommonModule,
+        PostRoutingModule,
+        ReactiveFormsModule,
+        SharedModule,
+        NgxPaginationModule,
+    ],
   exports: [
   PostEditComponent,
   PostDetailComponent,
