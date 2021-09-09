@@ -99,7 +99,7 @@ export class PostService {
     // @ts-ignore
     return this.http.get(`${environment.baseUrl}/posts/search?` + params.toString());
   }
-  
+
   countPosts(){
     // @ts-ignore
     return this.http.get(`${environment.baseUrl}/posts/count`);

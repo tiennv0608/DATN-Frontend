@@ -40,13 +40,13 @@ export class AdvancedComponent implements OnInit {
     // @ts-ignore
     let address = document.getElementById('address').value;
     // @ts-ignore
-
+console.log(address);
     if (title === ''
       && exp === ''
       && salary === ''
       && address !== 'Tất cả các tỉnh') {
 // @ts-ignore
-      this.postService.searchAddress(address).subscribe(result => {
+      this.postService.searchAddress(address.strim()).subscribe(result => {
         // @ts-ignore
         this.postList = result
         console.log(result)
@@ -197,7 +197,5 @@ export class AdvancedComponent implements OnInit {
         console.log(error);
       })
     }
-
-
   }
 }
