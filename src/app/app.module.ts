@@ -5,15 +5,12 @@ import {PostListComponent} from './component/post/post-list/post-list.component'
 import {SummaryPostComponent} from './component/post/summary-post/summary-post.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import { CompanyRegisterComponent } from './component/company/company-register/company-register.component';
-import { CompanyLoginComponent } from './component/company/company-login/company-login.component';
 import { SearchbarComponent } from './component/shared/searchbar/searchbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {FormsModule} from '@angular/forms';
 import { PostSearchComponent } from './component/post/post-search/post-search.component';
-import {MatPaginatorModule} from '@angular/material/paginator';
 import {environment} from '../environments/environment.prod';
 import {MainComponent} from './component/post/main/main.component';
 // @ts-ignore
@@ -37,7 +34,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { ListPostByIdComponent } from './component/post/list-post-by-id/list-post-by-id.component';
 import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
 import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
-import { SearchAdvancedComponent } from './component/post/search-advanced/search-advanced.component';
+import { SearchAdvancedComponent } from './component/shared/search-advanced/search-advanced.component';
 
 
 @NgModule({
@@ -70,12 +67,13 @@ import { SearchAdvancedComponent } from './component/post/search-advanced/search
     BrowserAnimationsModule,
     MatSelectModule,
     MatOptionModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   exports: [
     SideBarComponent,
-    MainComponent
+    MainComponent,
+    SearchAdvancedComponent
   ],
   bootstrap: [AppComponent]
 })

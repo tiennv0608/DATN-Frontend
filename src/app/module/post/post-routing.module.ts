@@ -11,7 +11,7 @@ const routes: Routes = [
     path: 'create',
     component:PostCreateComponent
   }, {
-    path: 'advanced',
+    path: 'search-advanced',
     component:AdvancedComponent
   },
   {

@@ -27,9 +27,11 @@ export class PostService {
   update(id: string, post: Post): Observable<Post> {
     return this.http.put<Post>(environment.API_URL + `/posts/${id}`, post);
   }
+
   getAllByIdCompany(id: any): Observable<Post[]> {
     return this.http.get<Post[]>(environment.API_URL + `/posts/companies/${id}`);
   }
+
   updateStatus(id: string): Observable<Post> {
     return this.http.get<Post>(environment.API_URL + `/posts/status/${id}`);
   }
@@ -85,30 +87,33 @@ export class PostService {
   //   return this.http.get(environment.API_URL + `/posts/search?salary=` + salary+`&exp=`+exp+`&title=`+title);
   // }
   search(params: URLSearchParams): Observable<Post> {
-    return this.http.get(environment.API_URL + `/posts/search?${params.toString()}`);
+    return this.http.get(environment.API_URL + '/posts/search?' + params.toString());
   }
 
 
   getTop5Companies(): Observable<Post> {
     return this.http.get(environment.API_URL + `/posts/get-top-5-companies`);
   }
+
   // tslint:disable-next-line:typedef
-  getSearchedPosts(params: any){
+  getSearchedPosts(params: any) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     // @ts-ignore
     return this.http.get(`${environment.baseUrl}/posts/search?` + params.toString());
   }
-  
-  countPosts(){
+
+  countPosts() {
     // @ts-ignore
     return this.http.get(`${environment.baseUrl}/posts/count`);
   }
-  getSuggestedPosts(cat_id:number, id:number){
+
+  getSuggestedPosts(cat_id: number, id: number) {
     console.log(environment.API_URL);
     // @ts-ignore
-    return this.http.get(`${environment.API_URL}/posts/${id}/${cat_id}`)
+    return this.http.get(`${environment.API_URL}/posts/${id}/${cat_id}`);
   }
+
   getNewestPosts() {
     // @ts-ignore
     return this.http.get(`http://localhost:8080/posts/new`);
