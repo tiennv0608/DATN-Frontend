@@ -35,6 +35,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { ListPostByIdComponent } from './component/post/list-post-by-id/list-post-by-id.component';
 import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
 import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
+import { SearchAdvancedComponent } from './component/shared/search-advanced/search-advanced.component';
 
 
 
@@ -55,6 +56,7 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
     FooterComponent,
     PostTopCompanyComponent,
     PostSearchComponent,
+    SearchAdvancedComponent
   ],
     imports: [
         BrowserModule,
@@ -73,7 +75,8 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
   providers: [],
   exports: [
     SideBarComponent,
-    MainComponent
+    MainComponent,
+    SearchAdvancedComponent
   ],
   bootstrap: [AppComponent]
 })

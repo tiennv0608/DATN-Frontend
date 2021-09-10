@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class PostTopCompanyComponent implements OnInit {
 
   posts: Post[] = [];
-  firstPost: Post = {};
+  // firstPost: Post = {};
 
   constructor(private postService: PostService,
               private router: Router) {
@@ -26,8 +26,8 @@ export class PostTopCompanyComponent implements OnInit {
     this.postService.getTop5Companies().subscribe(posts => {
       // @ts-ignore
       this.posts = posts;
-      this.firstPost = this.posts[0];
-      this.posts.shift();
+      // this.firstPost = this.posts[0];
+      // this.posts.shift();
     },error => {
       console.log(error);
     });

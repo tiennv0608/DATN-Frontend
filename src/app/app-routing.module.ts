@@ -1,13 +1,16 @@
 import {NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {PostListComponent} from './component/post/post-list/post-list.component';
-import {PostSearchComponent} from './component/post/post-search/post-search.component';
 import {MainComponent} from './component/post/main/main.component';
+import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent
+  },
+  {
+    path: 'search-advanced',
+    component: SearchAdvancedComponent
   },
   {
     path: 'posts',

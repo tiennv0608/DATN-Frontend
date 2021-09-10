@@ -7,17 +7,16 @@ import {SearchComponent} from '../../component/post/search/search.component';
 import {NewPostComponent} from '../../component/post/new-post/new-post.component';
 import {SideBarComponent} from '../../component/post/side-bar/side-bar.component';
 import {SummaryPostComponent} from '../../component/post/summary-post/summary-post.component';
+import {SearchAdvancedComponent} from '../../component/shared/search-advanced/search-advanced.component';
 
 
 @NgModule({
   declarations: [
-
   ],
   imports: [
     CommonModule
   ],
-  exports: [
-  ]
+  exports: []
 })
 export class SharedModule {
 }
