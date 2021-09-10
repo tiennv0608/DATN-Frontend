@@ -1,28 +1,25 @@
 <div class="row">
   <div class="col-4"></div>
   <div class="col-4">
-    <h1>Tạo sản phẩm mới</h1>
     <form [formGroup]="expForm" (ngSubmit)="submit()">
-      <table class="table">
-        <tr>
-          <td>Công việc:</td>
-          <td><input type="text" formControlName="slill"></td>
-        </tr>
-        <tr>
-          <td>Năm kinh nghiệm:</td>
-          <td><input type="text" formControlName="year"></td>
-        </tr>
-        <tr>
-          <td>Mức lương:</td>
-          <td><input type="text" formControlName="salary"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><input type="submit" ></td>
-        </tr>
-      </table>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="skill">Công việc</label>
+          <input type="text" class="form-control" formControlName="skill" id="skill" placeholder="skill">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Số năm</label>
+          <input type="text" class="form-control" formControlName="year" id="inputPassword4" placeholder="year">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Salary</label>
+        <input type="text" class="form-control" formControlName="salary" id="inputAddress" placeholder="salary">
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
     </form>
+
   </div>
   <div class="col-4"></div>
-</div>
 
+</div>

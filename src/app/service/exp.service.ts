@@ -20,7 +20,7 @@ export class ExpService {
     return this.http.post<Exp>(API_URL,exp);
   }
   delete(id: string) {
-    return this.http.delete(API_URL + `${id}`);
+    return this.http.delete(API_URL + `/${id}`);
   }
   update(id: string, exp: Exp): Observable<Exp> {
     return this.http.put<Exp>(API_URL + `/${id}`, exp);

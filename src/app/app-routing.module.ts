@@ -6,6 +6,8 @@ import {MainComponent} from './component/post/main/main.component';
 import {PageComponent} from "./component/user/page/page.component";
 import {ListExpComponent} from "./component/user/page/list-exp/list-exp.component";
 import {CreateExpComponent} from "./component/user/page/create-exp/create-exp.component";
+import {EditExpComponent} from "./component/user/page/edit-exp/edit-exp.component";
+import {DeleteExpComponent} from "./component/user/page/delete-exp/delete-exp.component";
 
 const routes: Routes = [
   {
@@ -29,7 +31,15 @@ const routes: Routes = [
 
   }, {
     path: 'exp/create',
-   component: CreateExpComponent
+    component: CreateExpComponent
+
+  }, {
+    path: 'exp/edit/:id',
+   component: EditExpComponent
+
+  }, {
+    path: 'exp/delete/:id',
+   component: DeleteExpComponent
 
   },
   {
