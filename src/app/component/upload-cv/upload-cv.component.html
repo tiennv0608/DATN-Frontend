@@ -1,7 +1,14 @@
-<input type="file" id="file" (change)="onFileChange($event)" class="form-control btn btn-primary" width="50% !important">
+
+
+
+
+
+<div>
+<input type="file" id="file" (change)="onFileChange($event)"  class="form-control btn btn-primary" width="20% !important">
+</div>
 <div class="spinner-border" role="status" *ngIf="checkUploadFile">
   <span class="visually-hidden">Loading...</span>
 </div>
-<input class="btn btn-primary mt-3" type="button" (click)="onUpload()" value="Đăng ảnh">
+<input class="btn btn-primary mt-3" type="button" (click)="onUpload()" value="Đăng CV">
 
 

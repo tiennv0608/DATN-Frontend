@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {Company} from '../../../model/company/company';
 import {CompanyService} from '../../../service/company.service';
 import {FormControl, FormGroup} from '@angular/forms';
+import {CvService} from '../../../service/cv.service';
 
 @Component({
   selector: 'app-navbar',
@@ -20,11 +21,12 @@ export class NavbarComponent implements OnInit {
   UpCVForm: FormGroup = new FormGroup({
     user: new FormControl(),
     link: new FormControl(),
-    name: new FormControl(),
+    nameCV: new FormControl(),
   });
   constructor(private tokenService: TokenService,
               private router: Router,
-              private companyService: CompanyService) {
+              private companyService: CompanyService,
+              private cvService: CvService) {
   }
 
   ngOnInit(): void {
@@ -75,6 +77,16 @@ export class NavbarComponent implements OnInit {
 
   save() {
     const id = this.tokenService.getToken().id;
-
+    const cv = {
+      name : this.UpCVForm.value.nameCV,
+      link : this.linkCv,
+      user:{
+        id: id
+      }
+    }
+    // @ts-ignore
+    this.cvService.save(cv).subscribe(()=>{
+      window.location.reload();
+    })
   }
 }

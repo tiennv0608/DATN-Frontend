@@ -33,7 +33,7 @@ export class UploadComponent implements OnInit {
     const allowedExtensions =
       /(\.jpg|\.jpeg|\.png|\.gif)$/i;
     if (!allowedExtensions.exec(name)) {
-        alert("sai form rồi đ m" )
+      alert("a Sơn k khôn");
     }else {
       this.ref = this.angularFireStore.ref(name);
       this.ref.put(this.selectedFile)

@@ -55,6 +55,7 @@ export class RegisterFormComponent implements OnInit {
       console.log('System error: ', error);
       if (error.error.responseCode == Constant.EMAIL_IS_EXISTS){
         this.message=error.error.responseMessage;
+        console.log(this.message);
       }
     });
   }
