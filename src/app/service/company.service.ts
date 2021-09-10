@@ -27,4 +27,10 @@ export class CompanyService {
   delete(id: string) {
     return this.httpClient.delete(environment.API_URL + `/companies/${id}`);
   }
+  getAllByUnenable(){
+    return this.httpClient.get(environment.API_URL + '/companies/permit')
+  }
+  updateenable(id: number){
+    return this.httpClient.get(environment.API_URL + `/companies/enable/${id}`)
+  }
 }

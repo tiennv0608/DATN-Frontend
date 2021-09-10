@@ -97,9 +97,9 @@ export class PostService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     // @ts-ignore
-    return this.http.get(`${environment.baseUrl}/posts/search?` + params.toString());
+    return this.http.get(`${environment.baseUrl}/posts/find?` + params.toString());
   }
-  
+
   countPosts(){
     // @ts-ignore
     return this.http.get(`${environment.baseUrl}/posts/count`);

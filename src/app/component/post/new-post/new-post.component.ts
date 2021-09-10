@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {PostService} from '../../../service/post.service';
-import {Post} from '../../../model/post/post';
 
 @Component({
   selector: 'app-new-post',
