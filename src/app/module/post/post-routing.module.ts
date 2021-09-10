@@ -5,6 +5,7 @@ import {PostEditComponent} from '../../component/post/post-edit/post-edit.compon
 import {PostDetailComponent} from '../../component/post/post-detail/post-detail.component';
 import {AdvancedComponent} from "../../component/advanced/advanced.component";
 import {PostSearchComponent} from '../../component/post/post-search/post-search.component';
+import { ListExpComponent } from 'src/app/component/user/page/list-exp/list-exp.component';
 
 const routes: Routes = [
   {

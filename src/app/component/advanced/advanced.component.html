@@ -1,65 +1,65 @@
 
-<div>
-  <h1 class="ttl-line-left mt-4 ">
-  TÌM KIẾM VIỆC LÀM NÂNG CAO
-  </h1>
-</div>
+<!--<div>-->
+<!--  <h1 class="ttl-line-left mt-4 ">-->
+<!--  TÌM KIẾM VIỆC LÀM NÂNG CAO-->
+<!--  </h1>-->
+<!--</div>-->
 
-<div class="row" >
-  <div class="col-3"></div>
-  <div class="col-6">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label>Tiêu đề</label>
-          <input type="text" class="form-control" id="title" placeholder="Tiêu đề">
-        </div>
-        <div class="form-group col-md-6">
-          <label >Kinh nghiêm</label>
-          <input type="text" class="form-control" id="exp" placeholder="Kinh nghiệm">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Địa chỉ</label>
-        <select id="address" class="form-control">
-                    <option *ngFor="let provinces of cities">{{provinces.name}}</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label >Mức lương tối thiểu</label>
-          <input type="text" class="form-control" id="salary" placeholder="">
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary" (click)="search()">Tìm kiếm</button>
-    <div class="card mb-3" style="max-width: 770px;" *ngFor="let postList of postList">
-      <div class="row g-0" *ngIf="postList?.status">
-        <div class="col-md-2">
-          <img [src]="postList.company?.image" class="img-fluid rounded-start p-3" alt="..." style="width: 100px;height: 100px">
-        </div>
-        <div class="col-md-10" style="font-size: 10px">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-9">
-                <p class="card-title" style="font-size: 10px">
-                  <a [routerLink]="['/posts/view',postList.id]" style="font-size: 20px">{{postList.title}}</a>
-                  <br>
-                  Số lượng tuyển :{{postList.quantity}},
-                  Cấp bậc :{{postList.position}},
-                  Kinh nghiệm :{{postList.exp}}<br>
-                  Thời gian kết thúc : {{postList.expiredDate | date : "dd/MM/yyyy"}}
-                </p>
-              </div>
-              <div class="col-3">
-                <a href="#" class="btn btn-primary" style="width: 110px;height: 40px">Apply Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-3"></div>
-</div>
+<!--<div class="row" >-->
+<!--  <div class="col-3"></div>-->
+<!--  <div class="col-6">-->
+<!--      <div class="form-row">-->
+<!--        <div class="form-group col-md-6">-->
+<!--          <label>Tiêu đề</label>-->
+<!--          <input type="text" class="form-control" id="title" placeholder="Tiêu đề">-->
+<!--        </div>-->
+<!--        <div class="form-group col-md-6">-->
+<!--          <label >Kinh nghiêm</label>-->
+<!--          <input type="text" class="form-control" id="exp" placeholder="Kinh nghiệm">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label>Địa chỉ</label>-->
+<!--        <select id="address" class="form-control">-->
+<!--                    <option *ngFor="let provinces of cities">{{provinces.name}}</option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--      <div class="form-row">-->
+<!--        <div class="form-group col-md-6">-->
+<!--          <label >Mức lương tối thiểu</label>-->
+<!--          <input type="text" class="form-control" id="salary" placeholder="">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <button type="submit" class="btn btn-primary" (click)="search()">Tìm kiếm</button>-->
+<!--    <div class="card mb-3" style="max-width: 770px;" *ngFor="let postList of postList">-->
+<!--      <div class="row g-0" *ngIf="postList?.status">-->
+<!--        <div class="col-md-2">-->
+<!--          <img [src]="postList.company?.image" class="img-fluid rounded-start p-3" alt="..." style="width: 100px;height: 100px">-->
+<!--        </div>-->
+<!--        <div class="col-md-10" style="font-size: 10px">-->
+<!--          <div class="card-body">-->
+<!--            <div class="row">-->
+<!--              <div class="col-9">-->
+<!--                <p class="card-title" style="font-size: 10px">-->
+<!--                  <a [routerLink]="['/posts/view',postList.id]" style="font-size: 20px">{{postList.title}}</a>-->
+<!--                  <br>-->
+<!--                  Số lượng tuyển :{{postList.quantity}},-->
+<!--                  Cấp bậc :{{postList.position}},-->
+<!--                  Kinh nghiệm :{{postList.exp}}<br>-->
+<!--                  Thời gian kết thúc : {{postList.expiredDate | date : "dd/MM/yyyy"}}-->
+<!--                </p>-->
+<!--              </div>-->
+<!--              <div class="col-3">-->
+<!--                <a href="#" class="btn btn-primary" style="width: 110px;height: 40px">Apply Now</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="col-3"></div>-->
+<!--</div>-->
 
 
 

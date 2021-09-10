@@ -4,6 +4,7 @@ import {LoginFormComponent} from '../../component/user/login-form/login-form.com
 import {RegisterFormComponent} from '../../component/user/register-form/register-form.component';
 import {MatSliderModule} from '@angular/material/slider';
 import {HttpClientModule} from '@angular/common/http';
+import { ListExpComponent } from 'src/app/component/user/page/list-exp/list-exp.component';
 
 const routes: Routes = [
   {

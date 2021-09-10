@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <h1>Tạo sản phẩm mới</h1>
+    <form [formGroup]="expForm" (ngSubmit)="submit()">
+      <table class="table">
+        <tr>
+          <td>Công việc:</td>
+          <td><input type="text" formControlName="slill"></td>
+        </tr>
+        <tr>
+          <td>Năm kinh nghiệm:</td>
+          <td><input type="text" formControlName="year"></td>
+        </tr>
+        <tr>
+          <td>Mức lương:</td>
+          <td><input type="text" formControlName="salary"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" ></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div class="col-4"></div>
+</div>
+
