@@ -5,6 +5,7 @@ export class Constant {
   public static readonly API_USER_LOGIN = environment.API_URL + '/auth/users/login';
   public static readonly API_COMPANY_REGISTER = environment.API_URL + '/auth/companies/register';
   public static readonly API_COMPANY_LOGIN = environment.API_URL + '/auth/companies/login';
+  public static readonly API_ADMIN_LOGIN = environment.API_URL + '/auth/admins/login';
   public static SUCCESS = '0000';
   public static USERNAME_IS_EXISTS = '0001';
   public static EMAIL_IS_EXISTS = '0002';

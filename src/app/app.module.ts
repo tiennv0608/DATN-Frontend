@@ -9,8 +9,9 @@ import { SearchbarComponent } from './component/shared/searchbar/searchbar.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PostSearchComponent } from './component/post/post-search/post-search.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import {environment} from '../environments/environment.prod';
 import {MainComponent} from './component/post/main/main.component';
 // @ts-ignore
@@ -37,6 +38,7 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
 import { SearchAdvancedComponent } from './component/shared/search-advanced/search-advanced.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,19 +58,20 @@ import { SearchAdvancedComponent } from './component/shared/search-advanced/sear
     PostSearchComponent,
     SearchAdvancedComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    JwPaginationModule,
-    NgxPaginationModule,
-    BrowserAnimationsModule,
-    MatSelectModule,
-    MatOptionModule,
-    FormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        AngularFireStorageModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        JwPaginationModule,
+        NgxPaginationModule,
+        BrowserAnimationsModule,
+        MatSelectModule,
+        MatOptionModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   exports: [
     SideBarComponent,

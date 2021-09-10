@@ -24,8 +24,10 @@ export class AdvancedComponent implements OnInit {
   ngOnInit(): void {
     const data = localStorage.getItem('search-advanced');
     if (data !== null) {
-      for (let post of JSON.parse(data)) {
+      for (let post of data) {
+        // @ts-ignore
         if (post.status) {
+          // @ts-ignore
           this.posts.push(post);
         }
       }
@@ -49,10 +51,12 @@ export class AdvancedComponent implements OnInit {
       localStorage.removeItem('search-advanced');
       localStorage.setItem('search-advanced', JSON.stringify(data));
       this.router.navigate(['posts/search-advanced']).then(() => {
-        window.location.reload();
+        // window.location.reload();
       }, error => {
         console.log(error);
       });
+    }, error => {
+      console.log(error);
     });
   }
 

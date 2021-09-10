@@ -35,7 +35,7 @@ export class SearchAdvancedComponent implements OnInit {
       localStorage.removeItem('search-advanced');
       localStorage.setItem('search-advanced', JSON.stringify(data));
       this.router.navigate(['posts/search-advanced']).then(() => {
-        window.location.reload();
+        // window.location.reload();
       });
     });
   }
