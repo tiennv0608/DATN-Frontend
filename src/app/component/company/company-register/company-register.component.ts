@@ -46,7 +46,6 @@ export class CompanyRegisterComponent implements OnInit {
       if (response.responseCode === Constant.SUCCESS) {
         this.isRegistered = true;
         this.message = response.responseMessage;
-        console.log(this.isRegistered);
       } else {
         this.message = response.responseMessage;
       }
@@ -68,7 +67,7 @@ export class CompanyRegisterComponent implements OnInit {
 
   reload() {
     if (this.isRegistered){
-      this.router.navigate(['']).then(() => {
+      this.router.navigate(['companies/login']).then(() => {
         window.location.reload();
       });
     }else {

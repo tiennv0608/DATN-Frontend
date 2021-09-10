@@ -5,8 +5,6 @@ import {PostListComponent} from './component/post/post-list/post-list.component'
 import {SummaryPostComponent} from './component/post/summary-post/summary-post.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import { CompanyRegisterComponent } from './component/company/company-register/company-register.component';
-import { CompanyLoginComponent } from './component/company/company-login/company-login.component';
 import { SearchbarComponent } from './component/shared/searchbar/searchbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
@@ -34,9 +32,13 @@ import {NavbarComponent} from './component/shared/navbar/navbar.component';
 import {FooterComponent} from './component/shared/footer/footer.component';
 import {JwPaginationComponent, JwPaginationModule} from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ListPostByIdComponent } from './component/post/list-post-by-id/list-post-by-id.component';
 import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
-import {CompanyModule} from './module/company/company.module';
-import { UploadCvComponent } from './component/upload-cv/upload-cv.component';
+import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
+import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
+// @ts-ignore
+import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
+
 
 
 
@@ -57,27 +59,29 @@ import { UploadCvComponent } from './component/upload-cv/upload-cv.component';
     FooterComponent,
     PostTopCompanyComponent,
     PostSearchComponent,
-    UploadCvComponent,
+    SearchAdvancedComponent,
+    UploadCvComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    JwPaginationModule,
-    NgxPaginationModule,
-    BrowserAnimationsModule,
-    MatSelectModule,
-    MatOptionModule,
-    FormsModule,
-    CompanyModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        AngularFireStorageModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        JwPaginationModule,
+        NgxPaginationModule,
+        BrowserAnimationsModule,
+        MatSelectModule,
+        MatOptionModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   exports: [
     SideBarComponent,
-    MainComponent
+    MainComponent,
+    SearchAdvancedComponent,
+    UploadCvComponent
   ],
   bootstrap: [AppComponent]
 })

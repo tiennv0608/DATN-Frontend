@@ -35,6 +35,7 @@ export class NavbarComponent implements OnInit {
       this.name = this.tokenService.getToken().name;
       this.type = this.tokenService.getToken().roles[0].authority;
     }
+    console.log(this.router.url);
   }
 
   logOut() {

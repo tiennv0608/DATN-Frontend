@@ -1,27 +1,11 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row text-center p-2 m-2">
-    <h2 class="text-center font-weight-bold">Top công ty tuyển dụng hàng đầu</h2>
+    <h1 class="text-center font-weight-bold">Top công ty tuyển dụng hàng đầu</h1>
     <div class="col-1"></div>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <a (click)="viewDetail(firstPost.company?.id)"><img [src]="firstPost.company?.image" style="width: 100%" alt="..."></a>
-        </div>
-        <div class="carousel-item" *ngFor="let post of posts">
-          <a (click)="viewDetail(post.company?.id)"><img [src]="post.company?.image" style="width: 100%" alt="..."></a>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-              data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-              data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    <div class="col-2" *ngFor="let post of posts">
+      <div class="card-img"><img [src]="post.company?.image" [alt]="post.company?.companyName" style="width: 100%"></div>
     </div>
     <div class="col-1"></div>
   </div>
 </div>
+<hr>
