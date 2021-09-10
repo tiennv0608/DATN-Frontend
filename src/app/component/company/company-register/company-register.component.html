@@ -28,7 +28,7 @@
               <h3 class="login-heading text-center">Đăng ký thành viên với tư cách nhà tuyển dụng</h3>
               <!--              <div class="alert alert-success" role="alert" *ngIf="isRegistered">{{message}}</div>-->
               <!--              <div class="alert alert-warning" role="alert" *ngIf="!isRegistered && (message != '')">{{message}}</div>-->
-              <form [formGroup]="registerForm"  novalidate>
+              <form [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
                 <div class="col mt-3">
                   <div class="input-group has-validation">
                     <span class="input-group-text" style="background: skyblue"><i class="bi bi-building"></i></span>
@@ -130,7 +130,7 @@
 
                 <div class="col mt-3">
                   <button class="btn head-btn2 form-control"
-                          [disabled]="registerForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="register()">
+                          [disabled]="registerForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal2" >
                     Đăng ký
                   </button>
                 </div>
