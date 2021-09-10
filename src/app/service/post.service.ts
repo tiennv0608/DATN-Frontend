@@ -41,8 +41,6 @@ export class PostService {
   }
 
   search(params: any): Observable<any> {
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
     return this.http.get(environment.API_URL + `/posts/search?` + params.toString());
   }
 

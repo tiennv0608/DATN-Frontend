@@ -27,21 +27,26 @@
           </div>
         </div>
         <div class="col-12 mt-3">
-          <div class="rounded">
-            <div class="input-group">
+          <div class="row rounded">
+            <div class="col-8">
               <input type="text" placeholder="Mức lương tối thiểu" [(ngModel)]="salary" [value]="salary"
                      aria-describedby="button-addon3"
                      class="form-control border-0 bg-light">
             </div>
+            <div class="col-4">
+              <input type="text" value="triệu đồng" class="form-control border-0 bg-light" readonly>
+            </div>
           </div>
         </div>
         <div class="col-12 mt-3">
-          <div class="rounded">
-            <div class="input-group">
+          <div class="row rounded">
+            <div class="col-8">
               <input type="text" placeholder="Năm kinh nghiệm" [(ngModel)]="exp" [value]="exp"
                      aria-describedby="button-addon2"
                      class="form-control border-0 bg-light">
             </div>
+            <div class="col-4"><input type="text" value="năm"
+                                      class="form-control border-0 bg-light" readonly></div>
           </div>
         </div>
         <div class="col-12 mt-3 pb-3">

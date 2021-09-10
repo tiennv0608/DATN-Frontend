@@ -24,10 +24,8 @@ export class AdvancedComponent implements OnInit {
   ngOnInit(): void {
     const data = localStorage.getItem('search-advanced');
     if (data !== null) {
-      for (let post of data) {
-        // @ts-ignore
+      for (let post of JSON.parse(data)) {
         if (post.status) {
-          // @ts-ignore
           this.posts.push(post);
         }
       }
@@ -35,23 +33,30 @@ export class AdvancedComponent implements OnInit {
   }
 
   viewDetail(id: any) {
-    this.router.navigateByUrl('/view/' + id);
+    this.router.navigateByUrl('/posts/view/' + id);
   }
 
   searchAdvanced() {
     const params: URLSearchParams = new URLSearchParams();
-    // @ts-ignore
-    params.set('address', this.address);
-    params.set('title', this.title);
-    // @ts-ignore
-    params.set('salary', this.salary * 1000000);
-    params.set('exp', this.exp);
-    console.log(params.toString());
+    if (this.address !== '') {
+      params.set('address', this.address);
+    }
+    if (this.title != '') {
+      params.set('title', this.title);
+    }
+    if (this.salary !== '') {
+      // @ts-ignore
+      params.set('salary', this.salary * 1000000);
+    }
+    if (this.exp !== '') {
+      params.set('exp', this.exp+ ' năm');
+    }
+    console.log(params.toString())
     this.postService.search(params).subscribe(data => {
       localStorage.removeItem('search-advanced');
       localStorage.setItem('search-advanced', JSON.stringify(data));
       this.router.navigate(['posts/search-advanced']).then(() => {
-        // window.location.reload();
+        window.location.reload();
       }, error => {
         console.log(error);
       });
