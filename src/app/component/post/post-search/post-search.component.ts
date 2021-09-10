@@ -28,8 +28,4 @@ export class PostSearchComponent implements OnInit {
       }
     }
   }
-
-  viewDetail(id: any) {
-    this.router.navigateByUrl('/posts/view/'+id);
-  }
 }

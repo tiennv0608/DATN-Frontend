@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'companies',
     loadChildren: () => import('./module/company/company.module').then(module => module.CompanyModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./module/admin/admin.module').then(module => module.AdminModule)
   }
 
 ];

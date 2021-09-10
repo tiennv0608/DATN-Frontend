@@ -1,0 +1,47 @@
+<div class="animated fadeIn">
+  <div class="row">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Tài khoản doanh nghiệp chưa duyệt
+        </div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Tên doanh nghiệp</th>
+              <th>Tên viết tắt</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let company of companies">
+              <th>{{company.id}}</th>
+              <th>{{company.companyName}}</th>
+              <th>{{company.shortName}}</th>
+              <th>{{company.email}}</th>
+              <th>{{company.password}}</th>
+              <td>
+                  <button type="button" class="btn btn-block btn-outline-primary" (click)="enableAccount(company.id)">Duyệt</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </div>
+      </div>
+    <!--/.col-->
+  </div>
+</div>
+

@@ -5,13 +5,11 @@ import {PostListComponent} from './component/post/post-list/post-list.component'
 import {SummaryPostComponent} from './component/post/summary-post/summary-post.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import { CompanyRegisterComponent } from './component/company/company-register/company-register.component';
-import { CompanyLoginComponent } from './component/company/company-login/company-login.component';
 import { SearchbarComponent } from './component/shared/searchbar/searchbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PostSearchComponent } from './component/post/post-search/post-search.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {environment} from '../environments/environment.prod';
@@ -39,6 +37,7 @@ import { PostTopCompanyComponent } from './component/post/post-top-company/post-
 import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,21 +54,22 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
     SearchbarComponent,
     FooterComponent,
     PostTopCompanyComponent,
-    PostSearchComponent
+    PostSearchComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    JwPaginationModule,
-    NgxPaginationModule,
-    BrowserAnimationsModule,
-    MatSelectModule,
-    MatOptionModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        AngularFireStorageModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        JwPaginationModule,
+        NgxPaginationModule,
+        BrowserAnimationsModule,
+        MatSelectModule,
+        MatOptionModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   exports: [
     SideBarComponent,
