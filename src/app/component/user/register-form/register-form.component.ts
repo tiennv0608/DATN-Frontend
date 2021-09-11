@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
 export class RegisterFormComponent implements OnInit {
 
   message = '';
-  isRegistered = false;
+  isRegistered = true;
   // userRegister: UserRegisterForm = {};
 
   registerForm: FormGroup = new FormGroup({
@@ -46,6 +46,7 @@ export class RegisterFormComponent implements OnInit {
     this.authService.registerUser(userRegister).subscribe((response: ResponseBody) => {
       if (response.responseCode === Constant.SUCCESS) {
         this.isRegistered = true;
+        console.log(this.isRegistered);
         this.message = response.responseMessage;
       } else {
         this.message = response.responseMessage;

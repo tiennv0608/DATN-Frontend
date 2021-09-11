@@ -1,13 +1,13 @@
 <header>
   <!-- Header Start -->
-  <div class="header-area header-transparrent">
+  <div class="header-area header-transparrent" >
     <div class="headder-top header-sticky">
       <div class="container-fluid" style="background-color: whitesmoke">
-        <div class="row align-items-center">
-          <div class="col-lg-3 col-md-2">
+        <div class="row align-items-center pt-4 pb-4">
+          <div class="col-lg-3 col-md-2" >
             <!-- Logo -->
-            <div class="logo">
-              <a href="../../../../index.html"><img src="../../../../assets/img/logo/logo.png" alt=""></a>
+            <div class="logo " >
+              <a routerLink="/"><img src="../../../../assets/img/logo/logo.png" alt="" ></a>
             </div>
           </div>
           <div class="col-lg-9 col-md-9">
@@ -16,10 +16,8 @@
               <div class="main-menu">
                 <nav class="d-none d-lg-block">
                   <ul id="navigation" class="tu" *ngIf="token === ''">
-                    <li><button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary" type="button" aria-expanded="false" (click)="navigatemainsite()">
-                      Trang chủ
-                    </button>
-                    </li>
+                    <li><a routerLink="/">Trang chủ</a></li>
+<!--                    <li><a routerLink="/search-advanced">Tìm kiếm nâng cao</a></li>-->
                   </ul>
                   <ul id="navigation1" class="tu" *ngIf="(token !== '') && (type === 'USER')">
                     <li><button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary" type="button" aria-expanded="false" (click)="navigatemainsite()">
@@ -61,8 +59,8 @@
               </div>
               <!-- Header-btn -->
               <div class="header-btn d-none f-right d-lg-block" *ngIf="token === ''">
-                <a [routerLink]="['users','login']" class="btn btn-warning">Người tìm việc</a>
-                <a [routerLink]="['companies','login']" class="btn btn-success">Nhà tuyển dụng</a>
+                <a [routerLink]="['users','login']" class="btn btn-warning mr-2">Người tìm việc</a>
+                <a [routerLink]="['companies','login']" class="btn btn-success mr-2">Nhà tuyển dụng</a>
               </div>
               <div class="header-btn d-none f-right d-lg-block" *ngIf="(token !== '') && (type === 'USER')">
                 <div class="main-menu">
