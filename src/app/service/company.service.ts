@@ -45,4 +45,5 @@ export class CompanyService {
   getAllRecommendedCompanies(){
     return this.httpClient.get(environment.API_URL + '/companies/all-recommended')
   }
+
 }

@@ -71,4 +71,13 @@ export class PostService {
     // @ts-ignore
     return this.http.get(`http://localhost:8080/posts/new`);
   }
+
+  getRecommendedPosts(): Observable<any> {
+    return this.http.get(`${environment.API_URL}/posts/recommended`);
+  }
+
+  setRecommendedPost(id: any): Observable<any> {
+    // @ts-ignore
+    return this.http.put(`${environment.API_URL}/posts/recommended/${id}`);
+  }
 }

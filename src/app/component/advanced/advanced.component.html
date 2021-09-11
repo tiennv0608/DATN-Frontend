@@ -6,7 +6,6 @@
       <div class="row">
         <div class="row">
           <h1 class="font-weight-bold pt-3">Kết quả tìm kiếm</h1>
-          <hr>
         </div>
       </div>
       <h2 class="text-center">Không có kết quả phù hợp</h2>
@@ -15,7 +14,6 @@
       <div class="row">
         <div class="row">
           <h1 class="font-weight-bold pt-3">Kết quả tìm kiếm</h1>
-          <hr>
         </div>
       </div>
       <div class="card mb-3" style="max-width: 770px;"
@@ -28,19 +26,16 @@
           <div class="col-md-10" style="font-size: 10px">
             <div class="card-body">
               <div class="row">
-                <div class="col-9">
+                <div class="col-12">
                   <p class="card-title" style="font-size: 10px">
                     <a (click)="viewDetail(post.id)"
-                       style="font-size: 20px; text-decoration: underline">{{post.title}}</a>
+                       style="font-size: 20px; text-decoration: underline">{{post.title | uppercase}}</a>
                     <br>
                     Số lượng tuyển :{{post.quantity}},
                     Cấp bậc :{{post.position}},
                     Kinh nghiệm :{{post.exp}}<br>
                     Thời gian kết thúc : {{post.expiredDate | date : "dd/MM/yyyy"}}
                   </p>
-                </div>
-                <div class="col-3">
-                  <a href="#" class="btn btn-primary" style="width: 110px;height: 40px">Apply Now</a>
                 </div>
               </div>
             </div>
@@ -51,68 +46,68 @@
     </div>
     <div class="col-4">
       <!-- For demo purpose -->
-      <div class="row border">
-        <div class="row">
-          <div class="col-12 text-center pt-3">
-            <h1 class="display-4 font-weight-bold">Tìm kiếm nâng cao</h1>
-            <hr>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="row bg-white">
-              <div class="col-12">
-                <div class="rounded">
-                  <div class="input-group">
-                    <input id="button-addon1" type="text" placeholder="Tiêu đề" [(ngModel)]="title" [value]="title"
-                           aria-describedby="button-addon1"
-                           class="form-control border-0 bg-light mt-0">
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 mt-3">
-                <div class="rounded">
-                  <div class="input-group">
-                    <input type="text" placeholder="Địa điểm làm việc" [(ngModel)]="address" [value]="address"
-                           aria-describedby="button-addon4"
-                           class="form-control border-0 bg-light">
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 mt-3">
-                <div class="row rounded">
-                  <div class="col-8">
-                    <input type="text" placeholder="Mức lương tối thiểu" [(ngModel)]="salary" [value]="salary"
-                           aria-describedby="button-addon3"
-                           class="form-control border-0 bg-light">
-                  </div>
-                  <div class="col-4">
-                    <input type="text" value="triệu đồng" class="form-control border-0 bg-light" readonly>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 mt-3">
-                <div class="row rounded">
-                  <div class="col-8">
-                    <input type="text" placeholder="Năm kinh nghiệm" [(ngModel)]="exp" [value]="exp"
-                           aria-describedby="button-addon2"
-                           class="form-control border-0 bg-light">
-                  </div>
-                  <div class="col-4">
-                    <input type="text" value="năm" class="form-control border-0 bg-light" readonly>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 mt-3 pb-3">
-                <div class="input-group">
-                  <button (click)="searchAdvanced()" class="btn-primary form-control">Tìm kiếm</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <!--      <div class="row border">-->
+      <!--        <div class="row">-->
+      <!--          <div class="col-12 text-center pt-3">-->
+      <!--            <h1 class="display-4 font-weight-bold">Tìm kiếm nâng cao</h1>-->
+      <!--            <hr>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <div class="row">-->
+      <!--          <div class="col-12">-->
+      <!--            <div class="row bg-white">-->
+      <!--              <div class="col-12">-->
+      <!--                <div class="rounded">-->
+      <!--                  <div class="input-group">-->
+      <!--                    <input id="button-addon1" type="text" placeholder="Tiêu đề" [(ngModel)]="title" [value]="title"-->
+      <!--                           aria-describedby="button-addon1"-->
+      <!--                           class="form-control border-0 bg-light mt-0">-->
+      <!--                  </div>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--              <div class="col-12 mt-3">-->
+      <!--                <div class="rounded">-->
+      <!--                  <div class="input-group">-->
+      <!--                    <input type="text" placeholder="Địa điểm làm việc" [(ngModel)]="address" [value]="address"-->
+      <!--                           aria-describedby="button-addon4"-->
+      <!--                           class="form-control border-0 bg-light">-->
+      <!--                  </div>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--              <div class="col-12 mt-3">-->
+      <!--                <div class="row rounded">-->
+      <!--                  <div class="col-8">-->
+      <!--                    <input type="text" placeholder="Mức lương tối thiểu" [(ngModel)]="salary" [value]="salary"-->
+      <!--                           aria-describedby="button-addon3"-->
+      <!--                           class="form-control border-0 bg-light">-->
+      <!--                  </div>-->
+      <!--                  <div class="col-4">-->
+      <!--                    <input type="text" value="triệu đồng" class="form-control border-0 bg-light" readonly>-->
+      <!--                  </div>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--              <div class="col-12 mt-3">-->
+      <!--                <div class="row rounded">-->
+      <!--                  <div class="col-8">-->
+      <!--                    <input type="text" placeholder="Năm kinh nghiệm" [(ngModel)]="exp" [value]="exp"-->
+      <!--                           aria-describedby="button-addon2"-->
+      <!--                           class="form-control border-0 bg-light">-->
+      <!--                  </div>-->
+      <!--                  <div class="col-4">-->
+      <!--                    <input type="text" value="năm" class="form-control border-0 bg-light" readonly>-->
+      <!--                  </div>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--              <div class="col-12 mt-3 pb-3">-->
+      <!--                <div class="input-group">-->
+      <!--                  <button (click)="searchAdvanced()" class="btn-primary form-control">Tìm kiếm</button>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <app-search-advanced></app-search-advanced>
     </div>
   </div>
 </div>

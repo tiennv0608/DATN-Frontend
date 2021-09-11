@@ -8,29 +8,28 @@ import {CompanyUpdateComponent} from '../../component/admin/company-update/compa
 import {ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../shared/shared.module';
 import {CompanyInfoComponent} from '../../component/admin/company-info/company-info.component';
+import {PostManagementComponent} from '../../component/admin/post-management/post-management.component';
 
 @NgModule({
   declarations: [
     CompanyAccountComponent,
     CompanyListComponent,
     CompanyUpdateComponent,
-    CompanyInfoComponent
-
+    CompanyInfoComponent,
+    PostManagementComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
     SharedModule,
-    // SharedModule,
-    // SharedModule
   ],
   exports: [
     CompanyAccountComponent,
     CompanyListComponent,
     CompanyUpdateComponent,
-    CompanyInfoComponent
-
+    CompanyInfoComponent,
+    PostManagementComponent
   ]
 })
 export class AdminModule { }

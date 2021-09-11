@@ -3,6 +3,7 @@ import {Company} from '../../../model/company/company';
 import {PostService} from '../../../service/post.service';
 import {Post} from '../../../model/post/post';
 import {Router} from '@angular/router';
+import {OwlOptions} from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-post-top-company',
@@ -12,7 +13,7 @@ import {Router} from '@angular/router';
 export class PostTopCompanyComponent implements OnInit {
 
   posts: Post[] = [];
-  // firstPost: Post = {};
+
 
   constructor(private postService: PostService,
               private router: Router) {
@@ -26,14 +27,12 @@ export class PostTopCompanyComponent implements OnInit {
     this.postService.getTop5Companies().subscribe(posts => {
       // @ts-ignore
       this.posts = posts;
-      // this.firstPost = this.posts[0];
-      // this.posts.shift();
-    },error => {
+    }, error => {
       console.log(error);
     });
   }
 
   viewDetail(id: string | undefined) {
-    this.router.navigateByUrl('companies/view/'+id)
+    this.router.navigateByUrl('companies/view/' + id);
   }
 }

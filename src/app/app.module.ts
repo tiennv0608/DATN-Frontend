@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
-import {SummaryPostComponent} from './component/post/summary-post/summary-post.component';
+import {PostListComponent} from './component/post/post-list/post-list.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { SearchbarComponent } from './component/shared/searchbar/searchbar.component';
@@ -28,16 +28,17 @@ import {NavbarComponent} from './component/shared/navbar/navbar.component';
 import {FooterComponent} from './component/shared/footer/footer.component';
 import {JwPaginationComponent, JwPaginationModule} from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { ListPostByIdComponent } from './component/post/list-post-by-id/list-post-by-id.component';
-import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
-import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
-import { CompanyUpdateComponent } from './component/admin/company-update/company-update.component';
+import {PostTopCompanyComponent} from './component/post/post-top-company/post-top-company.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+import {CarouselModule} from 'ngx-owl-carousel-o';
 import {MatMenuModule} from '@angular/material/menu';
-import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
 // @ts-ignore
 import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
+import {RecommendedPostComponent} from './component/post/recommended-post/recommended-post.component';
+import { PostManagementComponent } from './component/admin/post-management/post-management.component';
 import { Top5RecommendedCompanyComponent } from './component/post/top5-recommended-company/top5-recommended-company.component';
-import {PostListComponent} from './component/post/post-list/post-list.component';
+import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
+import {AdvancedComponent} from './component/advanced/advanced.component';
 
 
 
@@ -49,7 +50,7 @@ import {PostListComponent} from './component/post/post-list/post-list.component'
     SearchComponent,
     NewPostComponent,
     SideBarComponent,
-    SummaryPostComponent,
+    RecommendedPostComponent,
     PreloaderStartComponent,
     NavbarComponent,
     FooterComponent,
@@ -59,6 +60,7 @@ import {PostListComponent} from './component/post/post-list/post-list.component'
     PostTopCompanyComponent,
     PostSearchComponent,
     SearchAdvancedComponent,
+    AdvancedComponent,
     UploadCvComponent,
     Top5RecommendedCompanyComponent,
   ],
@@ -75,7 +77,9 @@ import {PostListComponent} from './component/post/post-list/post-list.component'
     MatOptionModule,
     FormsModule,
     ReactiveFormsModule,
-    MatMenuModule
+    MatMenuModule,
+    CarouselModule,
+    IvyCarouselModule
   ],
   providers: [],
   exports: [

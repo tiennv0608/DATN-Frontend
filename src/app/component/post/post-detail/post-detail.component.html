@@ -11,7 +11,7 @@
             </div>
             <div class=" col-9 job-tittle">
               <a>
-                <h4>{{post.title}}</h4>
+                <h4>{{post.title | uppercase}}</h4>
               </a>
               <p>Vị trí: {{post.position}}</p>
               <p>Kinh nghiệm: {{post.exp}}</p>
@@ -36,7 +36,7 @@
       </div>
       <!-- Right Content -->
       <div class="col-xl-4 col-lg-4">
-        <div class="post-details3  mb-50">
+        <div class="post-details3  mb-50" style="background-color: white">
           <!-- Small Section Tittle -->
           <div class="small-section-tittle">
             <h4 class="text-center font-weight-bold">Thông tin công việc</h4>
@@ -48,14 +48,15 @@
             <li>Ngày hết hạn : <span>{{post.expiredDate | date :"dd/MM/yyyy"}}</span></li>
           </ul>
           <div class="apply-btn2">
-            <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalUpCV" style="color: white">Apply Now</a>
+            <a *ngIf="isLogin" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalUpCV" style="color: white">Apply Now</a>
+            <p *ngIf="!isLogin"><a routerLink="/users/login" class="btn btn-primary">Đăng nhập để nộp CV</a></p>
           </div>
         </div>
         <div>
           <div class="card mb-3" style="max-width: 650px;" *ngFor="let post of posts | paginate: {itemsPerPage: 5, currentPage: page}">
             <div class="row g-0">
               <div class="col-md-2">
-                <img [src]="post.company?.image" class="img-fluid rounded-start p-3" alt="..." style="width: 100px;height: 100px">
+                <img [src]="post.company?.image" class="img-fluid rounded-start p-3" alt="..." style="width: 100%">
               </div>
               <div class="col-md-8" style="font-size: 10px">
                 <div class="card-body">
@@ -67,8 +68,7 @@
                         <br>
                         Số lượng tuyển :{{post.quantity}},
                         Cấp bậc :{{post.position}},
-                        Kinh nghiệm :{{post.exp}}<br>
-                        Thời gian kết thúc : {{post.expiredDate | date : "dd/MM/yyyy"}}
+                        Kinh nghiệm :{{post.exp}}
                       </p>
                     </div>
                   </div>
@@ -85,7 +85,7 @@
   </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="exampleModalUpCV" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModalUpCV" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="isLogin">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

@@ -5,7 +5,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
-              <h3 class="login-heading text-center">Sửa thông tin công ty</h3>
+              <h1 class="login-heading text-center">Sửa thông tin công ty</h1>
               <div class="alert alert-success" role="alert" *ngIf="isUpdated">{{message}}</div>
               <!--              <div class="alert alert-warning" role="alert" *ngIf="!isRegistered && (message != '')">{{message}}</div>-->
               <form [formGroup]="infoEditForm" (ngSubmit)="edit()" novalidate>

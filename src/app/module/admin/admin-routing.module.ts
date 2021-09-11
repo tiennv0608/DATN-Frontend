@@ -6,6 +6,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {CompanyListComponent} from '../../component/admin/company-list/company-list.component';
 import {CompanyUpdateComponent} from '../../component/admin/company-update/company-update.component';
 import {CompanyInfoComponent} from '../../component/admin/company-info/company-info.component';
+import {PostManagementComponent} from '../../component/admin/post-management/post-management.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'company-info/:id',
     component: CompanyInfoComponent
+  },
+  {
+    path: 'post-management',
+    component: PostManagementComponent
   }
 ];
 

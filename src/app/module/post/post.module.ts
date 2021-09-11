@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { PostRoutingModule } from './post-routing.module';
+import {PostRoutingModule} from './post-routing.module';
 import {PostCreateComponent} from '../../component/post/post-create/post-create.component';
 import {PostEditComponent} from '../../component/post/post-edit/post-edit.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -13,29 +13,30 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {PostSearchComponent} from '../../component/post/post-search/post-search.component';
 import {AdvancedComponent} from '../../component/advanced/advanced.component';
 import {AppModule} from '../../app.module';
+import {CarouselModule} from 'ngx-owl-carousel-o';
 import {UserModule} from '../user/user.module';
-
 
 
 @NgModule({
   declarations: [
     PostCreateComponent,
     PostEditComponent,
-    PostDetailComponent,
-    AdvancedComponent
-    ],
-    imports: [
-        CommonModule,
-        PostRoutingModule,
-        ReactiveFormsModule,
-        SharedModule,
-        NgxPaginationModule,
-        FormsModule,
-        UserModule
-    ],
+    PostDetailComponent
+  ],
+  imports: [
+    CommonModule,
+    PostRoutingModule,
+    ReactiveFormsModule,
+    SharedModule,
+    NgxPaginationModule,
+    FormsModule,
+    UserModule,
+    CarouselModule
+  ],
   exports: [
-  PostEditComponent,
-  PostDetailComponent,
-]
+    PostEditComponent,
+    PostDetailComponent,
+  ]
 })
-export class PostModule { }
+export class PostModule {
+}
