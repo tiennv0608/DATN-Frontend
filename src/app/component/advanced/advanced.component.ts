@@ -1,5 +1,4 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-
 import {Post} from '../../model/post/post';
 import {Router} from '@angular/router';
 import {PostService} from '../../service/post.service';

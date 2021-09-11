@@ -13,6 +13,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {PostSearchComponent} from '../../component/post/post-search/post-search.component';
 import {AdvancedComponent} from '../../component/advanced/advanced.component';
 import {AppModule} from '../../app.module';
+import {CarouselModule} from 'ngx-owl-carousel-o';
 
 
 
@@ -29,7 +30,8 @@ import {AppModule} from '../../app.module';
     ReactiveFormsModule,
     SharedModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    CarouselModule
   ],
   exports: [
   PostEditComponent,
