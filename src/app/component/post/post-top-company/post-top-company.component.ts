@@ -14,6 +14,7 @@ export class PostTopCompanyComponent implements OnInit {
 
   posts: Post[] = [];
 
+
   constructor(private postService: PostService,
               private router: Router) {
   }
@@ -26,12 +27,12 @@ export class PostTopCompanyComponent implements OnInit {
     this.postService.getTop5Companies().subscribe(posts => {
       // @ts-ignore
       this.posts = posts;
-    },error => {
+    }, error => {
       console.log(error);
     });
   }
 
   viewDetail(id: string | undefined) {
-    this.router.navigateByUrl('companies/view/'+id)
+    this.router.navigateByUrl('companies/view/' + id);
   }
 }

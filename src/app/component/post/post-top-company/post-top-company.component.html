@@ -8,18 +8,19 @@
 <!--  </div>-->
 <div class="row border">
   <h1 class="text-center font-weight-bold uppercase">Top công ty tuyển dụng hàng đầu</h1>
-  <!--  <owl-carousel-o>-->
-  <!--    <ng-container *ngFor="let post of posts">-->
-  <!--      <ng-template carouselSlide id="{{post.company?.id}}">-->
-  <!--          <img [src]="post.company?.image" width="100%" style="border: #0b0b0b" (click)="viewDetail(post.company?.id)">-->
-  <!--      </ng-template>-->
-  <!--    </ng-container>-->
-  <!--  </owl-carousel-o>-->
-  <carousel [cellsToShow]="4" [loop]="true" [autoplay]="true" [autoplayInterval]="3000" [overflowCellsLimit]="1"
-            [lightDOM]="true" style="width: 100%">
-    <div class="carousel-cell p-1" *ngFor="let post of posts">
-      <img [src]="post.company?.image" width="100%" style="border: #0b0b0b" (click)="viewDetail(post.company?.id)">
-    </div>
-  </carousel>
+    <owl-carousel-o>
+      <ng-container *ngFor="let post of posts">
+        <ng-template carouselSlide id="{{post.company?.id}}">
+            <img [src]="post.company?.image" width="75%" (click)="viewDetail(post.company?.id)">
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+<!--  <carousel [cellsToShow]="4" [loop]="true" [autoplay]="true" [autoplayInterval]="3000" [overflowCellsLimit]="1"-->
+<!--            [lightDOM]="true" style="width: 100%">-->
+<!--    <div class="carousel-cell p-1" *ngFor="let post of posts">-->
+<!--      <img [src]="post.company?.image" width="100%" style="border: #0b0b0b" (click)="viewDetail(post.company?.id)">-->
+<!--    </div>-->
+<!--  </carousel>-->
 </div>
+
 
