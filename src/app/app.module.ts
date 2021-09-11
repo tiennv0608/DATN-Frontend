@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
-import {PostListComponent} from './component/post/post-list/post-list.component';
 import {SummaryPostComponent} from './component/post/summary-post/summary-post.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
@@ -18,9 +17,6 @@ import {MainComponent} from './component/post/main/main.component';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 // @ts-ignore
 import {AngularFireModule} from '@angular/fire';
-
-
-
 
 import {SharedModule} from './module/shared/shared.module';
 import {SearchComponent} from './component/post/search/search.component';
@@ -41,6 +37,7 @@ import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
 // @ts-ignore
 import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
 import { Top5RecommendedCompanyComponent } from './component/post/top5-recommended-company/top5-recommended-company.component';
+import {PostListComponent} from './component/post/post-list/post-list.component';
 
 
 
@@ -48,7 +45,6 @@ import { Top5RecommendedCompanyComponent } from './component/post/top5-recommend
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent,
     MainComponent,
     SearchComponent,
     NewPostComponent,
@@ -86,7 +82,7 @@ import { Top5RecommendedCompanyComponent } from './component/post/top5-recommend
     SideBarComponent,
     MainComponent,
     SearchAdvancedComponent,
-    UploadCvComponent
+    UploadCvComponent,
   ],
   bootstrap: [AppComponent]
 })
