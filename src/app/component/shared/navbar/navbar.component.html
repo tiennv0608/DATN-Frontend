@@ -1,4 +1,4 @@
-<header >
+<header>
   <!-- Header Start -->
   <div class="header-area header-transparrent" >
     <div class="headder-top header-sticky">
@@ -16,18 +16,44 @@
               <div class="main-menu">
                 <nav class="d-none d-lg-block">
                   <ul id="navigation" class="tu" *ngIf="token === ''">
-<!--                    <li><a routerLink="/">Trang chủ</a></li>-->
+                    <li><a routerLink="/">Trang chủ</a></li>
+<!--                    <li><a routerLink="/search-advanced">Tìm kiếm nâng cao</a></li>-->
                   </ul>
                   <ul id="navigation1" class="tu" *ngIf="(token !== '') && (type === 'USER')">
-                    <li><a routerLink="/">Trang chủ</a></li>
+                    <li><button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary" type="button" aria-expanded="false" (click)="navigatemainsite()">
+                      Trang chủ
+                    </button>
+                    </li>
                   </ul>
                   <ul id="navigation2" class="tu" *ngIf="(token !== '') && (type === 'COMPANY')">
-                    <li><a routerLink="/">Trang chủ</a></li>
+                    <li><button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary" type="button" aria-expanded="false" (click)="navigatemainsite()">
+                      Trang chủ
+                    </button>
+                    </li>
                   </ul>
                   <ul id="navigation3" class="tu" *ngIf="(token !== '') && (type === 'ADMIN')">
-                    <li><a routerLink="/">Trang chủ</a></li>
-                    <li><a routerLink="/admin/company-accounts">Quản lý Doanh nghiệp</a></li>
-                    <li><a routerLink="#">Quản lý bài đăng</a></li>
+                    <li><button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary" type="button" aria-expanded="false" (click)="navigatemainsite()">
+                      Trang chủ
+                    </button>
+                    </li>
+                    <li><div class="dropdown">
+                      <button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Quản lý doanh nghiệp
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <a class="dropdown-item" routerLink="/admin/company-accounts">Duyệt tài khoản</a>
+                        <a class="dropdown-item" routerLink="/admin/company-list">Sửa thông tin</a>
+                      </div>
+                    </div></li>
+                    <li><div class="dropdown">
+                      <button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Quản lý bài đăng
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                        <a class="dropdown-item" routerLink="#">Gì đó</a>
+                        <a class="dropdown-item" routerLink="#">Gì đó</a>
+                      </div>
+                    </div></li>
                   </ul>
                 </nav>
               </div>

@@ -59,6 +59,7 @@ export class CvComponent implements OnInit {
     // @ts-ignore
     this.candidateService.save(candidate).subscribe(() => {
       console.log('thành công');
+      window.location.reload();
 // @ts-ignore
     },error=>{
       console.log(error);
