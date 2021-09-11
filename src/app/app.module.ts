@@ -40,6 +40,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
 // @ts-ignore
 import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
+import { Top5RecommendedCompanyComponent } from './component/post/top5-recommended-company/top5-recommended-company.component';
 
 
 
@@ -62,7 +63,8 @@ import {SearchAdvancedComponent} from './component/shared/search-advanced/search
     PostTopCompanyComponent,
     PostSearchComponent,
     SearchAdvancedComponent,
-    UploadCvComponent
+    UploadCvComponent,
+    Top5RecommendedCompanyComponent,
   ],
   imports: [
     BrowserModule,

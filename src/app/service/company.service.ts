@@ -39,4 +39,10 @@ export class CompanyService {
   updaterecommend(id: number){
     return this.httpClient.get(environment.API_URL + `/companies/recommend/${id}`)
   }
+  getMainPageCompanies(){
+    return this.httpClient.get(environment.API_URL + '/companies/main-page-recommended')
+  }
+  getAllRecommendedCompanies(){
+    return this.httpClient.get(environment.API_URL + '/companies/all-recommended')
+  }
 }
