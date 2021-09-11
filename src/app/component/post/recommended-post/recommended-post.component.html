@@ -20,7 +20,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;">
-                    <a routerLink="posts/view/{{post.id}}" style="font-size: 20px">{{post.title}}</a>
+                    <a routerLink="posts/view/{{post.id}}" style="font-size: 20px">{{post.title | uppercase}}</a>
                     <br>
                     Số lượng tuyển :{{post.quantity}},
                     Cấp bậc :{{post.position}},

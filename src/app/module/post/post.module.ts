@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { PostRoutingModule } from './post-routing.module';
+import {PostRoutingModule} from './post-routing.module';
 import {PostCreateComponent} from '../../component/post/post-create/post-create.component';
 import {PostEditComponent} from '../../component/post/post-edit/post-edit.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -14,7 +14,7 @@ import {PostSearchComponent} from '../../component/post/post-search/post-search.
 import {AdvancedComponent} from '../../component/advanced/advanced.component';
 import {AppModule} from '../../app.module';
 import {CarouselModule} from 'ngx-owl-carousel-o';
-
+import {UserModule} from '../user/user.module';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
     PostEditComponent,
     PostDetailComponent,
     AdvancedComponent
-    ],
+  ],
   imports: [
     CommonModule,
     PostRoutingModule,
@@ -31,11 +31,13 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
     SharedModule,
     NgxPaginationModule,
     FormsModule,
+    UserModule,
     CarouselModule
   ],
   exports: [
-  PostEditComponent,
-  PostDetailComponent,
-]
+    PostEditComponent,
+    PostDetailComponent,
+  ]
 })
-export class PostModule { }
+export class PostModule {
+}

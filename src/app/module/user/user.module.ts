@@ -19,10 +19,11 @@ import {CvComponent} from '../../component/user/cv/cv.component';
     UserRoutingModule,
     ReactiveFormsModule,
   ],
-  exports: [
-    RegisterFormComponent,
-    LoginFormComponent
-  ]
+    exports: [
+        RegisterFormComponent,
+        LoginFormComponent,
+        CvComponent
+    ]
 })
 export class UserModule {
 }

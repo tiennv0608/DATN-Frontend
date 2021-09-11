@@ -20,14 +20,13 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;">
-                    <a routerLink="posts/view/{{post.id}}" style="font-size: 20px">{{post.title}}</a>
+                    <a routerLink="posts/view/{{post.id}}" style="font-size: 20px">{{post.title | uppercase}}</a>
                     <br>
                     Số lượng tuyển :{{post.quantity}},
                     Cấp bậc :{{post.position}},
                     Kinh nghiệm :{{post.exp}}<br>
                     Thời gian kết thúc : {{post.expiredDate | date : "dd/MM/yyyy"}}
                   </p>
-                  <a href="#" class="btn btn-primary" style="font-size: 7px; ">Apply Now</a>
                 </div>
 
               </div>
