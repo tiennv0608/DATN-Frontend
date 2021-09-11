@@ -14,7 +14,7 @@ export class PostListComponent implements OnInit {
   posts: Post[] = [];
   page = 1;
   post?: Post;
-
+  isApply = false;
   constructor(private postService: PostService,
               private router: Router,
               private tokenService: TokenService,
@@ -35,23 +35,5 @@ export class PostListComponent implements OnInit {
     );
   }
 
-  applyCV(idPost: any) {
-    const idUser = this.tokenService.getToken().id;
-    this.postService.findById(idPost).subscribe(result => {
-      this.post = result;
-    });
-    const candidate = {
-      cv: {
-        id: 5
-      },
-      company: {
-        // @ts-ignore
-        id: this.post.company?.id
-      }
-    };
-    // @ts-ignore
-    this.candidateService.save(candidate).subscribe(() => {
-      console.log('thành công');
-    });
-  }
+
 }

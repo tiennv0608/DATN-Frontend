@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="card text-dark bg-light mb-3 mr-5 ml-10" *ngFor="let c of cvs">
-      <div class="card-body">
-        <h5 class="card-title">{{c.name}}</h5>
-        <p class="card-text"><a href="{{c.link}}">Xem cv</a></p>
+      <div class="card-body row">
+        <div class="col-8"><h3 class="card-title">{{c.name}}</h3></div>
+        <div class="col-4"><p class="card-text"><button (click)="applyCV(c.id)">Chọn</button></p></div>
       </div>
     </div>
   </div>

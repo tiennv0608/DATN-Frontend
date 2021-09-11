@@ -13,6 +13,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {PostSearchComponent} from '../../component/post/post-search/post-search.component';
 import {AdvancedComponent} from '../../component/advanced/advanced.component';
 import {AppModule} from '../../app.module';
+import {UserModule} from '../user/user.module';
 
 
 
@@ -23,14 +24,15 @@ import {AppModule} from '../../app.module';
     PostDetailComponent,
     AdvancedComponent
     ],
-  imports: [
-    CommonModule,
-    PostRoutingModule,
-    ReactiveFormsModule,
-    SharedModule,
-    NgxPaginationModule,
-    FormsModule
-  ],
+    imports: [
+        CommonModule,
+        PostRoutingModule,
+        ReactiveFormsModule,
+        SharedModule,
+        NgxPaginationModule,
+        FormsModule,
+        UserModule
+    ],
   exports: [
   PostEditComponent,
   PostDetailComponent,

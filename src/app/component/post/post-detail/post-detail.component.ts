@@ -15,7 +15,7 @@ export class PostDetailComponent implements OnInit {
   posts: any[] = [];
   page = 1;
   url = "/posts/view/";
-
+  idPost?: string;
   constructor(private postService: PostService,
               private tokenService: TokenService,
               private activatedRoute: ActivatedRoute,
@@ -68,4 +68,9 @@ export class PostDetailComponent implements OnInit {
       }
     );
   }
+
+  //
+  // onChangeId($event: string) {
+  //   console.log($event);
+  // }
 }
