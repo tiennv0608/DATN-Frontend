@@ -6,7 +6,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5 border">
-              <h2 class="login-heading text-center p-2">Thông tin tài khoản</h2>
+              <h1 class="login-heading text-center p-2">Thông tin tài khoản</h1>
               <div class="row">
                 <div class="col-md-12">
                   <div class="row mt-3">
@@ -29,11 +29,23 @@
                   <hr>
                   <div class="row mt-3">
                     <form [formGroup]="passwordForm" (ngSubmit)="changePassword()">
+                      <div class="input-group has-validation">
+                        <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock">*</i></span>
+                        <input [attr.type]="[isPassword]" class="form-control" formControlName="currentPassword"
+                               placeholder="Mật khẩu cũ">
+                        <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()"
+                              style="background: skyblue"><i
+                          class="bi bi-eye"></i></span>
+                        <span class="input-group-text" [hidden]="(isPassword== 'password')" (click)="showPass()"
+                              style="background: skyblue"><i
+                          class="bi bi-eye-slash"></i></span>
+                      </div>
+
                       <div class="row mt-3">
                         <div class="input-group has-validation">
                           <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock">*</i></span>
-                          <input [attr.type]="[isPassword]" class="form-control" formControlName="password"
-                                 placeholder="Mật khẩu">
+                          <input [attr.type]="[isPassword]" class="form-control" formControlName="newPassword"
+                                 placeholder="Mật khẩu mới">
                           <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()"
                                 style="background: skyblue"><i
                             class="bi bi-eye"></i></span>
@@ -41,11 +53,11 @@
                                 style="background: skyblue"><i
                             class="bi bi-eye-slash"></i></span>
                           <div class="col-md-12 alert alert-danger" role="alert"
-                               *ngIf="passwordForm.get('password')?.invalid && passwordForm.get('password')?.touched">
-                            <div *ngIf="passwordForm.get('password')?.errors?.required">
+                               *ngIf="passwordForm.get('newPassword')?.invalid && passwordForm.get('newPassword')?.touched">
+                            <div *ngIf="passwordForm.get('newPassword')?.errors?.required">
                               Mật khẩu không được để trống
                             </div>
-                            <div *ngIf="passwordForm.get('password')?.errors?.minlength">
+                            <div *ngIf="passwordForm.get('newPassword')?.errors?.minlength">
                               Mật khẩu phải ít nhất 8 ký tự
                             </div>
                           </div>
@@ -55,14 +67,14 @@
                       <div class="row mt-3">
                         <div class="input-group has-validation">
                           <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock">*</i></span>
-                          <input [attr.type]="[isConfirmedPassword]" class="form-control"
+                          <input [attr.type]="[isPassword]" class="form-control"
                                  formControlName="confirmedPassword"
                                  placeholder="Nhập lại mật khẩu">
-                          <span class="input-group-text" [hidden]="(isConfirmedPassword== 'text')"
-                                (click)="showConfirmedPass()" style="background: skyblue"><i
+                          <span class="input-group-text" [hidden]="(isPassword== 'text')"
+                                (click)="showPass()" style="background: skyblue"><i
                             class="bi bi-eye"></i></span>
-                          <span class="input-group-text" [hidden]="(isConfirmedPassword== 'password')"
-                                (click)="showConfirmedPass()" style="background: skyblue"><i
+                          <span class="input-group-text" [hidden]="(isPassword== 'password')"
+                                (click)="showPass()" style="background: skyblue"><i
                             class="bi bi-eye-slash"></i></span>
                           <div class="col-md-12 alert alert-danger" role="alert"
                                *ngIf="passwordForm.get('confirmedPassword')?.invalid && passwordForm.get('confirmedPassword')?.touched">
@@ -71,13 +83,13 @@
                             </div>
                           </div>
                           <div class="col-md-12 alert alert-danger" role="alert"
-                               *ngIf="passwordForm.value.password != passwordForm.value.confirmedPassword">
+                               *ngIf="passwordForm.value.newPassword != passwordForm.value.confirmedPassword">
                             Xác nhận mật khẩu không trùng khớp
                           </div>
                         </div>
                       </div>
                       <div class="row mt-3">
-                        <button class="btn btn-success">Đổi mật khẩu</button>
+                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#changeCompanyPassword">Đổi mật khẩu</button>
                       </div>
                     </form>
                   </div>
@@ -91,5 +103,20 @@
   </div>
 </div>
 
-
+<!-- Modal -->
+<div class="modal fade" id="changeCompanyPassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Đổi mật khẩu</h5>
+      </div>
+      <div class="modal-body">
+        {{message}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="reload()" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
 

@@ -7,6 +7,8 @@ import {Constant} from '../common/constant';
 import {UserLoginForm} from '../model/user/user-login-form';
 import {CompanyRegisterForm} from '../model/company/company-register-form';
 import {CompanyLoginForm} from '../model/company/company-login-form';
+import {environment} from '../../environments/environment.prod';
+import {CompanyPasswordForm} from '../model/company/company-password-form';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +32,9 @@ export class AuthService {
 
   loginCompany(companyLogin: CompanyLoginForm): Observable<ResponseBody> {
     return this.http.post<ResponseBody>(Constant.API_COMPANY_LOGIN, companyLogin);
+  }
+
+  changeCompanyPassword(id: any, companyPasswordForm: CompanyPasswordForm): Observable<any> {
+    return this.http.post(environment.API_URL + `/auth/companies/${id}/change-password`, companyPasswordForm);
   }
 }

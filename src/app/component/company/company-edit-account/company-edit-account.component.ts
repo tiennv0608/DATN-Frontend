@@ -4,6 +4,8 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {Company} from '../../../model/company/company';
 import {TokenService} from '../../../service/token.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../../service/auth.service';
+import {Constant} from '../../../common/constant';
 
 @Component({
   selector: 'app-company-edit-account',
@@ -17,16 +19,20 @@ export class CompanyEditAccountComponent implements OnInit {
   isConfirmedPassword = 'password';
   passwordForm = new FormGroup({});
   currentCompany?: Company = {};
+  message?: string = '';
+  isUpdated?: boolean = false;
 
   constructor(private tokenService: TokenService,
               private companyService: CompanyService,
+              private authService: AuthService,
               private router: Router) {
   }
 
   ngOnInit(): void {
     this.getInfo();
     this.passwordForm = new FormGroup({
-      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+      currentPassword: new FormControl(''),
+      newPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
       confirmedPassword: new FormControl('', [Validators.required])
     });
     const id = this.tokenService.getToken().id;
@@ -53,23 +59,26 @@ export class CompanyEditAccountComponent implements OnInit {
 
   changePassword() {
     const id = this.tokenService.getToken().id;
-    console.log(this.currentCompany?.password)
-    console.log(this.passwordForm.value.password)
-    if (this.passwordForm.value.password === this.currentCompany?.password) {
-      localStorage.setItem('message', 'Mật khẩu trùng với mật khẩu cũ');
-      this.router.navigate(['companies/account']);
-    } else {
-      const company = {
-        password: this.passwordForm.value.password,
-      };
-      this.companyService.update(id, company).subscribe(company => {
-        localStorage.setItem('message', 'Đổi mật khẩu thành công');
-        this.router.navigate(['companies/account']);
-      }, error => {
-        console.log(error);
-      });
-    }
+    const company = {
+      currentPassword: this.passwordForm.value.currentPassword,
+      newPassword: this.passwordForm.value.newPassword
+    };
+    this.authService.changeCompanyPassword(id, company).subscribe(data => {
+      console.log(data);
+      this.isUpdated = true;
+      this.message = 'Đổi mật khẩu thành công';
+    }, error => {
+      console.log(error)
+      console.log(error.responseCode);
+      console.log(Constant.PASSWORD_IS_NOT_TRUE);
+      if (error.error.responseCode == Constant.PASSWORD_IS_NOT_TRUE) {
+        this.message = 'Mật khẩu cũ không chính xác!'
+      } else {
+        this.message = 'Mật khẩu mới trùng với mật khẩu cũ!'
+      }
+    });
   }
+
 
   showPass(): void {
     this.isPassword = (this.isPassword === 'password') ? 'text' : 'password';
@@ -77,6 +86,14 @@ export class CompanyEditAccountComponent implements OnInit {
 
   showConfirmedPass(): void {
     this.isConfirmedPassword = (this.isConfirmedPassword === 'password') ? 'text' : 'password';
+  }
+
+  reload() {
+    if (this.isUpdated) {
+      this.router.navigate(['companies/account']);
+    } else {
+      this.passwordForm.reset();
+    }
   }
 
 }
