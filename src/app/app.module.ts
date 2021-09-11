@@ -35,7 +35,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { ListPostByIdComponent } from './component/post/list-post-by-id/list-post-by-id.component';
 import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
 import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
-import { SearchAdvancedComponent } from './component/shared/search-advanced/search-advanced.component';
+import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
+// @ts-ignore
+import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
+
 
 
 
@@ -56,7 +59,8 @@ import { SearchAdvancedComponent } from './component/shared/search-advanced/sear
     FooterComponent,
     PostTopCompanyComponent,
     PostSearchComponent,
-    SearchAdvancedComponent
+    SearchAdvancedComponent,
+    UploadCvComponent
   ],
     imports: [
         BrowserModule,
@@ -76,7 +80,8 @@ import { SearchAdvancedComponent } from './component/shared/search-advanced/sear
   exports: [
     SideBarComponent,
     MainComponent,
-    SearchAdvancedComponent
+    SearchAdvancedComponent,
+    UploadCvComponent
   ],
   bootstrap: [AppComponent]
 })

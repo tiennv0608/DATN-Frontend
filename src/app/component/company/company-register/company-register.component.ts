@@ -67,7 +67,9 @@ export class CompanyRegisterComponent implements OnInit {
 
   reload() {
     if (this.isRegistered){
-      this.router.navigateByUrl('companies/login');
+      this.router.navigate(['companies/login']).then(() => {
+        window.location.reload();
+      });
     }else {
       this.registerForm.reset();
     }
