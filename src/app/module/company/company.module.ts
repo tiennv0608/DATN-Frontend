@@ -14,6 +14,7 @@ import {CompanyEditAccountComponent} from '../../component/company/company-edit-
 import {ListPostByIdComponent} from '../../component/post/list-post-by-id/list-post-by-id.component';
 import {CompanyDetailsComponent} from '../../component/company/company-details/company-details.component';
 import {SharedModule} from '../shared/shared.module';
+import {AllRecommendedCompanyComponent} from '../../component/company/all-recommended-company/all-recommended-company.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {SharedModule} from '../shared/shared.module';
     AccountComponent,
     ListPostByIdComponent,
     InfoComponent,
-    CompanyDetailsComponent
+    CompanyDetailsComponent,
+    AllRecommendedCompanyComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import {SharedModule} from '../shared/shared.module';
     CompanyInfoEditComponent,
     // UploadComponent,
     AccountComponent,
-    InfoComponent]
+    InfoComponent,
+    AllRecommendedCompanyComponent]
 })
 export class CompanyModule {
 }

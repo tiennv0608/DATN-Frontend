@@ -18,6 +18,7 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
 // @ts-ignore
 import {AngularFireModule} from '@angular/fire';
 
+import {SharedModule} from './module/shared/shared.module';
 import {SearchComponent} from './component/post/search/search.component';
 import {NewPostComponent} from './component/post/new-post/new-post.component';
 
@@ -34,16 +35,17 @@ import {MatMenuModule} from '@angular/material/menu';
 // @ts-ignore
 import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
 import {RecommendedPostComponent} from './component/post/recommended-post/recommended-post.component';
-// @ts-ignore
-import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
 import { PostManagementComponent } from './component/admin/post-management/post-management.component';
+import { Top5RecommendedCompanyComponent } from './component/post/top5-recommended-company/top5-recommended-company.component';
+import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
+import {AdvancedComponent} from './component/advanced/advanced.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent,
     MainComponent,
     SearchComponent,
     NewPostComponent,
@@ -58,7 +60,9 @@ import { PostManagementComponent } from './component/admin/post-management/post-
     PostTopCompanyComponent,
     PostSearchComponent,
     SearchAdvancedComponent,
-    UploadCvComponent
+    AdvancedComponent,
+    UploadCvComponent,
+    Top5RecommendedCompanyComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,7 +86,7 @@ import { PostManagementComponent } from './component/admin/post-management/post-
     SideBarComponent,
     MainComponent,
     SearchAdvancedComponent,
-    UploadCvComponent
+    UploadCvComponent,
   ],
   bootstrap: [AppComponent]
 })

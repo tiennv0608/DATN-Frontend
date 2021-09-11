@@ -12,7 +12,6 @@
             <th>Tên doanh nghiệp</th>
             <th>Tên viết tắt</th>
             <th>Số điện thoại</th>
-            <th>Ảnh</th>
             <th>Địa chỉ</th>
             <th>Mô tả</th>
             <th>Số lượng nhân viên</th>
@@ -28,12 +27,17 @@
             <th>{{company.companyName}}</th>
             <th>{{company.shortName}}</th>
             <th>{{company.phone}}</th>
-            <th><img [src]="company.image" class="img-fluid rounded-start p-3" alt="..."
-                     style="width: 100px;height: 100px"></th>
             <th>{{company.address}}</th>
             <th>{{company.description}}</th>
             <th>{{company.numberOfStaff}}</th>
-            <th>{{company.linkGoogle}}</th>
+            <th style="display: -webkit-box;
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    height: 116px;
+    -webkit-box-orient: vertical;
+    ">{{company.linkGoogle}}</th>
             <th>{{company.website}}</th>
             <th *ngIf="company.recommended==true">Được đề xuất</th>
             <th *ngIf="company.recommended==false">Mặc định</th>

@@ -21,8 +21,7 @@ import {UserModule} from '../user/user.module';
   declarations: [
     PostCreateComponent,
     PostEditComponent,
-    PostDetailComponent,
-    AdvancedComponent
+    PostDetailComponent
   ],
   imports: [
     CommonModule,
