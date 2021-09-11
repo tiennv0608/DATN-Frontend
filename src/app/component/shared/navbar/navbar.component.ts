@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {TokenService} from '../../../service/token.service';
 import {Router} from '@angular/router';
 import {Company} from '../../../model/company/company';
@@ -24,8 +24,7 @@ export class NavbarComponent implements OnInit {
     link: new FormControl(),
     nameCV: new FormControl(),
   });
-  // @ts-ignore
-  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger | undefined;
 
   constructor(private tokenService: TokenService,
               private router: Router,
