@@ -5,6 +5,7 @@ import {Company} from '../../../model/company/company';
 import {CompanyService} from '../../../service/company.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CvService} from '../../../service/cv.service';
+import {MatMenuTrigger} from '@angular/material/menu';
 
 @Component({
   selector: 'app-navbar',
@@ -23,6 +24,9 @@ export class NavbarComponent implements OnInit {
     link: new FormControl(),
     nameCV: new FormControl(),
   });
+  // @ts-ignore
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+
   constructor(private tokenService: TokenService,
               private router: Router,
               private companyService: CompanyService,
@@ -62,6 +66,9 @@ export class NavbarComponent implements OnInit {
     const checkImage = company?.image == '' || company?.image == null;
     const checkPassword = company?.password == ''|| company?.password == null;
     return checkName && checkEmail && checkImage && checkPassword;
+  }
+  navigatemainsite(){
+    this.router.navigateByUrl("/");
   }
 
 
