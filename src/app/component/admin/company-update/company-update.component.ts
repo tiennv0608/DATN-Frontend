@@ -1,15 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {CompanyService} from '../../../service/company.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CompanyService} from '../../../service/company.service';
 import {TokenService} from '../../../service/token.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-company-info-edit',
-  templateUrl: './company-info-edit.component.html',
-  styleUrls: ['./company-info-edit.component.scss']
+  selector: 'app-company-update',
+  templateUrl: './company-update.component.html',
+  styleUrls: ['./company-update.component.scss']
 })
-export class CompanyInfoEditComponent implements OnInit {
+export class CompanyUpdateComponent implements OnInit {
   infoEditForm: FormGroup = new FormGroup({
     companyName: new FormControl(),
     shortName: new FormControl(),
@@ -32,11 +32,12 @@ export class CompanyInfoEditComponent implements OnInit {
 
   constructor(private companyService: CompanyService,
               private tokenService: TokenService,
-              private router: Router) {
+              private router: Router,
+              private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    const id = this.tokenService.getToken().id;
+    const id = this.activatedRoute.snapshot.params.id;
     this.findById(id);
   }
 
@@ -46,6 +47,9 @@ export class CompanyInfoEditComponent implements OnInit {
       this.infoEditForm = new FormGroup({
         companyName: new FormControl(company.companyName, [Validators.required]),
         shortName: new FormControl(company.shortName),
+        // email: new FormControl(company.email, [Validators.required]),
+        // password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+        // confirmedPassword: new FormControl('', [Validators.required]),
         phone: new FormControl(company.phone, [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
         description: new FormControl(company.description),
         address: new FormControl(company.address),
@@ -60,10 +64,12 @@ export class CompanyInfoEditComponent implements OnInit {
   }
 
   edit() {
-    const id = this.tokenService.getToken().id;
+    const id = this.activatedRoute.snapshot.params.id;
     const company = {
       companyName: this.infoEditForm.value.companyName,
       shortName: this.infoEditForm.value.shortName,
+      // email: this.infoEditForm.value.email,
+      // password: this.infoEditForm.value.password,
       image: this.image,
       phone: this.infoEditForm.value.phone,
       description: this.infoEditForm.value.description,
@@ -95,6 +101,8 @@ export class CompanyInfoEditComponent implements OnInit {
   }
 
   reload() {
-    this.router.navigate(['companies/info']);
+    const id = this.activatedRoute.snapshot.params.id;
+    this.router.navigate(['/admin/company-info/'+id]);
   }
+
 }

@@ -46,7 +46,6 @@ export class CompanyLoginComponent implements OnInit {
         this.isLogin = true;
         this.message = 'Đăng nhập thành công';
         this.tokenService.setToken(response.responseData);
-
       } else {
         this.message = 'Đăng nhập thất bại! Hãy thử lại';
       }

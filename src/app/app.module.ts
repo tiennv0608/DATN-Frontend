@@ -2,15 +2,15 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {PostListComponent} from './component/post/post-list/post-list.component';
-import {RecommendedPostComponent} from './component/post/recommended-post/recommended-post.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import {SearchbarComponent} from './component/shared/searchbar/searchbar.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SearchbarComponent } from './component/shared/searchbar/searchbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {PostSearchComponent} from './component/post/post-search/post-search.component';
+import { PostSearchComponent } from './component/post/post-search/post-search.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import {environment} from '../environments/environment.prod';
 import {MainComponent} from './component/post/main/main.component';
 // @ts-ignore
@@ -25,12 +25,19 @@ import {SideBarComponent} from './component/post/side-bar/side-bar.component';
 import {PreloaderStartComponent} from './component/shared/preloader-start/preloader-start.component';
 import {NavbarComponent} from './component/shared/navbar/navbar.component';
 import {FooterComponent} from './component/shared/footer/footer.component';
+import {JwPaginationComponent, JwPaginationModule} from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {PostTopCompanyComponent} from './component/post/post-top-company/post-top-company.component';
-import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
-import {JwPaginationModule} from 'jw-angular-pagination';
 import {CarouselModule} from 'ngx-owl-carousel-o';
+import {MatMenuModule} from '@angular/material/menu';
+// @ts-ignore
+import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
+import {RecommendedPostComponent} from './component/post/recommended-post/recommended-post.component';
+// @ts-ignore
+import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
+import { PostManagementComponent } from './component/admin/post-management/post-management.component';
+
 
 
 @NgModule({
@@ -50,7 +57,8 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
     FooterComponent,
     PostTopCompanyComponent,
     PostSearchComponent,
-    SearchAdvancedComponent
+    SearchAdvancedComponent,
+    UploadCvComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +73,7 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
     MatOptionModule,
     FormsModule,
     ReactiveFormsModule,
+    MatMenuModule,
     CarouselModule,
     IvyCarouselModule
   ],
@@ -72,7 +81,8 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
   exports: [
     SideBarComponent,
     MainComponent,
-    SearchAdvancedComponent
+    SearchAdvancedComponent,
+    UploadCvComponent
   ],
   bootstrap: [AppComponent]
 })

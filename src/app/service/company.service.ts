@@ -33,4 +33,10 @@ export class CompanyService {
   updateenable(id: number){
     return this.httpClient.get(environment.API_URL + `/companies/enable/${id}`)
   }
+  getAllByEnable(){
+    return this.httpClient.get(environment.API_URL + '/companies/list')
+  }
+  updaterecommend(id: number){
+    return this.httpClient.get(environment.API_URL + `/companies/recommend/${id}`)
+  }
 }

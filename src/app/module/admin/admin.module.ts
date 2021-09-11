@@ -3,18 +3,33 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import {CompanyAccountComponent} from '../../component/admin/company-account/company-account.component';
-
+import {CompanyListComponent} from '../../component/admin/company-list/company-list.component';
+import {CompanyUpdateComponent} from '../../component/admin/company-update/company-update.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {SharedModule} from '../shared/shared.module';
+import {CompanyInfoComponent} from '../../component/admin/company-info/company-info.component';
+import {PostManagementComponent} from '../../component/admin/post-management/post-management.component';
 
 @NgModule({
   declarations: [
-    CompanyAccountComponent
+    CompanyAccountComponent,
+    CompanyListComponent,
+    CompanyUpdateComponent,
+    CompanyInfoComponent,
+    PostManagementComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule,
+    SharedModule,
   ],
   exports: [
-    CompanyAccountComponent
+    CompanyAccountComponent,
+    CompanyListComponent,
+    CompanyUpdateComponent,
+    CompanyInfoComponent,
+    PostManagementComponent
   ]
 })
 export class AdminModule { }

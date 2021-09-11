@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {MainComponent} from './component/post/main/main.component';
 import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
 
+
 const routes: Routes = [
   {
     path: '',

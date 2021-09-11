@@ -1,8 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {TokenService} from '../../../service/token.service';
 import {Router} from '@angular/router';
 import {Company} from '../../../model/company/company';
 import {CompanyService} from '../../../service/company.service';
+import {FormControl, FormGroup} from '@angular/forms';
+import {CvService} from '../../../service/cv.service';
+import {MatMenuTrigger} from '@angular/material/menu';
 
 @Component({
   selector: 'app-navbar',
@@ -14,10 +17,19 @@ export class NavbarComponent implements OnInit {
   token: string = '';
   type: string = '';
   name?: string;
+  linkCv? = '';
+  checkValid = false;
+  UpCVForm: FormGroup = new FormGroup({
+    user: new FormControl(),
+    link: new FormControl(),
+    nameCV: new FormControl(),
+  });
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger | undefined;
 
   constructor(private tokenService: TokenService,
               private router: Router,
-              private companyService: CompanyService) {
+              private companyService: CompanyService,
+              private cvService: CvService) {
   }
 
   ngOnInit(): void {
@@ -53,5 +65,35 @@ export class NavbarComponent implements OnInit {
     const checkImage = company?.image == '' || company?.image == null;
     const checkPassword = company?.password == ''|| company?.password == null;
     return checkName && checkEmail && checkImage && checkPassword;
+  }
+  navigatemainsite(){
+    this.router.navigateByUrl("/");
+  }
+
+
+  // @ts-ignore
+  onChangeCv($event) {
+    this.linkCv = $event
+    this.checkValid = true;
+  }
+
+  check(){
+    this.checkValid = false;
+    this.linkCv = '';
+  }
+
+  save() {
+    const id = this.tokenService.getToken().id;
+    const cv = {
+      name : this.UpCVForm.value.nameCV,
+      link : this.linkCv,
+      user:{
+        id: id
+      }
+    }
+    // @ts-ignore
+    this.cvService.save(cv).subscribe(()=>{
+      window.location.reload();
+    })
   }
 }

@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PreloaderStartComponent} from '../../component/shared/preloader-start/preloader-start.component';
 import {NavbarComponent} from '../../component/shared/navbar/navbar.component';
@@ -8,15 +8,20 @@ import {NewPostComponent} from '../../component/post/new-post/new-post.component
 import {SideBarComponent} from '../../component/post/side-bar/side-bar.component';
 import {RecommendedPostComponent} from '../../component/post/recommended-post/recommended-post.component';
 import {SearchAdvancedComponent} from '../../component/shared/search-advanced/search-advanced.component';
-
+import {UploadComponent} from '../../component/upload/upload.component';
 
 @NgModule({
   declarations: [
+    UploadComponent
+
   ],
   imports: [
     CommonModule
   ],
-  exports: []
+  exports: [
+    UploadComponent
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule {
 }
