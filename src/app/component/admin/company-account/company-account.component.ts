@@ -9,7 +9,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class CompanyAccountComponent implements OnInit {
   companies:any[]=[];
-  page = 1;
   constructor(private companyservice: CompanyService,
               private activatedRoute: ActivatedRoute,
               private router: Router) { }

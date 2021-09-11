@@ -35,7 +35,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { ListPostByIdComponent } from './component/post/list-post-by-id/list-post-by-id.component';
 import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
 import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
-
+import { CompanyUpdateComponent } from './component/admin/company-update/company-update.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -56,20 +57,21 @@ import { CompanyDetailsComponent } from './component/company/company-details/com
     PostTopCompanyComponent,
     PostSearchComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        AngularFireStorageModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig),
-        JwPaginationModule,
-        NgxPaginationModule,
-        BrowserAnimationsModule,
-        MatSelectModule,
-        MatOptionModule,
-        FormsModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    JwPaginationModule,
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatOptionModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatMenuModule
+  ],
   providers: [],
   exports: [
     SideBarComponent,
