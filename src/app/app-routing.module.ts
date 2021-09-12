@@ -2,6 +2,7 @@ import {NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {MainComponent} from './component/post/main/main.component';
 import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
+import {UnderConstructionComponent} from './component/shared/under-construction/under-construction.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,6 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./module/admin/admin.module').then(module => module.AdminModule)
   }
-
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Post} from '../../model/post/post';
 import {Router} from '@angular/router';
 import {PostService} from '../../service/post.service';
@@ -48,9 +48,9 @@ export class AdvancedComponent implements OnInit {
       params.set('salary', this.salary * 1000000);
     }
     if (this.exp !== '') {
-      params.set('exp', this.exp+ ' năm');
+      params.set('exp', this.exp + ' năm');
     }
-    console.log(params.toString())
+    console.log(params.toString());
     this.postService.search(params).subscribe(data => {
       localStorage.removeItem('search-advanced');
       localStorage.setItem('search-advanced', JSON.stringify(data));
@@ -63,6 +63,4 @@ export class AdvancedComponent implements OnInit {
       console.log(error);
     });
   }
-
-
 }

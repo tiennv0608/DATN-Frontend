@@ -1,10 +1,16 @@
-<div class="job-post-company pt-120 pb-120">
-  <div class="container">
-    <div class="row justify-content-between border" style="background-color: ghostwhite">
+<!--<div class="job-post-company">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-12">-->
+
+<!--      </div>-->
+<!--    </div>-->
+    <div class="row border" style="background-color: ghostwhite">
+      <h1 class="text-center">Chi tiết công việc</h1>
       <!-- Left Content -->
       <div class="col-xl-7 col-lg-8">
         <!-- job single -->
-        <div class="single-job-items mb-50">
+        <div class="single-job-items">
           <div class="job-items">
             <div class="col-3 company-img company-img-details">
               <a ><img [src]="post.company?.image" width="85px" height="85px"></a>
@@ -35,7 +41,7 @@
 
       </div>
       <!-- Right Content -->
-      <div class="col-xl-4 col-lg-4">
+      <div class="col-xl-5 col-lg-4">
         <div class="post-details3  mb-50" style="background-color: white">
           <!-- Small Section Tittle -->
           <div class="small-section-tittle">
@@ -47,8 +53,10 @@
             <li>Hình thức làm việc : <span>{{post.workForm?.name}}</span></li>
             <li>Ngày hết hạn : <span>{{post.expiredDate | date :"dd/MM/yyyy"}}</span></li>
           </ul>
-          <div class="apply-btn2">
-            <a *ngIf="isLogin" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalUpCV" style="color: white">Apply Now</a>
+          <div class="apply-btn2 text-center">
+<!--            <a *ngIf="isLogin && !isUser" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalUpCV" style="color: white" disabled></a>-->
+            <button *ngIf="isLogin && !isApplied && isUser" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalUpCV" style="color: white">Apply Now</button>
+            <button *ngIf="isLogin && isApplied && isUser" class="btn btn-primary" style="color: white" disabled>Bạn đã nộp CV</button>
             <p *ngIf="!isLogin"><a routerLink="/users/login" class="btn btn-primary">Đăng nhập để nộp CV</a></p>
           </div>
         </div>
@@ -82,18 +90,21 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+<!--  </div>-->
+<!--</div>-->
 <!-- Modal -->
 <div class="modal fade" id="exampleModalUpCV" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="isLogin">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Bài đăng mới</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Nộp CV</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" *ngIf="existedCv">
         <app-cv></app-cv>
+      </div>
+      <div class="modal-body" *ngIf="!existedCv">
+        <p>Bạn chưa có CV</p>
       </div>
     </div>
   </div>

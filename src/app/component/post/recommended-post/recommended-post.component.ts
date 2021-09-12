@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Post} from '../../../model/post/post';
 import {PostService} from '../../../service/post.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-recommended-post',
@@ -10,7 +11,8 @@ import {PostService} from '../../../service/post.service';
 export class RecommendedPostComponent implements OnInit {
   posts: Post[] = [];
 
-  constructor(private postService: PostService) {
+  constructor(private postService: PostService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -23,5 +25,9 @@ export class RecommendedPostComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  viewDetail(id: any) {
+    this.router.navigate(['posts/view', id]);
   }
 }

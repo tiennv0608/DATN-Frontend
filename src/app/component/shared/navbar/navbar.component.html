@@ -6,7 +6,7 @@
         <div class="row align-items-center pt-4 pb-4">
           <div class="col-lg-3 col-md-2" >
             <!-- Logo -->
-            <div class="logo " >
+            <div class="logo" >
               <a routerLink="/"><img src="../../../../assets/img/logo/logo.png" alt="" ></a>
             </div>
           </div>
@@ -16,26 +16,26 @@
               <div class="main-menu">
                 <nav class="d-none d-lg-block">
                   <ul id="navigation" class="tu" *ngIf="token === ''">
-                    <li><a routerLink="/">Trang chủ</a></li>
+<!--                    <li><a routerLink="/">Trang chủ</a></li>-->
 <!--                    <li><a routerLink="/search-advanced">Tìm kiếm nâng cao</a></li>-->
                   </ul>
                   <ul id="navigation1" class="tu" *ngIf="(token !== '') && (type === 'USER')">
-                    <li><button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary" type="button" aria-expanded="false" (click)="navigatemainsite()">
-                      Trang chủ
-                    </button>
-                    </li>
+<!--                    <li><button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary" type="button" aria-expanded="false" (click)="navigatemainsite()">-->
+<!--                      Trang chủ-->
+<!--                    </button>-->
+<!--                    </li>-->
                   </ul>
                   <ul id="navigation2" class="tu" *ngIf="(token !== '') && (type === 'COMPANY')">
-                    <li><button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary" type="button" aria-expanded="false" (click)="navigatemainsite()">
-                      Trang chủ
-                    </button>
-                    </li>
+<!--                    <li><button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary" type="button" aria-expanded="false" (click)="navigatemainsite()">-->
+<!--                      Trang chủ-->
+<!--                    </button>-->
+<!--                    </li>-->
                   </ul>
                   <ul id="navigation3" class="tu" *ngIf="(token !== '') && (type === 'ADMIN')">
-                    <li><button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary" type="button" aria-expanded="false" (click)="navigatemainsite()">
-                      Trang chủ
-                    </button>
-                    </li>
+<!--                    <li><button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary" type="button" aria-expanded="false" (click)="navigatemainsite()">-->
+<!--                      Trang chủ-->
+<!--                    </button>-->
+<!--                    </li>-->
                     <li><div class="dropdown">
                       <button style="background-color: whitesmoke; border: none; color: #0b0b0b" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Quản lý doanh nghiệp
@@ -71,8 +71,7 @@
                         <ul class="submenu">
                           <li><a href="#">Thông tin cá nhân</a></li>
                           <li><a routerLink="/users/cv">CV của tôi</a></li>
-                          <br>
-                          <li><a (click)="logOut()" class="btn btn-success">Đăng xuất</a></li>
+                          <li><a (click)="logOut()">Đăng xuất</a></li>
                         </ul>
                       </li>
                     </ul>
@@ -151,7 +150,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
       </div>
     </div>
   </div>

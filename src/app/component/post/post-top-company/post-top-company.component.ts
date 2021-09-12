@@ -14,6 +14,32 @@ export class PostTopCompanyComponent implements OnInit {
 
   posts: Post[] = [];
 
+  customOptions: OwlOptions = {
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: true,
+    navSpeed: 700,
+    navText: ['<i class="bi bi-arrow-left-circle"></i>', '<i class="bi bi-arrow-right-circle"></i>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+  };
+
 
   constructor(private postService: PostService,
               private router: Router) {

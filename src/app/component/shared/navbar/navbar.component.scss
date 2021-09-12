@@ -9,3 +9,7 @@ ul>li>a{
 .dropdown:hover>.dropdown-menu {
   display: block;
 }
+
+.logo a:hover {
+  background: none !important;
+}

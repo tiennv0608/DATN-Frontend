@@ -32,11 +32,12 @@ export class SearchAdvancedComponent implements OnInit {
     }
     if (this.salary !== '') {
       // @ts-ignore
-      params.set('salary', this.salary * 1000000);
+      params.set('salary', +this.salary * 1000000);
     }
     if (this.exp !== '') {
       params.set('exp', this.exp + ' năm');
     }
+    // console.log(params.toString());
     this.postService.search(params).subscribe(data => {
       console.log(data);
       localStorage.removeItem('search-advanced');

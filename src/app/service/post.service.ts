@@ -80,4 +80,12 @@ export class PostService {
     // @ts-ignore
     return this.http.put(`${environment.API_URL}/posts/recommended/${id}`);
   }
+
+  getTop1Companies(): Observable<any> {
+    return this.http.get(`${environment.API_URL}/posts/get-top-1-companies`);
+  }
+
+  getTop6PostRecommended(): Observable<any> {
+    return this.http.get(`${environment.API_URL}/posts/top-6-recommended`);
+  }
 }

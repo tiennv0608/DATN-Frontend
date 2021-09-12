@@ -39,6 +39,10 @@ import { PostManagementComponent } from './component/admin/post-management/post-
 import { Top5RecommendedCompanyComponent } from './component/post/top5-recommended-company/top5-recommended-company.component';
 import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
 import {AdvancedComponent} from './component/advanced/advanced.component';
+import { Top1CompanyComponent } from './component/company/top1-company/top1-company.component';
+import { Top6RecommendedComponent } from './component/post/top6-recommended/top6-recommended.component';
+import { CompanyPostComponent } from './component/post/company-post/company-post.component';
+import { UnderConstructionComponent } from './component/shared/under-construction/under-construction.component';
 
 
 
@@ -50,7 +54,6 @@ import {AdvancedComponent} from './component/advanced/advanced.component';
     SearchComponent,
     NewPostComponent,
     SideBarComponent,
-    RecommendedPostComponent,
     PreloaderStartComponent,
     NavbarComponent,
     FooterComponent,
@@ -59,10 +62,10 @@ import {AdvancedComponent} from './component/advanced/advanced.component';
     FooterComponent,
     PostTopCompanyComponent,
     PostSearchComponent,
-    SearchAdvancedComponent,
-    AdvancedComponent,
     UploadCvComponent,
     Top5RecommendedCompanyComponent,
+    Top1CompanyComponent,
+    Top6RecommendedComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,13 +82,13 @@ import {AdvancedComponent} from './component/advanced/advanced.component';
     ReactiveFormsModule,
     MatMenuModule,
     CarouselModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    SharedModule
   ],
   providers: [],
   exports: [
     SideBarComponent,
     MainComponent,
-    SearchAdvancedComponent,
     UploadCvComponent,
   ],
   bootstrap: [AppComponent]

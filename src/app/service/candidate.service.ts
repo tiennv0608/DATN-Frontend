@@ -15,10 +15,11 @@ export class CandidateService {
     return this.httpClient.get<Candidate[]>(environment.API_URL + '/candidates');
   }
 
-  save(cv: Cv): Observable<Candidate> {
-    return this.httpClient.post<Candidate>(environment.API_URL + '/candidates', cv);
+  save(cv: Cv): Observable<any> {
+    return this.httpClient.post<any>(environment.API_URL + '/candidates', cv);
   }
-  findByCompanyId(id: any): Observable<Candidate> {
+  findByPostId(id: any): Observable<Candidate> {
     return this.httpClient.get<Candidate>(environment.API_URL + `/candidates/${id}`);
   }
+
 }

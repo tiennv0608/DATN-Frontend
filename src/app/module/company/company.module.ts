@@ -15,6 +15,8 @@ import {ListPostByIdComponent} from '../../component/post/list-post-by-id/list-p
 import {CompanyDetailsComponent} from '../../component/company/company-details/company-details.component';
 import {SharedModule} from '../shared/shared.module';
 import {AllRecommendedCompanyComponent} from '../../component/company/all-recommended-company/all-recommended-company.component';
+import {CompanyPostComponent} from '../../component/post/company-post/company-post.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -27,13 +29,15 @@ import {AllRecommendedCompanyComponent} from '../../component/company/all-recomm
     ListPostByIdComponent,
     InfoComponent,
     CompanyDetailsComponent,
-    AllRecommendedCompanyComponent
+    AllRecommendedCompanyComponent,
+    CompanyPostComponent,
   ],
   imports: [
     CommonModule,
     CompanyRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    NgxPaginationModule
   ],
   exports: [CompanyLoginComponent,
     CompanyRegisterComponent,

@@ -28,5 +28,8 @@ export class AllRecommendedCompanyComponent implements OnInit {
     });
   }
 
+  showUnderConstruction() {
+    this.router.navigate(['companies/error']);
+  }
 
 }
