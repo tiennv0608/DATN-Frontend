@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {CompanyDetailsComponent} from '../../component/company/company-details/company-details.component';
 // @ts-ignore
 import {AllRecommendedCompanyComponent} from '../../component/company/all-recommended-company/all-recommended-company.component';
+import {UnderConstructionComponent} from '../../component/shared/under-construction/under-construction.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,10 @@ const routes: Routes = [
   {
     path: 'all-recommended',
     component: AllRecommendedCompanyComponent
+  },
+  {
+    path: 'error',
+    component: UnderConstructionComponent
   }
 ];
 
