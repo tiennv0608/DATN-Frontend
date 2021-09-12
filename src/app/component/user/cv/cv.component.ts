@@ -20,6 +20,8 @@ export class CvComponent implements OnInit {
   // @Output()
   // idPost= new EventEmitter<string>();
   idPost: any;
+  isApplied: boolean = false;
+  message: string = '';
 
   constructor(private cvService: CvService,
               private tokenService: TokenService,
@@ -45,8 +47,6 @@ export class CvComponent implements OnInit {
   }
 
   applyCV(idCV: any) {
-    console.log(idCV);
-    console.log(this.idPost);
     const candidate = {
       cv: {
         id: idCV
@@ -55,14 +55,14 @@ export class CvComponent implements OnInit {
         id: this.idPost
       }
     };
-    console.log(candidate);
     // @ts-ignore
     this.candidateService.save(candidate).subscribe(() => {
-      console.log('thành công');
+      this.message = 'Bạn đã nộp CV thành công!'
       window.location.reload();
 // @ts-ignore
-    },error=>{
+    }, error => {
       console.log(error);
+      this.message = 'Bạn đã nộp CV thất bại';
     });
   }
 }

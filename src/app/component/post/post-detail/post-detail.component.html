@@ -53,8 +53,9 @@
             <li>Hình thức làm việc : <span>{{post.workForm?.name}}</span></li>
             <li>Ngày hết hạn : <span>{{post.expiredDate | date :"dd/MM/yyyy"}}</span></li>
           </ul>
-          <div class="apply-btn2">
-            <a *ngIf="isLogin" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalUpCV" style="color: white">Apply Now</a>
+          <div class="apply-btn2 text-center">
+            <button *ngIf="isLogin && !isApplied" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalUpCV" style="color: white">Apply Now</button>
+            <button *ngIf="isLogin && isApplied" class="btn btn-primary" style="color: white" disabled>Bạn đã nộp CV</button>
             <p *ngIf="!isLogin"><a routerLink="/users/login" class="btn btn-primary">Đăng nhập để nộp CV</a></p>
           </div>
         </div>
@@ -95,11 +96,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Bài đăng mới</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Nộp CV</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" *ngIf="existedCv">
         <app-cv></app-cv>
+      </div>
+      <div class="modal-body" *ngIf="!existedCv">
+        <p>Bạn chưa có CV</p>
       </div>
     </div>
   </div>
