@@ -41,6 +41,7 @@ import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
 import {AdvancedComponent} from './component/advanced/advanced.component';
 import { Top1CompanyComponent } from './component/company/top1-company/top1-company.component';
 import { Top6RecommendedComponent } from './component/post/top6-recommended/top6-recommended.component';
+import { CompanyPostComponent } from './component/post/company-post/company-post.component';
 
 
 
