@@ -15,13 +15,15 @@ import {AdvancedComponent} from '../../component/advanced/advanced.component';
 import {AppModule} from '../../app.module';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {UserModule} from '../user/user.module';
+import {RecommendedPostComponent} from '../../component/post/recommended-post/recommended-post.component';
 
 
 @NgModule({
   declarations: [
     PostCreateComponent,
     PostEditComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    RecommendedPostComponent
   ],
   imports: [
     CommonModule,

@@ -9,6 +9,10 @@ body {
 a {
   text-decoration: none !important;
 }
+a:hover {
+  background: #d0c6c6;
+  cursor: pointer;
+}
 h1 {
   font-size: 17px !important;
   margin: auto;

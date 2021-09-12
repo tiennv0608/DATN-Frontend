@@ -4,11 +4,12 @@ import {PostService} from '../../../service/post.service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-recommended-post',
-  templateUrl: './recommended-post.component.html',
-  styleUrls: ['./recommended-post.component.scss']
+  selector: 'app-top6-recommended',
+  templateUrl: './top6-recommended.component.html',
+  styleUrls: ['./top6-recommended.component.scss']
 })
-export class RecommendedPostComponent implements OnInit {
+export class Top6RecommendedComponent implements OnInit {
+
   posts: Post[] = [];
 
   constructor(private postService: PostService,
@@ -16,18 +17,14 @@ export class RecommendedPostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getRecommendedPosts();
+    this.getTop6Recommended();
   }
 
-  getRecommendedPosts() {
-    this.postService.getRecommendedPosts().subscribe(posts => {
+  getTop6Recommended() {
+    this.postService.getTop6PostRecommended().subscribe(posts => {
       this.posts = posts;
     }, error => {
       console.log(error);
     });
-  }
-
-  viewDetail(id: any) {
-    this.router.navigate(['posts/view', id]);
   }
 }
