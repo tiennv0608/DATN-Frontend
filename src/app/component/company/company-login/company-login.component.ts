@@ -40,17 +40,12 @@ export class CompanyLoginComponent implements OnInit {
       email: this.loginForm.value.email,
       password: this.loginForm.value.password
     }
-    console.log(companyLogin);
     this.authService.loginCompany(companyLogin).subscribe((response: ResponseBody) => {
-      if (response.responseCode === Constant.SUCCESS) {
         this.isLogin = true;
         this.message = 'Đăng nhập thành công';
         this.tokenService.setToken(response.responseData);
-      } else {
-        this.message = 'Đăng nhập thất bại! Hãy thử lại';
-      }
     }, error => {
-      console.log('Error system:' + error);
+      this.message = 'Sai tài khoản hoặc mật khẩu';
     });
   }
 

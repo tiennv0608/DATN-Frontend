@@ -7,7 +7,7 @@
           <div class="candidateinfo">
             <div class="userPic"><img [src]="company.image" class="img-fluid rounded-start p-3" alt="..."
                                       style="width: 100px;height: 100px"></div>
-            <div class="title">{{company.companyName}}</div>
+            <div class="title"><a routerLink="/companies/view/{{company.id}}">{{company.companyName}}</a></div>
             <div class="desi">{{company.shortName}}</div>
             <div class="loctext"><i class="fa fa-map-marker" aria-hidden="true"></i> {{company.address}}</div>
             <div class="clearfix"></div>

@@ -39,6 +39,7 @@ import { PostManagementComponent } from './component/admin/post-management/post-
 import { Top5RecommendedCompanyComponent } from './component/post/top5-recommended-company/top5-recommended-company.component';
 import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
 import {AdvancedComponent} from './component/advanced/advanced.component';
+import { Top1CompanyComponent } from './component/company/top1-company/top1-company.component';
 
 
 
@@ -63,6 +64,7 @@ import {AdvancedComponent} from './component/advanced/advanced.component';
     AdvancedComponent,
     UploadCvComponent,
     Top5RecommendedCompanyComponent,
+    Top1CompanyComponent,
   ],
   imports: [
     BrowserModule,
