@@ -1,5 +1,7 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {AngularFireStorage, AngularFireStorageReference} from '@angular/fire/storage';
+import {Router} from '@angular/router';
+import {error} from 'protractor';
 
 @Component({
   selector: 'app-upload',
@@ -13,9 +15,11 @@ export class UploadComponent implements OnInit {
   checkUploadFile = false;
   @Output()
   givenURLtoCreate = new EventEmitter<string>();
+  message: string = '';
 
 
-  constructor(private angularFireStore: AngularFireStorage) {
+  constructor(private angularFireStore: AngularFireStorage,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -33,8 +37,9 @@ export class UploadComponent implements OnInit {
     const allowedExtensions =
       /(\.jpg|\.jpeg|\.png|\.gif)$/i;
     if (!allowedExtensions.exec(name)) {
-      alert("a Sơn k khôn");
-    }else {
+      this.message = 'Đây không phải là file ảnh';
+    } else {
+      this.message = 'Đăng ảnh thành công';
       this.ref = this.angularFireStore.ref(name);
       this.ref.put(this.selectedFile)
         .then(snapshot => {
@@ -49,6 +54,18 @@ export class UploadComponent implements OnInit {
         .catch(error => {
           console.log(`Failed to upload avatar and get link ${error}`);
         });
+    }
+  }
+
+  reload() {
+    if (this.checkUploadFile) {
+      this.router.navigate(['companies/edit-info']).then(() => {
+        location.reload();
+      }, error => {
+        console.log(error);
+      });
+    } else {
+      return;
     }
   }
 }

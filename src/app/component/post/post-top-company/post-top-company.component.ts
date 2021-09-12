@@ -22,8 +22,6 @@ export class PostTopCompanyComponent implements OnInit {
     touchDrag: true,
     pullDrag: false,
     dots: true,
-    nav: true,
-    autoHeight: false,
     navSpeed: 700,
     navText: ['<i class="bi bi-arrow-left-circle"></i>', '<i class="bi bi-arrow-right-circle"></i>'],
     responsive: {

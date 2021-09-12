@@ -1,5 +1,6 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {AngularFireStorage, AngularFireStorageReference} from '@angular/fire/storage';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-upload-cv',
@@ -13,9 +14,10 @@ export class UploadCvComponent implements OnInit {
   checkUploadFile = false;
   @Output()
   givenURLtoCreate = new EventEmitter<string>();
+  message: string = '';
 
-
-  constructor(private angularFireStore: AngularFireStorage) {
+  constructor(private angularFireStore: AngularFireStorage,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -33,8 +35,9 @@ export class UploadCvComponent implements OnInit {
     const allowedExtensions =
       /(\.docx|\.pdf)$/i;
     if (!allowedExtensions.exec(name)) {
-      alert("sai form rồi đ m" )
-    }else {
+      this.message = 'Định dạng file không chính xác'
+    } else {
+      this.message = 'Tạo CV thành công'
       this.ref = this.angularFireStore.ref(name);
       this.ref.put(this.selectedFile)
         .then(snapshot => {
@@ -49,6 +52,18 @@ export class UploadCvComponent implements OnInit {
         .catch(error => {
           console.log(`Failed to upload avatar and get link ${error}`);
         });
+    }
+  }
+
+  reload() {
+    if (this.checkUploadFile) {
+      this.router.navigate(['companies/edit-info']).then(() => {
+        location.reload();
+      }, error => {
+        console.log(error);
+      });
+    } else {
+      return;
     }
   }
 }

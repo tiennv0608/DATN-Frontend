@@ -29,6 +29,7 @@ export class PostDetailComponent implements OnInit {
 
   isApplied: boolean = false;
   existedCv: boolean = false;
+  isUser: boolean = false;
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
@@ -40,6 +41,7 @@ export class PostDetailComponent implements OnInit {
       this.checkLogin();
       this.checkCv();
       this.checkApplied();
+      this.checkUser();
     });
   }
 
@@ -70,6 +72,13 @@ export class PostDetailComponent implements OnInit {
       }, error => {
         console.log(error);
       });
+    }
+  }
+
+  checkUser() {
+    const role = this.tokenService.getToken().roles[0].authority;
+    if (role == 'USER') {
+      this.isUser = true;
     }
   }
 

@@ -9,17 +9,24 @@ import {SideBarComponent} from '../../component/post/side-bar/side-bar.component
 import {RecommendedPostComponent} from '../../component/post/recommended-post/recommended-post.component';
 import {SearchAdvancedComponent} from '../../component/shared/search-advanced/search-advanced.component';
 import {UploadComponent} from '../../component/upload/upload.component';
+import {AdvancedComponent} from '../../component/advanced/advanced.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-    UploadComponent
-
+    UploadComponent,
+    SearchAdvancedComponent,
+    AdvancedComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgxPaginationModule,
+    FormsModule
   ],
   exports: [
-    UploadComponent
+    UploadComponent,
+    SearchAdvancedComponent,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })

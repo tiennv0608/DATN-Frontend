@@ -60,8 +60,6 @@ import { Top6RecommendedComponent } from './component/post/top6-recommended/top6
     FooterComponent,
     PostTopCompanyComponent,
     PostSearchComponent,
-    SearchAdvancedComponent,
-    AdvancedComponent,
     UploadCvComponent,
     Top5RecommendedCompanyComponent,
     Top1CompanyComponent,
@@ -82,13 +80,13 @@ import { Top6RecommendedComponent } from './component/post/top6-recommended/top6
     ReactiveFormsModule,
     MatMenuModule,
     CarouselModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    SharedModule
   ],
   providers: [],
   exports: [
     SideBarComponent,
     MainComponent,
-    SearchAdvancedComponent,
     UploadCvComponent,
   ],
   bootstrap: [AppComponent]
