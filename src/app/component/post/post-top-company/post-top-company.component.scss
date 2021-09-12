@@ -14,4 +14,13 @@ h1 {
 
 carousel {
   background-color: #EEEEEE;
+  marquee-loop: infinite !important;
+}
+
+.carousel-cell img:hover {
+  cursor: pointer !important;
+}
+
+img:hover {
+  cursor: pointer !important;
 }

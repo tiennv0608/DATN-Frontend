@@ -47,6 +47,8 @@ export class PostDetailComponent implements OnInit {
   checkLogin() {
     if (this.tokenService.getToken().token !== '') {
       this.isLogin = true;
+    } else {
+      console.log('Chưa đăng nhập');
     }
   }
 
