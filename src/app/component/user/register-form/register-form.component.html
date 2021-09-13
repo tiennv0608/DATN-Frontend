@@ -5,7 +5,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
-              <h3 class="login-heading text-center">Đăng ký thành viên với tư cách người tìm việc</h3>
+              <h2 class="login-heading font-weight-bold text-center">Đăng ký thành viên với tư cách người tìm việc</h2>
 <!--              <div class="alert alert-success" role="alert" *ngIf="isRegistered">{{message}}</div>-->
 <!--              <div class="alert alert-warning" role="alert" *ngIf="!isRegistered && (message != '')">{{message}}</div>-->
               <form [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
@@ -74,12 +74,12 @@
                 <div class="col mt-3">
                   <div class="input-group has-validation">
                     <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
-                    <input [attr.type]="[isConfirmedPassword]" class="form-control" formControlName="confirmedPassword"
+                    <input [attr.type]="[isPassword]" class="form-control" formControlName="confirmedPassword"
                            placeholder="Confirm password">
-                    <span class="input-group-text" [hidden]="(isConfirmedPassword== 'text')"
-                          (click)="showConfirmedPass()" style="background: skyblue"><i class="bi bi-eye"></i></span>
-                    <span class="input-group-text" [hidden]="(isConfirmedPassword== 'password')"
-                          (click)="showConfirmedPass()" style="background: skyblue"><i class="bi bi-eye-slash"></i></span>
+                    <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()" style="background: skyblue"><i
+                      class="bi bi-eye"></i></span>
+                    <span class="input-group-text" [hidden]="(isPassword== 'password')" (click)="showPass()" style="background: skyblue"><i
+                      class="bi bi-eye-slash"></i></span>
                     <div class="col-md-12 alert alert-danger" role="alert"
                          *ngIf="registerForm.get('confirmedPassword')?.invalid && registerForm.get('confirmedPassword')?.touched">
                       <div *ngIf="registerForm.get('confirmedPassword')?.errors?.required">
@@ -93,7 +93,7 @@
                   </div>
                 </div>
                 <div class="col mt-3">
-                  <button class="btn head-btn2 form-control"
+                  <button class="btn btn-primary form-control"
                           [disabled]="registerForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal6">Đăng ký
                   </button>
                 </div>
