@@ -26,11 +26,7 @@ export class PageComponent implements OnInit {
               private ac: ActivatedRoute
               ) {
   }
-// expForm = new  FormGroup({
-//   salary: new FormControl('', [Validators.required]),
-//   year: new FormControl('', [Validators.required]),
-//   sill: new FormControl('', [Validators.required, Validators.minLength(6)])
-// })
+
   userForm: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),

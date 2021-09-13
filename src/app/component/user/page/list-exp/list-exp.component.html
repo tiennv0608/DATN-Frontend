@@ -39,7 +39,7 @@
   <div class="col-6">
     <h1>Thông tin kinh nghiệm</h1>
     <div>
-      <a routerLink="/exp/create">Create</a>
+      <a routerLink="/exp/create">Tạo mới</a>
     </div>
     <table class="table ">
       <thead>
@@ -58,8 +58,8 @@
         <td>{{expList.skill}}</td>
         <td>{{expList.year}}</td>
         <td>{{expList.salary}}</td>
-        <td><a [routerLink]="['/exp/edit/',expList.id]">Edit</a></td>
-        <td><a [routerLink]="['/exp/delete/',expList.id]">Delete</a></td>
+        <td><a [routerLink]="['/exp/edit/',expList.id]">Sửa</a></td>
+        <td><a [routerLink]="['/exp/delete/',expList.id]">Xóa</a></td>
       </tr>
       </tbody>
     </table>
