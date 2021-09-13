@@ -31,9 +31,9 @@ user: User[] = [];
       this.expService.getById(this.id).subscribe(result => {
           this.exp = result;
           this.expForm = new FormGroup({
-            skill: new FormControl(this.exp.skill),
-            year: new FormControl(this.exp.year),
-            salary: new FormControl(this.exp.salary)
+            skill: new FormControl(this.exp.skill,[Validators.required]),
+            year: new FormControl(this.exp.year,[Validators.required]),
+            salary: new FormControl(this.exp.salary,[Validators.required])
           });
           // console.log(result);
         }, error => {
