@@ -58,15 +58,14 @@ export class CvComponent implements OnInit {
       };
       // @ts-ignore
       this.candidateService.save(candidate).subscribe(() => {
-        this.message = 'Bạn đã nộp CV thành công!'
+        this.message = 'Bạn đã nộp CV thành công!';
         window.location.reload();
       }, error => {
         console.log(error);
         this.message = 'Bạn đã nộp CV thất bại';
       });
     } else {
-      this.message = 'Bạn không nộp được CV'
+      this.message = 'Bạn không nộp được CV';
     }
-
   }
 }
