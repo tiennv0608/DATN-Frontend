@@ -12,7 +12,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PostSearchComponent } from './component/post/post-search/post-search.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {environment} from '../environments/environment.prod';
-import {MainComponent} from './component/post/main/main.component';
+import {MainComponent} from './component/main/main.component';
 // @ts-ignore
 import {AngularFireStorageModule} from '@angular/fire/storage';
 // @ts-ignore
