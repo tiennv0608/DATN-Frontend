@@ -5,7 +5,7 @@ import {PostEditComponent} from '../../component/post/post-edit/post-edit.compon
 import {PostDetailComponent} from '../../component/post/post-detail/post-detail.component';
 import {AdvancedComponent} from '../../component/advanced/advanced.component';
 import {PostSearchComponent} from '../../component/post/post-search/post-search.component';
-import {RecommendedPostComponent} from '../../component/post/recommended-post/recommended-post.component';
+import { RecommendedPostComponent } from 'src/app/component/post/recommended-post/recommended-post.component';
 
 const routes: Routes = [
   {
