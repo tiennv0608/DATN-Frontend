@@ -1,27 +1,24 @@
-<div class="container-fluid">
-  <div class="row text-center p-2 m-2">
-    <h2 class="text-center font-weight-bold">Top công ty tuyển dụng hàng đầu</h2>
-    <div class="col-1"></div>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <a (click)="viewDetail(firstPost.company?.id)"><img [src]="firstPost.company?.image" style="width: 100%" alt="..."></a>
-        </div>
-        <div class="carousel-item" *ngFor="let post of posts">
-          <a (click)="viewDetail(post.company?.id)"><img [src]="post.company?.image" style="width: 100%" alt="..."></a>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-              data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-              data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    <div class="col-1"></div>
+<!--<div class="row">-->
+<div class="row mt-3">
+  <div class="col-12">
+    <h1 class="text-center font-weight-bold uppercase">Top công ty tuyển dụng hàng đầu</h1>
   </div>
+  <!--    <div>-->
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let post of posts">
+      <ng-template carouselSlide id="{{post.company?.id}}">
+        <img [src]="post.company?.image" (click)="viewDetail(post.company?.id)" width="50%">
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  <!--  </div>-->
+  <!--  <carousel [cellsToShow]="5" [loop]="true" [autoplay]="true" [autoplayInterval]="3000" [overflowCellsLimit]="1"-->
+  <!--            style="width: 100%">-->
+  <!--    <div class="carousel-cell p-1" *ngFor="let post of posts">-->
+  <!--      <img [src]="post.company?.image" width="100%" style="border: #0b0b0b" (click)="viewDetail(post.company?.id)">-->
+  <!--    </div>-->
+  <!--  </carousel>-->
 </div>
+<!--</div>-->
+
+

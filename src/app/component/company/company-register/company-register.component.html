@@ -1,3 +1,22 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Đăng kí</h5>
+      </div>
+      <div class="modal-body" *ngIf="!isRegistered && message !== ''">
+        Tài khoản đã tồn tại!
+      </div>
+      <div class="modal-body" *ngIf="isRegistered">
+        Đăng kí thành công
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="reload()" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container-fluid">
   <div class="row no-gutter"
        style="background: url('../../../../assets/img/hero/h1_hero.jpg'); background-size: cover; background-repeat: no-repeat">
@@ -111,8 +130,8 @@
 
                 <div class="col mt-3">
                   <button class="btn head-btn2 form-control"
-                          [disabled]="registerForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal">Đăng
-                    ký
+                          [disabled]="registerForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal2" >
+                    Đăng ký
                   </button>
                 </div>
 
@@ -129,23 +148,5 @@
     </div>
   </div>
 </div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-      </div>
-      <div class="modal-body" *ngIf="!isRegistered && message !== ''">
-        Tài khoản đã tồn tại!
-      </div>
-      <div class="modal-body" *ngIf="isRegistered">
-        Đăng kí thành công
-      </div>
-      <div class="modal-footer">
-        <button type="button" (click)="reload()" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 

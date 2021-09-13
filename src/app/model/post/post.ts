@@ -21,4 +21,5 @@ export interface Post {
   status?: string;
   company?: Company;
   city?: City;
+  recommended?: boolean;
 }

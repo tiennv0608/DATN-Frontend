@@ -1,5 +1,11 @@
-<div class="row">
-  <div class="col-6" *ngFor="let post of posts | paginate: {itemsPerPage: 6, currentPage: page}">
+<!--<div class="row">-->
+<div class="row mt-3">
+  <div class="col-12 text-center">
+    <h1 class="display-4 font-weight-bold uppercase">Tin tuyển dụng</h1>
+  </div>
+</div>
+<div class="row mt-2">
+  <div class="col-4" *ngFor="let post of posts | paginate: {itemsPerPage: 9, currentPage: page}">
     <div class="card mb-3" style="max-width: 650px;">
       <div class="row g-0">
         <div class="col-md-3">
@@ -14,24 +20,20 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;">
-              <a routerLink="posts/view/{{post.id}}" style="font-size: 20px">{{post.title}}</a>
-              <br>
-              Số lượng tuyển :{{post.quantity}},
-              Cấp bậc :{{post.position}},
-              Kinh nghiệm :{{post.exp}}<br>
-              Thời gian kết thúc : {{post.expiredDate | date : "dd/MM/yyyy"}}
-            </p>
-            <a href="#" class="btn btn-primary" style="font-size: 7px; ">Apply Now</a>
-          </div>
-
+                  <a routerLink="posts/view/{{post.id}}" style="font-size: 20px">{{post.title | uppercase}}</a>
+                  <br>
+                  Số lượng tuyển :{{post.quantity}},
+                  Cấp bậc :{{post.position}},
+                  Kinh nghiệm :{{post.exp}}<br>
+                  Thời gian kết thúc : {{post.expiredDate | date : "dd/MM/yyyy"}}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
 </div>
 <pagination-controls (pageChange)="page = $event"></pagination-controls>
-
+<!--</div>-->

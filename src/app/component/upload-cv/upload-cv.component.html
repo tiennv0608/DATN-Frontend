@@ -1,0 +1,24 @@
+<div>
+  <input type="file" id="file" (change)="onFileChange($event)"
+         class="form-control btn btn-primary" width="20% !important">
+</div>
+<div class="spinner-border" role="status" *ngIf="checkUploadFile">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<input class="btn btn-primary mt-3" type="button" (click)="onUpload()" value="Đăng CV" data-bs-toggle="modal" data-bs-target="#uploadCV">
+
+<div class="modal fade" id="uploadCV" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Đăng ảnh</h5>
+      </div>
+      <div class="modal-body">
+        {{message}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="reload()" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

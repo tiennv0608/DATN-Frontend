@@ -41,9 +41,6 @@ export class LoginFormComponent implements OnInit {
         this.isLogin = true;
         this.message = 'Đăng nhập thành công';
         this.tokenService.setToken(response.responseData);
-        this.router.navigate(['']).then(() => {
-          window.location.reload();
-        });
       } else {
         this.message = 'Sai email hoặc mật khẩu, hãy nhập lại!';
       }
@@ -52,8 +49,12 @@ export class LoginFormComponent implements OnInit {
     });
   }
   reload() {
-    this.router.navigate(['']).then(() => {
+    if (this.isLogin){
+      this.router.navigate(['']).then(() => {
+        window.location.reload();
+      });
+    }else {
       window.location.reload();
-    });
+    }
   }
 }

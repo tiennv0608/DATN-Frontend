@@ -1,5 +1,5 @@
-<body class="bg-white">
-<div class="container-fluid">
+
+<div class="container-fluid mt-3">
   <div class="row no-gutter"
        style="background: url('../../../../assets/img/hero/h1_hero.jpg'); background-size: cover; background-repeat: no-repeat">
     <div class="col-md-8 col-lg-6">
@@ -7,10 +7,10 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
-<!--              <div *ngIf="!isLogin">-->
-<!--                <div class="alert alert-success" role="alert" *ngIf="message == 'Hãy điền vào form'">{{message}}</div>-->
-<!--                <div class="alert alert-danger" role="alert" *ngIf="message == 'Sai email hoặc mật khẩu, hãy nhập lại!'">{{message}}</div>-->
-<!--              </div>-->
+              <!--              <div *ngIf="!isLogin">-->
+              <!--                <div class="alert alert-success" role="alert" *ngIf="message == 'Hãy điền vào form'">{{message}}</div>-->
+              <!--                <div class="alert alert-danger" role="alert" *ngIf="message == 'Sai email hoặc mật khẩu, hãy nhập lại!'">{{message}}</div>-->
+              <!--              </div>-->
               <h3 class="login-heading mb-4 text-center">Đăng nhập với tư cách người tìm việc</h3>
               <form [formGroup]="loginForm" (ngSubmit)="login()">
                 <div class="col mt-3">
@@ -36,7 +36,8 @@
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
                   <label class="custom-control-label" for="customCheck1">Nhớ mật khẩu</label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mt-3"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal5">
                   Đăng nhập
                 </button>
                 <div class="text-center mt-3 pt-3">
@@ -56,17 +57,18 @@
   </div>
 </div>
 
-</body>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="exampleModalLabel">Đăng nhập</h5>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" *ngIf="isLogin">
         Đăng nhập thành công
+      </div>
+      <div class="modal-body" *ngIf="!isLogin">
+        Đăng nhập thất bại
       </div>
       <div class="modal-footer">
         <button type="button" (click)="reload()" class="btn btn-primary" data-bs-dismiss="modal">OK</button>

@@ -2,11 +2,8 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {PostListComponent} from './component/post/post-list/post-list.component';
-import {SummaryPostComponent} from './component/post/summary-post/summary-post.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import { CompanyRegisterComponent } from './component/company/company-register/company-register.component';
-import { CompanyLoginComponent } from './component/company/company-login/company-login.component';
 import { SearchbarComponent } from './component/shared/searchbar/searchbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
@@ -21,9 +18,6 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
 // @ts-ignore
 import {AngularFireModule} from '@angular/fire';
 
-
-
-
 import {SharedModule} from './module/shared/shared.module';
 import {SearchComponent} from './component/post/search/search.component';
 import {NewPostComponent} from './component/post/new-post/new-post.component';
@@ -34,6 +28,7 @@ import {NavbarComponent} from './component/shared/navbar/navbar.component';
 import {FooterComponent} from './component/shared/footer/footer.component';
 import {JwPaginationComponent, JwPaginationModule} from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';
+<<<<<<< HEAD
 import { ListPostByIdComponent } from './component/post/list-post-by-id/list-post-by-id.component';
 import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
 import { CompanyDetailsComponent } from './component/company/company-details/company-details.component';
@@ -42,17 +37,34 @@ import { EditExpComponent } from './component/user/page/edit-exp/edit-exp.compon
 import { DeleteExpComponent } from './component/user/page/delete-exp/delete-exp.component';
 import { CreateExpComponent } from './component/user/page/create-exp/create-exp.component';
 import { ListExpComponent } from './component/user/page/list-exp/list-exp.component';
+=======
+import {PostTopCompanyComponent} from './component/post/post-top-company/post-top-company.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+import {CarouselModule} from 'ngx-owl-carousel-o';
+import {MatMenuModule} from '@angular/material/menu';
+// @ts-ignore
+import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
+import {RecommendedPostComponent} from './component/post/recommended-post/recommended-post.component';
+import { PostManagementComponent } from './component/admin/post-management/post-management.component';
+import { Top5RecommendedCompanyComponent } from './component/post/top5-recommended-company/top5-recommended-company.component';
+import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
+import {AdvancedComponent} from './component/advanced/advanced.component';
+import { Top1CompanyComponent } from './component/company/top1-company/top1-company.component';
+import { Top6RecommendedComponent } from './component/post/top6-recommended/top6-recommended.component';
+import { CompanyPostComponent } from './component/post/company-post/company-post.component';
+import { UnderConstructionComponent } from './component/shared/under-construction/under-construction.component';
+
+
+>>>>>>> 30e9d3308119b4329f8d5e1b1ddca29e7bf59eb2
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent,
     MainComponent,
     SearchComponent,
     NewPostComponent,
     SideBarComponent,
-    SummaryPostComponent,
     PreloaderStartComponent,
     NavbarComponent,
     FooterComponent,
@@ -61,11 +73,36 @@ import { ListExpComponent } from './component/user/page/list-exp/list-exp.compon
     FooterComponent,
     PostTopCompanyComponent,
     PostSearchComponent,
+<<<<<<< HEAD
     PageComponent,
     EditExpComponent,
     DeleteExpComponent,
     CreateExpComponent,
     ListExpComponent
+=======
+    UploadCvComponent,
+    Top5RecommendedCompanyComponent,
+    Top1CompanyComponent,
+    Top6RecommendedComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    JwPaginationModule,
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatOptionModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatMenuModule,
+    CarouselModule,
+    IvyCarouselModule,
+    SharedModule
+>>>>>>> 30e9d3308119b4329f8d5e1b1ddca29e7bf59eb2
   ],
     imports: [
         BrowserModule,
@@ -84,7 +121,8 @@ import { ListExpComponent } from './component/user/page/list-exp/list-exp.compon
   providers: [],
   exports: [
     SideBarComponent,
-    MainComponent
+    MainComponent,
+    UploadCvComponent,
   ],
   bootstrap: [AppComponent]
 })

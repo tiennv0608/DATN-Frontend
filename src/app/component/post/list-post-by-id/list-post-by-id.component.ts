@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Post} from '../../../model/post/post';
 import {PostService} from '../../../service/post.service';
 import {TokenService} from '../../../service/token.service';
@@ -11,7 +11,8 @@ import {Router} from '@angular/router';
 })
 export class ListPostByIdComponent implements OnInit {
   posts: Post[] = [];
-id:any;
+  id: any;
+
   constructor(private postService: PostService,
               private tokenService: TokenService,
               private router: Router) {
@@ -32,14 +33,15 @@ id:any;
       }
     );
   }
-  updateStatus(id: any){
-    this.postService.updateStatus(id).subscribe(()=>{
+
+  updateStatus(id: any) {
+    this.postService.updateStatus(id).subscribe(() => {
       window.location.reload();
-    })
+    });
   }
 
   close() {
-    this.router.navigateByUrl('/companies/find-all')
+    this.router.navigateByUrl('/companies/find-all');
   }
 
   updateId(id: any) {

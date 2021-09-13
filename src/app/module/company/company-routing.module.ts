@@ -10,6 +10,9 @@ import {ListPostByIdComponent} from '../../component/post/list-post-by-id/list-p
 import {MatSliderModule} from '@angular/material/slider';
 import {HttpClientModule} from '@angular/common/http';
 import {CompanyDetailsComponent} from '../../component/company/company-details/company-details.component';
+// @ts-ignore
+import {AllRecommendedCompanyComponent} from '../../component/company/all-recommended-company/all-recommended-company.component';
+import {UnderConstructionComponent} from '../../component/shared/under-construction/under-construction.component';
 
 const routes: Routes = [
   {
@@ -43,6 +46,14 @@ const routes: Routes = [
   {
     path: 'view/:id',
     component: CompanyDetailsComponent
+  },
+  {
+    path: 'all-recommended',
+    component: AllRecommendedCompanyComponent
+  },
+  {
+    path: 'error',
+    component: UnderConstructionComponent
   }
 ];
 
