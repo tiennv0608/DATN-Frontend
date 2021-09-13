@@ -16,7 +16,6 @@ import {AppModule} from '../../app.module';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {UserModule} from '../user/user.module';
 import {RecommendedPostComponent} from '../../component/post/recommended-post/recommended-post.component';
-import {CompanyPostComponent} from '../../component/post/company-post/company-post.component';
 
 
 @NgModule({

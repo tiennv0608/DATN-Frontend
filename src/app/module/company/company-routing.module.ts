@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {CompanyDetailsComponent} from '../../component/company/company-details/company-details.component';
 // @ts-ignore
 import {AllRecommendedCompanyComponent} from '../../component/company/all-recommended-company/all-recommended-company.component';
+// @ts-ignore
 import {UnderConstructionComponent} from '../../component/shared/under-construction/under-construction.component';
 
 const routes: Routes = [

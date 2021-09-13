@@ -9,6 +9,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../shared/shared.module';
 import {CompanyInfoComponent} from '../../component/admin/company-info/company-info.component';
 import {PostManagementComponent} from '../../component/admin/post-management/post-management.component';
+import {AdminLoginComponent} from '../../component/admin/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {PostManagementComponent} from '../../component/admin/post-management/pos
     CompanyListComponent,
     CompanyUpdateComponent,
     CompanyInfoComponent,
-    PostManagementComponent
+    PostManagementComponent,
+    AdminLoginComponent,
   ],
   imports: [
     CommonModule,

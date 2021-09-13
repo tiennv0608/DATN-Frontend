@@ -43,6 +43,7 @@ import { Top1CompanyComponent } from './component/company/top1-company/top1-comp
 import { Top6RecommendedComponent } from './component/post/top6-recommended/top6-recommended.component';
 import { CompanyPostComponent } from './component/post/company-post/company-post.component';
 import { UnderConstructionComponent } from './component/shared/under-construction/under-construction.component';
+import { AdminLoginComponent } from './component/admin/admin-login/admin-login.component';
 
 
 
