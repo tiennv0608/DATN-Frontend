@@ -37,4 +37,7 @@ export class AuthService {
   changeCompanyPassword(id: any, companyPasswordForm: CompanyPasswordForm): Observable<any> {
     return this.http.post(environment.API_URL + `/auth/companies/${id}/change-password`, companyPasswordForm);
   }
+  changeUserPassword(id: any, companyPasswordForm: CompanyPasswordForm): Observable<any> {
+    return this.http.post(environment.API_URL + `/auth/users/${id}/change-password`, companyPasswordForm);
+  }
 }
