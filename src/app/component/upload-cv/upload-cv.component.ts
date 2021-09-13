@@ -36,6 +36,7 @@ export class UploadCvComponent implements OnInit {
       /(\.docx|\.pdf)$/i;
     if (!allowedExtensions.exec(name)) {
       this.message = 'Định dạng file không chính xác'
+      this.reload();
     } else {
       this.message = 'Tạo CV thành công'
       this.ref = this.angularFireStore.ref(name);
@@ -56,8 +57,8 @@ export class UploadCvComponent implements OnInit {
   }
 
   reload() {
-    if (this.checkUploadFile) {
-      this.router.navigate(['companies/edit-info']).then(() => {
+    if (!this.checkUploadFile) {
+      this.router.navigate(['users/cv']).then(() => {
         location.reload();
       }, error => {
         console.log(error);

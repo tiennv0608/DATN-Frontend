@@ -58,7 +58,7 @@ export class UploadComponent implements OnInit {
   }
 
   reload() {
-    if (this.checkUploadFile) {
+    if (!this.checkUploadFile) {
       this.router.navigate(['companies/edit-info']).then(() => {
         location.reload();
       }, error => {
