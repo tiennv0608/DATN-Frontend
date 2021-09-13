@@ -47,22 +47,25 @@ export class CvComponent implements OnInit {
   }
 
   applyCV(idCV: any) {
-    const candidate = {
-      cv: {
-        id: idCV
-      },
-      post: {
-        id: this.idPost
-      }
-    };
-    // @ts-ignore
-    this.candidateService.save(candidate).subscribe(() => {
-      this.message = 'Bạn đã nộp CV thành công!'
-      window.location.reload();
-// @ts-ignore
-    }, error => {
-      console.log(error);
-      this.message = 'Bạn đã nộp CV thất bại';
-    });
+    if (this.idPost != '') {
+      const candidate = {
+        cv: {
+          id: idCV
+        },
+        post: {
+          id: this.idPost
+        }
+      };
+      // @ts-ignore
+      this.candidateService.save(candidate).subscribe(() => {
+        this.message = 'Bạn đã nộp CV thành công!';
+        window.location.reload();
+      }, error => {
+        console.log(error);
+        this.message = 'Bạn đã nộp CV thất bại';
+      });
+    } else {
+      this.message = 'Bạn không nộp được CV';
+    }
   }
 }

@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class RecommendedPostComponent implements OnInit {
   posts: Post[] = [];
+  page = 1;
 
   constructor(private postService: PostService,
               private router: Router) {

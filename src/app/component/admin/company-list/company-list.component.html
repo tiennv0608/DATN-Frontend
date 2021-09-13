@@ -13,9 +13,7 @@
             <th>Tên viết tắt</th>
             <th>Số điện thoại</th>
             <th>Địa chỉ</th>
-            <th>Mô tả</th>
             <th>Số lượng nhân viên</th>
-            <th>Google Map</th>
             <th>Website</th>
             <th>Trạng thái đề xuất</th>
             <th colspan="2">Hành động</th>
@@ -28,16 +26,7 @@
             <th>{{company.shortName}}</th>
             <th>{{company.phone}}</th>
             <th>{{company.address}}</th>
-            <th>{{company.description}}</th>
             <th>{{company.numberOfStaff}}</th>
-            <th style="display: -webkit-box;
-    width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 3;
-    height: 116px;
-    -webkit-box-orient: vertical;
-    ">{{company.linkGoogle}}</th>
             <th>{{company.website}}</th>
             <th *ngIf="company.recommended==true">Được đề xuất</th>
             <th *ngIf="company.recommended==false">Mặc định</th>

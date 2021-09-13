@@ -1,16 +1,15 @@
 <div class="container-fluid">
-  <div class="row no-gutter"
-       style="background: url('../../../../assets/img/hero/h1_hero.jpg'); background-size: cover; background-repeat: no-repeat">
+  <div class="row no-gutter">
     <div class="col-md-12 col-lg-12">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5 border">
-              <h2 class="login-heading text-center p-2">Thông tin công ty</h2>
-              <div class="row text-center" *ngIf="message">
-                <div class="alert alert-success" role="alert" *ngIf="isUpdated">{{message}}</div>
-                <div class="alert alert-danger" role="alert" *ngIf="!isUpdated">{{message}}</div>
-              </div>
+            <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5 border" style="background-color: whitesmoke">
+              <h1 class="login-heading text-center p-2">Thông tin công ty</h1>
+<!--              <div class="row text-center" *ngIf="message">-->
+<!--                <div class="alert alert-success" role="alert" *ngIf="isUpdated">{{message}}</div>-->
+<!--                <div class="alert alert-danger" role="alert" *ngIf="!isUpdated">{{message}}</div>-->
+<!--              </div>-->
               <div class="row">
                 <div class="col-md-5">
                   <div class="col-12" style="border-radius: 50%; height: 256px; width: 256px;">
@@ -92,7 +91,7 @@
                   <hr>
                   <div class="row mt-3">
                     <div class="col-12 text-center">
-                      <a class="btn btn-warning font-weight-bold" [routerLink]="['/admin/company-updateinfo/'+company.id]">Sửa thông tin</a>
+                      <a class="btn btn-primary" [routerLink]="['/admin/company-updateinfo/'+company.id]">Sửa thông tin</a>
                     </div>
                   </div>
                 </div>

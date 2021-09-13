@@ -29,7 +29,7 @@ import {UnderConstructionComponent} from '../../component/shared/under-construct
   exports: [
     UploadComponent,
     SearchAdvancedComponent,
-    UnderConstructionComponent,
+    // UnderConstructionComponent,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,6 +1,6 @@
 import {NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {MainComponent} from './component/post/main/main.component';
+import {MainComponent} from './component/main/main.component';
 import {PageComponent} from "./component/user/page/page.component";
 import {ListExpComponent} from "./component/user/page/list-exp/list-exp.component";
 import {CreateExpComponent} from "./component/user/page/create-exp/create-exp.component";

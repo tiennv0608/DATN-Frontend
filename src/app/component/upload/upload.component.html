@@ -14,7 +14,7 @@
         {{message}}
       </div>
       <div class="modal-footer">
-        <button type="button" (click)="reload()" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        <button type="button" (click)="reload()" class="btn btn-primary" data-bs-dismiss="modal" *ngIf="checkUploadFile">OK</button>
       </div>
     </div>
   </div>

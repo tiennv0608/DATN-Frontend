@@ -31,7 +31,6 @@ export class UploadComponent implements OnInit {
   }
 
   onUpload(): any {
-    this.checkUploadFile = true;
     // @ts-ignore
     const name = this.selectedFile.name;
     const allowedExtensions =
@@ -39,6 +38,7 @@ export class UploadComponent implements OnInit {
     if (!allowedExtensions.exec(name)) {
       this.message = 'Đây không phải là file ảnh';
     } else {
+      this.checkUploadFile = true;
       this.message = 'Đăng ảnh thành công';
       this.ref = this.angularFireStore.ref(name);
       this.ref.put(this.selectedFile)
@@ -58,7 +58,7 @@ export class UploadComponent implements OnInit {
   }
 
   reload() {
-    if (this.checkUploadFile) {
+    if (!this.checkUploadFile) {
       this.router.navigate(['companies/edit-info']).then(() => {
         location.reload();
       }, error => {
