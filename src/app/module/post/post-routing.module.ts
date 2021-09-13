@@ -5,11 +5,7 @@ import {PostEditComponent} from '../../component/post/post-edit/post-edit.compon
 import {PostDetailComponent} from '../../component/post/post-detail/post-detail.component';
 import {AdvancedComponent} from '../../component/advanced/advanced.component';
 import {PostSearchComponent} from '../../component/post/post-search/post-search.component';
-<<<<<<< HEAD
-import { ListExpComponent } from 'src/app/component/user/page/list-exp/list-exp.component';
-=======
-import {RecommendedPostComponent} from '../../component/post/recommended-post/recommended-post.component';
->>>>>>> 30e9d3308119b4329f8d5e1b1ddca29e7bf59eb2
+import { RecommendedPostComponent } from 'src/app/component/post/recommended-post/recommended-post.component';
 
 const routes: Routes = [
   {

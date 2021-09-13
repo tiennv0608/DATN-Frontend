@@ -1,17 +1,12 @@
 import {NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {MainComponent} from './component/post/main/main.component';
-<<<<<<< HEAD
 import {PageComponent} from "./component/user/page/page.component";
 import {ListExpComponent} from "./component/user/page/list-exp/list-exp.component";
 import {CreateExpComponent} from "./component/user/page/create-exp/create-exp.component";
 import {EditExpComponent} from "./component/user/page/edit-exp/edit-exp.component";
 import {DeleteExpComponent} from "./component/user/page/delete-exp/delete-exp.component";
-=======
-import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
-import {UnderConstructionComponent} from './component/shared/under-construction/under-construction.component';
-
->>>>>>> 30e9d3308119b4329f8d5e1b1ddca29e7bf59eb2
+import { SearchAdvancedComponent } from './component/shared/search-advanced/search-advanced.component';
 
 const routes: Routes = [
   {
