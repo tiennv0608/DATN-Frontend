@@ -25,7 +25,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
-              <h3 class="login-heading text-center">Đăng ký thành viên với tư cách nhà tuyển dụng</h3>
+              <h2 class="login-heading text-center font-weight-bold">Đăng ký thành viên với tư cách nhà tuyển dụng</h2>
               <!--              <div class="alert alert-success" role="alert" *ngIf="isRegistered">{{message}}</div>-->
               <!--              <div class="alert alert-warning" role="alert" *ngIf="!isRegistered && (message != '')">{{message}}</div>-->
               <form [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
@@ -47,8 +47,11 @@
                          *ngIf="registerForm.get('shortName')?.errors?.required && registerForm.get('shortName')?.touched">
                       Tên viết tắt không được để trống
                     </div>
-                    <div *ngIf="registerForm.get('shortName')?.errors?.maxLength">
-                      Tên viết tắt không được quá 10 ký tự
+                    <div class="col-md-12 alert alert-danger" role="alert" *ngIf="registerForm.get('shortName')?.errors?.minlength">
+                      Tên viết tắt có ít nhất 3 ký tự
+                    </div>
+                    <div class="col-md-12 alert alert-danger" role="alert" *ngIf="registerForm.get('shortName')?.errors?.maxlength">
+                      Tên viết tắt không được quá 20 ký tự
                     </div>
                   </div>
                 </div>
@@ -129,8 +132,8 @@
                 </div>
 
                 <div class="col mt-3">
-                  <button class="btn head-btn2 form-control"
-                          [disabled]="registerForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal2" >
+                  <button class="btn btn-primary form-control"
+                          [disabled]="registerForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                     Đăng ký
                   </button>
                 </div>

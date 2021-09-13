@@ -16,7 +16,7 @@ export class CompanyRegisterComponent implements OnInit {
 
   registerForm: FormGroup = new FormGroup({
     companyName: new FormControl('', [Validators.required]),
-    shortName: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+    shortName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     confirmedPassword: new FormControl('', [Validators.required]),
@@ -66,11 +66,11 @@ export class CompanyRegisterComponent implements OnInit {
   }
 
   reload() {
-    if (this.isRegistered){
+    if (this.isRegistered) {
       this.router.navigate(['companies/login']).then(() => {
         window.location.reload();
       });
-    }else {
+    } else {
       this.registerForm.reset();
     }
   }

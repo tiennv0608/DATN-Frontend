@@ -15,8 +15,8 @@ import {CompanyLoginForm} from '../../../model/company/company-login-form';
 })
 export class CompanyLoginComponent implements OnInit {
   loginForm = new FormGroup({
-    email: new FormControl('',[Validators.required]),
-    password: new FormControl('',[Validators.required, Validators.minLength(8)]),
+    email: new FormControl(''),
+    password: new FormControl(''),
   });
   isLogin = false;
   isPassword = 'password';
