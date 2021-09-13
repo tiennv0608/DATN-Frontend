@@ -10,7 +10,6 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PostSearchComponent } from './component/post/post-search/post-search.component';
-import {MatPaginatorModule} from '@angular/material/paginator';
 import {environment} from '../environments/environment.prod';
 import {MainComponent} from './component/post/main/main.component';
 // @ts-ignore
@@ -26,24 +25,25 @@ import {SideBarComponent} from './component/post/side-bar/side-bar.component';
 import {PreloaderStartComponent} from './component/shared/preloader-start/preloader-start.component';
 import {NavbarComponent} from './component/shared/navbar/navbar.component';
 import {FooterComponent} from './component/shared/footer/footer.component';
-import {JwPaginationComponent, JwPaginationModule} from 'jw-angular-pagination';
+import {JwPaginationModule} from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';
-import {PostTopCompanyComponent} from './component/post/post-top-company/post-top-company.component';
+import { PostTopCompanyComponent } from './component/post/post-top-company/post-top-company.component';
+import { PageComponent } from './component/user/page/page.component';
+import { EditExpComponent } from './component/user/page/edit-exp/edit-exp.component';
+import { DeleteExpComponent } from './component/user/page/delete-exp/delete-exp.component';
+import { CreateExpComponent } from './component/user/page/create-exp/create-exp.component';
+import { ListExpComponent } from './component/user/page/list-exp/list-exp.component';
+import { UploadCvComponent } from './component/upload-cv/upload-cv.component';
+// @ts-ignore
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+// @ts-ignore
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {MatMenuModule} from '@angular/material/menu';
 // @ts-ignore
 import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
-import {RecommendedPostComponent} from './component/post/recommended-post/recommended-post.component';
-import { PostManagementComponent } from './component/admin/post-management/post-management.component';
 import { Top5RecommendedCompanyComponent } from './component/post/top5-recommended-company/top5-recommended-company.component';
-import {UploadCvComponent} from './component/upload-cv/upload-cv.component';
-import {AdvancedComponent} from './component/advanced/advanced.component';
 import { Top1CompanyComponent } from './component/company/top1-company/top1-company.component';
 import { Top6RecommendedComponent } from './component/post/top6-recommended/top6-recommended.component';
-import { CompanyPostComponent } from './component/post/company-post/company-post.component';
-import { UnderConstructionComponent } from './component/shared/under-construction/under-construction.component';
-
 
 
 
@@ -59,9 +59,13 @@ import { UnderConstructionComponent } from './component/shared/under-constructio
     FooterComponent,
     PostListComponent,
     SearchbarComponent,
-    FooterComponent,
     PostTopCompanyComponent,
     PostSearchComponent,
+    PageComponent,
+    EditExpComponent,
+    DeleteExpComponent,
+    CreateExpComponent,
+    ListExpComponent,
     UploadCvComponent,
     Top5RecommendedCompanyComponent,
     Top1CompanyComponent,
@@ -83,7 +87,7 @@ import { UnderConstructionComponent } from './component/shared/under-constructio
     MatMenuModule,
     CarouselModule,
     IvyCarouselModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   exports: [

@@ -1,9 +1,12 @@
 import {NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {MainComponent} from './component/post/main/main.component';
-import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
-import {UnderConstructionComponent} from './component/shared/under-construction/under-construction.component';
-
+import {PageComponent} from "./component/user/page/page.component";
+import {ListExpComponent} from "./component/user/page/list-exp/list-exp.component";
+import {CreateExpComponent} from "./component/user/page/create-exp/create-exp.component";
+import {EditExpComponent} from "./component/user/page/edit-exp/edit-exp.component";
+import {DeleteExpComponent} from "./component/user/page/delete-exp/delete-exp.component";
+import { SearchAdvancedComponent } from './component/shared/search-advanced/search-advanced.component';
 
 const routes: Routes = [
   {
@@ -21,6 +24,26 @@ const routes: Routes = [
   {
     path: 'users',
     loadChildren: () => import('./module/user/user.module').then(module => module.UserModule)
+  },
+  {
+    path: 'page',
+   component: PageComponent
+  }, {
+    path: 'exp/list',
+   component: ListExpComponent
+
+  }, {
+    path: 'exp/create',
+    component: CreateExpComponent
+
+  }, {
+    path: 'exp/edit/:id',
+   component: EditExpComponent
+
+  }, {
+    path: 'exp/delete/:id',
+   component: DeleteExpComponent
+
   },
   {
     path: 'companies',
