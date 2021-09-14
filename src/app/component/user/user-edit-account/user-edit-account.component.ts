@@ -66,6 +66,7 @@ export class UserEditAccountComponent implements OnInit {
       currentPassword: this.passwordForm.value.currentPassword,
       newPassword: this.passwordForm.value.newPassword
     };
+    console.log(user);
     this.authService.changeUserPassword(id, user).subscribe(data => {
       console.log(data);
       this.isUpdated = true;
@@ -98,6 +99,4 @@ export class UserEditAccountComponent implements OnInit {
       this.passwordForm.reset();
     }
   }
-
-
 }

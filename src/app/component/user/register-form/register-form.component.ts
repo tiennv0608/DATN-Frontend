@@ -14,13 +14,13 @@ import {Router} from '@angular/router';
 export class RegisterFormComponent implements OnInit {
 
   message = '';
-  isRegistered = true;
+  isRegistered = false;
   // userRegister: UserRegisterForm = {};
 
   registerForm: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     confirmedPassword: new FormControl('', [Validators.required]),
     phone: new FormControl('', [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
   });
@@ -47,15 +47,12 @@ export class RegisterFormComponent implements OnInit {
       if (response.responseCode === Constant.SUCCESS) {
         this.isRegistered = true;
         console.log(this.isRegistered);
-        this.message = response.responseMessage;
-      } else {
-        this.message = response.responseMessage;
-        console.log('1');
+        this.message = 'Đăng ký thành công';
       }
     }, error => {
       console.log('System error: ', error);
-      if (error.error.responseCode == Constant.EMAIL_IS_EXISTS){
-        this.message=error.error.responseMessage;
+      if (error.error.responseCode == Constant.EMAIL_IS_EXISTS) {
+        this.message = 'Email đã tồn tại';
         console.log(this.message);
       }
     });
@@ -70,9 +67,9 @@ export class RegisterFormComponent implements OnInit {
   }
 
   reload() {
-    if (this.isRegistered){
+    if (this.isRegistered) {
       this.router.navigateByUrl('users/login');
-    }else {
+    } else {
       this.registerForm.reset();
     }
   }

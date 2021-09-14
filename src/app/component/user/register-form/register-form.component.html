@@ -1,13 +1,14 @@
 <div class="container-fluid">
-  <div class="row no-gutter" style="background-image: url('../../../../assets/img/gallery/cv_bg.jpg'); background-size: cover; background-repeat: no-repeat">
+  <div class="row no-gutter"
+       style="background-image: url('../../../../assets/img/gallery/cv_bg.jpg'); background-size: cover; background-repeat: no-repeat">
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
               <h2 class="login-heading font-weight-bold text-center">Đăng ký thành viên với tư cách người tìm việc</h2>
-<!--              <div class="alert alert-success" role="alert" *ngIf="isRegistered">{{message}}</div>-->
-<!--              <div class="alert alert-warning" role="alert" *ngIf="!isRegistered && (message != '')">{{message}}</div>-->
+              <!--              <div class="alert alert-success" role="alert" *ngIf="isRegistered">{{message}}</div>-->
+              <!--              <div class="alert alert-warning" role="alert" *ngIf="!isRegistered && (message != '')">{{message}}</div>-->
               <form [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
                 <div class="col mt-3">
                   <div class="input-group has-validation">
@@ -55,9 +56,11 @@
                     <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
                     <input [attr.type]="[isPassword]" class="form-control" formControlName="password"
                            placeholder="Password">
-                    <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()" style="background: skyblue"><i
+                    <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()"
+                          style="background: skyblue"><i
                       class="bi bi-eye"></i></span>
-                    <span class="input-group-text" [hidden]="(isPassword== 'password')" (click)="showPass()" style="background: skyblue"><i
+                    <span class="input-group-text" [hidden]="(isPassword== 'password')" (click)="showPass()"
+                          style="background: skyblue"><i
                       class="bi bi-eye-slash"></i></span>
                     <div class="col-md-12 alert alert-danger" role="alert"
                          *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
@@ -65,7 +68,7 @@
                         Mật khẩu không được để trống
                       </div>
                       <div *ngIf="registerForm.get('password')?.errors?.minlength">
-                        Mật khẩu phải ít nhất 6 ký tự
+                        Mật khẩu phải ít nhất 8 ký tự
                       </div>
                     </div>
                   </div>
@@ -76,9 +79,11 @@
                     <span class="input-group-text" style="background: skyblue"><i class="bi bi-lock"></i></span>
                     <input [attr.type]="[isPassword]" class="form-control" formControlName="confirmedPassword"
                            placeholder="Confirm password">
-                    <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()" style="background: skyblue"><i
+                    <span class="input-group-text" [hidden]="(isPassword== 'text')" (click)="showPass()"
+                          style="background: skyblue"><i
                       class="bi bi-eye"></i></span>
-                    <span class="input-group-text" [hidden]="(isPassword== 'password')" (click)="showPass()" style="background: skyblue"><i
+                    <span class="input-group-text" [hidden]="(isPassword== 'password')" (click)="showPass()"
+                          style="background: skyblue"><i
                       class="bi bi-eye-slash"></i></span>
                     <div class="col-md-12 alert alert-danger" role="alert"
                          *ngIf="registerForm.get('confirmedPassword')?.invalid && registerForm.get('confirmedPassword')?.touched">
@@ -94,7 +99,8 @@
                 </div>
                 <div class="col mt-3">
                   <button class="btn btn-primary form-control"
-                          [disabled]="registerForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal6">Đăng ký
+                          [disabled]="registerForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal6">Đăng
+                    ký
                   </button>
                 </div>
 
@@ -114,17 +120,14 @@
 
 
 <!-- Modal -->
-<div  class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Register</h5>
       </div>
-      <div class="modal-body" *ngIf="message == '409'">
-        Tài khoản đã tồn tại!
-      </div>
-      <div class="modal-body" *ngIf="isRegistered">
-        Đăng kí thành công!
+      <div class="modal-body">
+        {{message}}
       </div>
       <div class="modal-footer">
         <button type="button" (click)="reload()" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
