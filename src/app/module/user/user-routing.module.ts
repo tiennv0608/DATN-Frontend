@@ -5,6 +5,9 @@ import {RegisterFormComponent} from '../../component/user/register-form/register
 import {MatSliderModule} from '@angular/material/slider';
 import {HttpClientModule} from '@angular/common/http';
 import {CvComponent} from '../../component/user/cv/cv.component';
+import {EditAccountComponent} from '../../component/user/edit-account/edit-account.component';
+import {UserEditAccountComponent} from '../../component/user/user-edit-account/user-edit-account.component';
+import {EditComponent} from '../../component/user/edit/edit.component';
 
 const routes: Routes = [
   {
@@ -18,6 +21,16 @@ const routes: Routes = [
   {
     path: 'cv',
     component: CvComponent
+  }, {
+    path: 'account',
+    component: EditAccountComponent
+  }, {
+    path: 'edit-account',
+    component: UserEditAccountComponent
+  },
+  {
+    path: 'edit',
+    component: EditComponent
   }
 ];
 

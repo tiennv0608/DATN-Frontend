@@ -50,6 +50,9 @@ import { Top6RecommendedComponent } from './component/post/top6-recommended/top6
 import { CompanyPostComponent } from './component/post/company-post/company-post.component';
 import { UnderConstructionComponent } from './component/shared/under-construction/under-construction.component';
 import { AdminLoginComponent } from './component/admin/admin-login/admin-login.component';
+import { UserEditAccountComponent } from './component/user/user-edit-account/user-edit-account.component';
+import { EditComponent } from './component/user/edit/edit.component';
+
 
 
 
@@ -78,6 +81,9 @@ import { AdminLoginComponent } from './component/admin/admin-login/admin-login.c
     Top5RecommendedCompanyComponent,
     Top1CompanyComponent,
     Top6RecommendedComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
