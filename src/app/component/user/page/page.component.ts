@@ -4,15 +4,14 @@ import {User} from 'src/app/model/user';
 import {UserService} from "../../../service/user.service";
 import {AuthService} from "../../../service/auth.service";
 import {TokenService} from "../../../service/token.service";
-import {UntypedFormControl, UntypedFormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ExpService} from "../../../service/exp.service";
 import {Exp} from "../../../model/exp";
 
 @Component({
-    selector: 'app-page',
-    templateUrl: './page.component.html',
-    styleUrls: ['./page.component.scss'],
-    standalone: false
+  selector: 'app-page',
+  templateUrl: './page.component.html',
+  styleUrls: ['./page.component.scss']
 })
 export class PageComponent implements OnInit {
 
@@ -28,12 +27,12 @@ export class PageComponent implements OnInit {
               ) {
   }
 
-  userForm: UntypedFormGroup = new UntypedFormGroup({
-    name: new UntypedFormControl('', [Validators.required]),
-    email: new UntypedFormControl('', [Validators.required, Validators.email]),
-    password: new UntypedFormControl('', [Validators.required, Validators.minLength(6)]),
-    confirmedPassword: new UntypedFormControl('', [Validators.required]),
-    phone: new UntypedFormControl('', [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
+  userForm: FormGroup = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    confirmedPassword: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
   })
 
   ngOnInit(): void {
@@ -43,11 +42,11 @@ export class PageComponent implements OnInit {
     this.userService.findById(this.id).subscribe(result => {
       this.user = result
       console.log(result);
-      this.userForm = new UntypedFormGroup({
-        name: new UntypedFormControl(this.user.name,[Validators.required,Validators.minLength(3),Validators.maxLength(50)]),
-        email: new UntypedFormControl(this.user.email,[Validators.required, Validators.email]),
-        password: new UntypedFormControl(this.user.password, [Validators.required,Validators.minLength(10)]),
-        phone: new UntypedFormControl(this.user.phone,[Validators.required, Validators.pattern(/^\+84\d{9}$/)])
+      this.userForm = new FormGroup({
+        name: new FormControl(this.user.name,[Validators.required,Validators.minLength(3),Validators.maxLength(50)]),
+        email: new FormControl(this.user.email,[Validators.required, Validators.email]),
+        password: new FormControl(this.user.password, [Validators.required,Validators.minLength(10)]),
+        phone: new FormControl(this.user.phone,[Validators.required, Validators.pattern(/^\+84\d{9}$/)])
       })
     }, error => {
       console.log(error);

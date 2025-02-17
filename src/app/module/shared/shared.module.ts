@@ -13,8 +13,7 @@ import {AdvancedComponent} from '../../component/advanced/advanced.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {FormsModule} from '@angular/forms';
 import {UnderConstructionComponent} from '../../component/shared/under-construction/under-construction.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [
     UploadComponent,
@@ -26,8 +25,6 @@ import { MatInputModule } from '@angular/material/input';
     CommonModule,
     NgxPaginationModule,
     FormsModule,
-    MatFormFieldModule,
-    MatInputModule
   ],
   exports: [
     UploadComponent,
