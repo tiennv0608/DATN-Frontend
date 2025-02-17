@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {CompanyAccountComponent} from '../../component/admin/company-account/company-account.component';
-import {MatLegacySliderModule as MatSliderModule} from '@angular/material/legacy-slider';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {CompanyListComponent} from '../../component/admin/company-list/company-list.component';
 import {CompanyUpdateComponent} from '../../component/admin/company-update/company-update.component';
@@ -36,6 +35,6 @@ const routes: Routes = [
   }
 ];
 
-@NgModule({ exports: [RouterModule], imports: [RouterModule.forChild(routes), MatSliderModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({ exports: [RouterModule], imports: [RouterModule.forChild(routes)], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AdminRoutingModule {
 }

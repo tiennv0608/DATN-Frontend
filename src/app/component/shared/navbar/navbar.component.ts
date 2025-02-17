@@ -25,8 +25,6 @@ export class NavbarComponent implements OnInit {
     link: new UntypedFormControl(),
     nameCV: new UntypedFormControl(),
   });
-  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger | undefined;
-
   constructor(private tokenService: TokenService,
               private router: Router,
               private companyService: CompanyService,
