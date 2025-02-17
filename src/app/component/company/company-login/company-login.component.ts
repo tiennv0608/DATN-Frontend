@@ -9,9 +9,10 @@ import {Constant} from '../../../common/constant';
 import {CompanyLoginForm} from '../../../model/company/company-login-form';
 
 @Component({
-  selector: 'app-company-login',
-  templateUrl: './company-login.component.html',
-  styleUrls: ['./company-login.component.scss']
+    selector: 'app-company-login',
+    templateUrl: './company-login.component.html',
+    styleUrls: ['./company-login.component.scss'],
+    standalone: false
 })
 export class CompanyLoginComponent implements OnInit {
   loginForm = new UntypedFormGroup({

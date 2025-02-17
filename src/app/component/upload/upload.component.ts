@@ -4,9 +4,10 @@ import {Router} from '@angular/router';
 import {error} from 'protractor';
 
 @Component({
-  selector: 'app-upload',
-  templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.scss']
+    selector: 'app-upload',
+    templateUrl: './upload.component.html',
+    styleUrls: ['./upload.component.scss'],
+    standalone: false
 })
 export class UploadComponent implements OnInit {
   selectedFile?: File;

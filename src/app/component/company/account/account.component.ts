@@ -3,9 +3,10 @@ import {TokenService} from '../../../service/token.service';
 import {CompanyService} from '../../../service/company.service';
 
 @Component({
-  selector: 'app-account',
-  templateUrl: './account.component.html',
-  styleUrls: ['./account.component.scss']
+    selector: 'app-account',
+    templateUrl: './account.component.html',
+    styleUrls: ['./account.component.scss'],
+    standalone: false
 })
 export class AccountComponent implements OnInit {
   email?: string = '';

@@ -6,9 +6,10 @@ import {User} from 'src/app/model/user';
 import {TokenService} from "../../../../service/token.service";
 
 @Component({
-  selector: 'app-create-exp',
-  templateUrl: './create-exp.component.html',
-  styleUrls: ['./create-exp.component.scss']
+    selector: 'app-create-exp',
+    templateUrl: './create-exp.component.html',
+    styleUrls: ['./create-exp.component.scss'],
+    standalone: false
 })
 export class CreateExpComponent implements OnInit {
   user: User[] = [];

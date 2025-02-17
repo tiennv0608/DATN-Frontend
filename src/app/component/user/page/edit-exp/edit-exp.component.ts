@@ -8,9 +8,10 @@ import User = firebase.User;
 import {TokenService} from "../../../../service/token.service";
 
 @Component({
-  selector: 'app-edit-exp',
-  templateUrl: './edit-exp.component.html',
-  styleUrls: ['./edit-exp.component.scss']
+    selector: 'app-edit-exp',
+    templateUrl: './edit-exp.component.html',
+    styleUrls: ['./edit-exp.component.scss'],
+    standalone: false
 })
 export class EditExpComponent implements OnInit {
 user: User[] = [];

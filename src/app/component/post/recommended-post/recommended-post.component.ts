@@ -4,9 +4,10 @@ import {PostService} from '../../../service/post.service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-recommended-post',
-  templateUrl: './recommended-post.component.html',
-  styleUrls: ['./recommended-post.component.scss']
+    selector: 'app-recommended-post',
+    templateUrl: './recommended-post.component.html',
+    styleUrls: ['./recommended-post.component.scss'],
+    standalone: false
 })
 export class RecommendedPostComponent implements OnInit {
   posts: Post[] = [];

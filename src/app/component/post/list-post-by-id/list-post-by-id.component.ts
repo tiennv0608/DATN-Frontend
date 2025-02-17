@@ -5,9 +5,10 @@ import {TokenService} from '../../../service/token.service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-list-post-by-id',
-  templateUrl: './list-post-by-id.component.html',
-  styleUrls: ['./list-post-by-id.component.scss']
+    selector: 'app-list-post-by-id',
+    templateUrl: './list-post-by-id.component.html',
+    styleUrls: ['./list-post-by-id.component.scss'],
+    standalone: false
 })
 export class ListPostByIdComponent implements OnInit {
   posts: Post[] = [];

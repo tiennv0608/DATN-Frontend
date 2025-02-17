@@ -6,9 +6,10 @@ import {Router} from '@angular/router';
 import {OwlOptions} from 'ngx-owl-carousel-o';
 
 @Component({
-  selector: 'app-post-top-company',
-  templateUrl: './post-top-company.component.html',
-  styleUrls: ['./post-top-company.component.scss']
+    selector: 'app-post-top-company',
+    templateUrl: './post-top-company.component.html',
+    styleUrls: ['./post-top-company.component.scss'],
+    standalone: false
 })
 export class PostTopCompanyComponent implements OnInit {
 

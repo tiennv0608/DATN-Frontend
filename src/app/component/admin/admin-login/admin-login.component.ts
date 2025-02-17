@@ -8,9 +8,10 @@ import {ResponseBody} from '../../../common/response-body';
 import {Constant} from '../../../common/constant';
 
 @Component({
-  selector: 'app-admin-login',
-  templateUrl: './admin-login.component.html',
-  styleUrls: ['./admin-login.component.scss']
+    selector: 'app-admin-login',
+    templateUrl: './admin-login.component.html',
+    styleUrls: ['./admin-login.component.scss'],
+    standalone: false
 })
 export class AdminLoginComponent implements OnInit {
   loginForm = new UntypedFormGroup({

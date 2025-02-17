@@ -8,9 +8,10 @@ import {AuthService} from '../../../service/auth.service';
 import {Constant} from '../../../common/constant';
 
 @Component({
-  selector: 'app-company-edit-account',
-  templateUrl: './company-edit-account.component.html',
-  styleUrls: ['./company-edit-account.component.scss']
+    selector: 'app-company-edit-account',
+    templateUrl: './company-edit-account.component.html',
+    styleUrls: ['./company-edit-account.component.scss'],
+    standalone: false
 })
 export class CompanyEditAccountComponent implements OnInit {
   email?: string = '';

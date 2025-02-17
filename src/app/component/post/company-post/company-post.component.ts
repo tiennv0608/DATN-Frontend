@@ -4,9 +4,10 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {PostService} from '../../../service/post.service';
 
 @Component({
-  selector: 'app-company-post',
-  templateUrl: './company-post.component.html',
-  styleUrls: ['./company-post.component.scss']
+    selector: 'app-company-post',
+    templateUrl: './company-post.component.html',
+    styleUrls: ['./company-post.component.scss'],
+    standalone: false
 })
 export class CompanyPostComponent implements OnInit {
 

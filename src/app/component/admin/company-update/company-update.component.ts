@@ -5,9 +5,10 @@ import {TokenService} from '../../../service/token.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-company-update',
-  templateUrl: './company-update.component.html',
-  styleUrls: ['./company-update.component.scss']
+    selector: 'app-company-update',
+    templateUrl: './company-update.component.html',
+    styleUrls: ['./company-update.component.scss'],
+    standalone: false
 })
 export class CompanyUpdateComponent implements OnInit {
   infoEditForm: UntypedFormGroup = new UntypedFormGroup({

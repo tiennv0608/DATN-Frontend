@@ -4,9 +4,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {EventEmitter} from '@angular/core';
 
 @Component({
-  selector: 'app-company-list',
-  templateUrl: './company-list.component.html',
-  styleUrls: ['./company-list.component.scss']
+    selector: 'app-company-list',
+    templateUrl: './company-list.component.html',
+    styleUrls: ['./company-list.component.scss'],
+    standalone: false
 })
 export class CompanyListComponent implements OnInit {
   companies:any[]=[];

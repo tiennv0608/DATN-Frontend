@@ -3,9 +3,10 @@ import {CompanyService} from '../../../service/company.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-top5-recommended-company',
-  templateUrl: './top5-recommended-company.component.html',
-  styleUrls: ['./top5-recommended-company.component.scss']
+    selector: 'app-top5-recommended-company',
+    templateUrl: './top5-recommended-company.component.html',
+    styleUrls: ['./top5-recommended-company.component.scss'],
+    standalone: false
 })
 export class Top5RecommendedCompanyComponent implements OnInit {
   companies:any[]=[];

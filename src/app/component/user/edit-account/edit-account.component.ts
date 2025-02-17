@@ -10,9 +10,10 @@ import {UserService} from '../../../service/user.service';
 import {User} from '../../../model/user/user';
 
 @Component({
-  selector: 'app-edit-account',
-  templateUrl: './edit-account.component.html',
-  styleUrls: ['./edit-account.component.scss']
+    selector: 'app-edit-account',
+    templateUrl: './edit-account.component.html',
+    styleUrls: ['./edit-account.component.scss'],
+    standalone: false
 })
 export class EditAccountComponent implements OnInit {
   email?: string = '';

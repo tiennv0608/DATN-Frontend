@@ -3,9 +3,10 @@ import {Router} from '@angular/router';
 import {Post} from '../../../model/post/post';
 
 @Component({
-  selector: 'app-post-search',
-  templateUrl: './post-search.component.html',
-  styleUrls: ['./post-search.component.scss']
+    selector: 'app-post-search',
+    templateUrl: './post-search.component.html',
+    styleUrls: ['./post-search.component.scss'],
+    standalone: false
 })
 export class PostSearchComponent implements OnInit {
   posts: any[] = [];

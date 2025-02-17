@@ -4,9 +4,10 @@ import {CompanyService} from '../../../service/company.service';
 import {Company} from '../../../model/company/company';
 
 @Component({
-  selector: 'app-info',
-  templateUrl: './info.component.html',
-  styleUrls: ['./info.component.scss']
+    selector: 'app-info',
+    templateUrl: './info.component.html',
+    styleUrls: ['./info.component.scss'],
+    standalone: false
 })
 export class InfoComponent implements OnInit {
   message?: string = '';

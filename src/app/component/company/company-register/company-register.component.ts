@@ -6,9 +6,10 @@ import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-company-register',
-  templateUrl: './company-register.component.html',
-  styleUrls: ['./company-register.component.scss']
+    selector: 'app-company-register',
+    templateUrl: './company-register.component.html',
+    styleUrls: ['./company-register.component.scss'],
+    standalone: false
 })
 export class CompanyRegisterComponent implements OnInit {
   message = '';

@@ -4,9 +4,10 @@ import {PostService} from '../../../service/post.service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-top6-recommended',
-  templateUrl: './top6-recommended.component.html',
-  styleUrls: ['./top6-recommended.component.scss']
+    selector: 'app-top6-recommended',
+    templateUrl: './top6-recommended.component.html',
+    styleUrls: ['./top6-recommended.component.scss'],
+    standalone: false
 })
 export class Top6RecommendedComponent implements OnInit {
 

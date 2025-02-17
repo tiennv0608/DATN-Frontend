@@ -4,9 +4,10 @@ import {Router} from '@angular/router';
 import {PostService} from '../../service/post.service';
 
 @Component({
-  selector: 'app-advanced',
-  templateUrl: './advanced.component.html',
-  styleUrls: ['./advanced.component.scss']
+    selector: 'app-advanced',
+    templateUrl: './advanced.component.html',
+    styleUrls: ['./advanced.component.scss'],
+    standalone: false
 })
 export class AdvancedComponent implements OnInit {
   posts: Post[] = [];

@@ -5,9 +5,10 @@ import {CompanyService} from '../../../service/company.service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-top1-company',
-  templateUrl: './top1-company.component.html',
-  styleUrls: ['./top1-company.component.scss']
+    selector: 'app-top1-company',
+    templateUrl: './top1-company.component.html',
+    styleUrls: ['./top1-company.component.scss'],
+    standalone: false
 })
 export class Top1CompanyComponent implements OnInit {
   company: Company = {};

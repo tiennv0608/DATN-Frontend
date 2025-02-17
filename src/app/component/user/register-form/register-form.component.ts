@@ -7,9 +7,10 @@ import {UserRegisterForm} from '../../../model/user/user-register-form';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-register-form',
-  templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.scss']
+    selector: 'app-register-form',
+    templateUrl: './register-form.component.html',
+    styleUrls: ['./register-form.component.scss'],
+    standalone: false
 })
 export class RegisterFormComponent implements OnInit {
 

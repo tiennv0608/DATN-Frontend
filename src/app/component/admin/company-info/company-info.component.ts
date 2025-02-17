@@ -5,9 +5,10 @@ import {CompanyService} from '../../../service/company.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-company-info',
-  templateUrl: './company-info.component.html',
-  styleUrls: ['./company-info.component.scss']
+    selector: 'app-company-info',
+    templateUrl: './company-info.component.html',
+    styleUrls: ['./company-info.component.scss'],
+    standalone: false
 })
 export class CompanyInfoComponent implements OnInit {
   message?: string = '';

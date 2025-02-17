@@ -15,9 +15,10 @@ import {City} from '../../../model/post/city';
 import {CityService} from '../../../service/city.service';
 
 @Component({
-  selector: 'app-post-edit',
-  templateUrl: './post-edit.component.html',
-  styleUrls: ['./post-edit.component.scss']
+    selector: 'app-post-edit',
+    templateUrl: './post-edit.component.html',
+    styleUrls: ['./post-edit.component.scss'],
+    standalone: false
 })
 export class PostEditComponent implements OnInit {
   categories: Category[] = [];

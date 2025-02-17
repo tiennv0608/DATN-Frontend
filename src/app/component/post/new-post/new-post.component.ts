@@ -3,9 +3,10 @@ import {Router} from '@angular/router';
 import {PostService} from '../../../service/post.service';
 
 @Component({
-  selector: 'app-new-post',
-  templateUrl: './new-post.component.html',
-  styleUrls: ['./new-post.component.scss']
+    selector: 'app-new-post',
+    templateUrl: './new-post.component.html',
+    styleUrls: ['./new-post.component.scss'],
+    standalone: false
 })
 export class NewPostComponent implements OnInit {
   posts: any[] = [];

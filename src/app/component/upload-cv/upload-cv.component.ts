@@ -3,9 +3,10 @@ import {AngularFireStorage, AngularFireStorageReference} from '@angular/fire/sto
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-upload-cv',
-  templateUrl: './upload-cv.component.html',
-  styleUrls: ['./upload-cv.component.scss']
+    selector: 'app-upload-cv',
+    templateUrl: './upload-cv.component.html',
+    styleUrls: ['./upload-cv.component.scss'],
+    standalone: false
 })
 export class UploadCvComponent implements OnInit {
   selectedFile?: File;

@@ -4,9 +4,10 @@ import {CityService} from '../../../service/city.service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-search-advanced',
-  templateUrl: './search-advanced.component.html',
-  styleUrls: ['./search-advanced.component.scss']
+    selector: 'app-search-advanced',
+    templateUrl: './search-advanced.component.html',
+    styleUrls: ['./search-advanced.component.scss'],
+    standalone: false
 })
 export class SearchAdvancedComponent implements OnInit {
   address = '';

@@ -3,9 +3,10 @@ import {Post} from '../../../model/post/post';
 import {PostService} from '../../../service/post.service';
 
 @Component({
-  selector: 'app-post-management',
-  templateUrl: './post-management.component.html',
-  styleUrls: ['./post-management.component.scss']
+    selector: 'app-post-management',
+    templateUrl: './post-management.component.html',
+    styleUrls: ['./post-management.component.scss'],
+    standalone: false
 })
 export class PostManagementComponent implements OnInit {
 

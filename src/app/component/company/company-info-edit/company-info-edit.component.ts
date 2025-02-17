@@ -5,9 +5,10 @@ import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {TokenService} from '../../../service/token.service';
 
 @Component({
-  selector: 'app-company-info-edit',
-  templateUrl: './company-info-edit.component.html',
-  styleUrls: ['./company-info-edit.component.scss']
+    selector: 'app-company-info-edit',
+    templateUrl: './company-info-edit.component.html',
+    styleUrls: ['./company-info-edit.component.scss'],
+    standalone: false
 })
 export class CompanyInfoEditComponent implements OnInit {
   infoEditForm: UntypedFormGroup = new UntypedFormGroup({

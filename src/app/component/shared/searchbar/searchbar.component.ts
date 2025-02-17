@@ -9,9 +9,10 @@ import {environment} from '../../../../environments/environment';
 import {Post} from '../../../model/post/post';
 
 @Component({
-  selector: 'app-searchbar',
-  templateUrl: './searchbar.component.html',
-  styleUrls: ['./searchbar.component.scss']
+    selector: 'app-searchbar',
+    templateUrl: './searchbar.component.html',
+    styleUrls: ['./searchbar.component.scss'],
+    standalone: false
 })
 export class SearchbarComponent implements OnInit {
   keyword = '';

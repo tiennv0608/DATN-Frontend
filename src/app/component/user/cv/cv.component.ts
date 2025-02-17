@@ -9,9 +9,10 @@ import {error} from 'protractor';
 import {CandidateService} from '../../../service/candidate.service';
 
 @Component({
-  selector: 'app-cv',
-  templateUrl: './cv.component.html',
-  styleUrls: ['./cv.component.scss']
+    selector: 'app-cv',
+    templateUrl: './cv.component.html',
+    styleUrls: ['./cv.component.scss'],
+    standalone: false
 })
 export class CvComponent implements OnInit {
   cvs: Cv[] = [];

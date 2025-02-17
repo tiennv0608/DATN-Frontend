@@ -7,9 +7,10 @@ import {UntypedFormControl, UntypedFormGroup, Validators} from "@angular/forms";
 import { User } from 'src/app/model/user';
 
 @Component({
-  selector: 'app-delete-exp',
-  templateUrl: './delete-exp.component.html',
-  styleUrls: ['./delete-exp.component.scss']
+    selector: 'app-delete-exp',
+    templateUrl: './delete-exp.component.html',
+    styleUrls: ['./delete-exp.component.scss'],
+    standalone: false
 })
 export class DeleteExpComponent implements OnInit {
   user: User[] = [];

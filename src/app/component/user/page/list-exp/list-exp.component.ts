@@ -6,9 +6,10 @@ import {ActivatedRoute} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-list-exp',
-  templateUrl: './list-exp.component.html',
-  styleUrls: ['./list-exp.component.scss']
+    selector: 'app-list-exp',
+    templateUrl: './list-exp.component.html',
+    styleUrls: ['./list-exp.component.scss'],
+    standalone: false
 })
 export class ListExpComponent implements OnInit {
   user_id: string | undefined;

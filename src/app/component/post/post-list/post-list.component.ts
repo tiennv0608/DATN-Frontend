@@ -6,9 +6,10 @@ import {TokenService} from '../../../service/token.service';
 import {CandidateService} from '../../../service/candidate.service';
 
 @Component({
-  selector: 'app-post-list',
-  templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.scss']
+    selector: 'app-post-list',
+    templateUrl: './post-list.component.html',
+    styleUrls: ['./post-list.component.scss'],
+    standalone: false
 })
 export class PostListComponent implements OnInit {
   posts: Post[] = [];

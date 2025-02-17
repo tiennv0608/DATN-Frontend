@@ -7,9 +7,10 @@ import {CvService} from '../../../service/cv.service';
 import {CandidateService} from '../../../service/candidate.service';
 
 @Component({
-  selector: 'app-post-detail',
-  templateUrl: './post-detail.component.html',
-  styleUrls: ['./post-detail.component.scss']
+    selector: 'app-post-detail',
+    templateUrl: './post-detail.component.html',
+    styleUrls: ['./post-detail.component.scss'],
+    standalone: false
 })
 export class PostDetailComponent implements OnInit {
   post: Post = {};

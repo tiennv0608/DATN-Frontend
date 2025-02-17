@@ -3,9 +3,10 @@ import {CompanyService} from '../../../service/company.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-company-account',
-  templateUrl: './company-account.component.html',
-  styleUrls: ['./company-account.component.scss']
+    selector: 'app-company-account',
+    templateUrl: './company-account.component.html',
+    styleUrls: ['./company-account.component.scss'],
+    standalone: false
 })
 export class CompanyAccountComponent implements OnInit {
   companies:any[]=[];

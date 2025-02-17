@@ -4,9 +4,10 @@ import {CompanyService} from '../../../service/company.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-company-details',
-  templateUrl: './company-details.component.html',
-  styleUrls: ['./company-details.component.scss']
+    selector: 'app-company-details',
+    templateUrl: './company-details.component.html',
+    styleUrls: ['./company-details.component.scss'],
+    standalone: false
 })
 export class CompanyDetailsComponent implements OnInit {
   company?: Company = {};

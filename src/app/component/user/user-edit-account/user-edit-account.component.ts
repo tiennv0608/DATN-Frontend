@@ -10,9 +10,10 @@ import {User} from '../../../model/user/user';
 import {UserService} from '../../../service/user.service';
 
 @Component({
-  selector: 'app-user-edit-account',
-  templateUrl: './user-edit-account.component.html',
-  styleUrls: ['./user-edit-account.component.scss']
+    selector: 'app-user-edit-account',
+    templateUrl: './user-edit-account.component.html',
+    styleUrls: ['./user-edit-account.component.scss'],
+    standalone: false
 })
 export class UserEditAccountComponent implements OnInit {
 
