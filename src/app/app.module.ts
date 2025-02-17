@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {PostListComponent} from './component/post/post-list/post-list.component';
 import {AppRoutingModule} from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { SearchbarComponent } from './component/shared/searchbar/searchbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
@@ -57,59 +57,49 @@ import { EditComponent } from './component/user/edit/edit.component';
 
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    MainComponent,
-    SearchComponent,
-    NewPostComponent,
-    SideBarComponent,
-    PreloaderStartComponent,
-    NavbarComponent,
-    FooterComponent,
-    PostListComponent,
-    SearchbarComponent,
-    FooterComponent,
-    PostTopCompanyComponent,
-    PostSearchComponent,
-    PageComponent,
-    EditExpComponent,
-    DeleteExpComponent,
-    CreateExpComponent,
-    ListExpComponent,
-    UploadCvComponent,
-    Top5RecommendedCompanyComponent,
-    Top1CompanyComponent,
-    Top6RecommendedComponent,
-
-
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    JwPaginationModule,
-    NgxPaginationModule,
-    BrowserAnimationsModule,
-    MatSelectModule,
-    MatOptionModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatMenuModule,
-    CarouselModule,
-    IvyCarouselModule,
-    SharedModule,
-  ],
-  providers: [],
-  exports: [
-    SideBarComponent,
-    MainComponent,
-    UploadCvComponent,
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        MainComponent,
+        SearchComponent,
+        NewPostComponent,
+        SideBarComponent,
+        PreloaderStartComponent,
+        NavbarComponent,
+        FooterComponent,
+        PostListComponent,
+        SearchbarComponent,
+        FooterComponent,
+        PostTopCompanyComponent,
+        PostSearchComponent,
+        PageComponent,
+        EditExpComponent,
+        DeleteExpComponent,
+        CreateExpComponent,
+        ListExpComponent,
+        UploadCvComponent,
+        Top5RecommendedCompanyComponent,
+        Top1CompanyComponent,
+        Top6RecommendedComponent,
+    ],
+    exports: [
+        SideBarComponent,
+        MainComponent,
+        UploadCvComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        AngularFireStorageModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        JwPaginationModule,
+        NgxPaginationModule,
+        BrowserAnimationsModule,
+        MatSelectModule,
+        MatOptionModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatMenuModule,
+        CarouselModule,
+        IvyCarouselModule,
+        SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {
 }

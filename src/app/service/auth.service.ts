@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {UserRegisterForm} from '../model/user/user-register-form';
 import {Observable} from 'rxjs';
 import {ResponseBody} from '../common/response-body';

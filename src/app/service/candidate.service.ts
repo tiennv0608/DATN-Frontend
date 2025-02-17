@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Cv} from '../model/user/cv';
 import {environment} from '../../environments/environment.prod';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {Candidate} from '../model/company/candidate';
 
 @Injectable({

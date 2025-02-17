@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Exp } from '../model/exp';
 const API_URL = 'http://localhost:8080/exp'
 @Injectable({

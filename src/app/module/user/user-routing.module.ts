@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginFormComponent} from '../../component/user/login-form/login-form.component';
 import {RegisterFormComponent} from '../../component/user/register-form/register-form.component';
 import {MatSliderModule} from '@angular/material/slider';
-import {HttpClientModule} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {CvComponent} from '../../component/user/cv/cv.component';
 import {EditAccountComponent} from '../../component/user/edit-account/edit-account.component';
 import {UserEditAccountComponent} from '../../component/user/user-edit-account/user-edit-account.component';
@@ -34,9 +34,6 @@ const routes: Routes = [
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forChild(routes), MatSliderModule, HttpClientModule],
-  exports: [RouterModule]
-})
+@NgModule({ exports: [RouterModule], imports: [RouterModule.forChild(routes), MatSliderModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class UserRoutingModule {
 }
