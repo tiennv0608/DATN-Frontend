@@ -7,7 +7,7 @@ import {AccountComponent} from '../../component/company/account/account.componen
 import {InfoComponent} from '../../component/company/info/info.component';
 import {CompanyEditAccountComponent} from '../../component/company/company-edit-account/company-edit-account.component';
 import {ListPostByIdComponent} from '../../component/post/list-post-by-id/list-post-by-id.component';
-import {MatSliderModule} from '@angular/material/slider';
+import {MatLegacySliderModule as MatSliderModule} from '@angular/material/legacy-slider';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {CompanyDetailsComponent} from '../../component/company/company-details/company-details.component';
 // @ts-ignore

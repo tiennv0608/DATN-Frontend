@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {LoginFormComponent} from '../../component/user/login-form/login-form.component';
 import {RegisterFormComponent} from '../../component/user/register-form/register-form.component';
-import {MatSliderModule} from '@angular/material/slider';
+import {MatLegacySliderModule as MatSliderModule} from '@angular/material/legacy-slider';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {CvComponent} from '../../component/user/cv/cv.component';
 import {EditAccountComponent} from '../../component/user/edit-account/edit-account.component';
