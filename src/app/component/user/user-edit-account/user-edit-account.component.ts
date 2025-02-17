@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {Company} from '../../../model/company/company';
 import {TokenService} from '../../../service/token.service';
 import {CompanyService} from '../../../service/company.service';
@@ -20,7 +20,7 @@ export class UserEditAccountComponent implements OnInit {
   userName?: string = '';
   isPassword = 'password';
   isConfirmedPassword = 'password';
-  passwordForm = new FormGroup({});
+  passwordForm = new UntypedFormGroup({});
   currentUser?: User = {};
   message?: string = '';
   isUpdated?: boolean = false;
@@ -33,10 +33,10 @@ export class UserEditAccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInfo();
-    this.passwordForm = new FormGroup({
-      currentPassword: new FormControl(''),
-      newPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
-      confirmedPassword: new FormControl('', [Validators.required])
+    this.passwordForm = new UntypedFormGroup({
+      currentPassword: new UntypedFormControl(''),
+      newPassword: new UntypedFormControl('', [Validators.required, Validators.minLength(8)]),
+      confirmedPassword: new UntypedFormControl('', [Validators.required])
     });
     const id = this.tokenService.getToken().id;
     this.findById(id);

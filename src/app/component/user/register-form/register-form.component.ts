@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../service/auth.service';
 import {ResponseBody} from '../../../common/response-body';
 import {Constant} from '../../../common/constant';
@@ -17,12 +17,12 @@ export class RegisterFormComponent implements OnInit {
   isRegistered = false;
   // userRegister: UserRegisterForm = {};
 
-  registerForm: FormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    confirmedPassword: new FormControl('', [Validators.required]),
-    phone: new FormControl('', [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
+  registerForm: UntypedFormGroup = new UntypedFormGroup({
+    name: new UntypedFormControl('', [Validators.required]),
+    email: new UntypedFormControl('', [Validators.required, Validators.email]),
+    password: new UntypedFormControl('', [Validators.required, Validators.minLength(8)]),
+    confirmedPassword: new UntypedFormControl('', [Validators.required]),
+    phone: new UntypedFormControl('', [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
   });
 
   isPassword = 'password';

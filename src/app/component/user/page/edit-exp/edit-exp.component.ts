@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import {Exp} from "../../../../model/exp";
 import {ExpService} from "../../../../service/exp.service";
@@ -18,10 +18,10 @@ user: User[] = [];
   id: string | undefined;
   constructor(private expService: ExpService, private ac: ActivatedRoute, private token: TokenService) {
   }
-  expForm: FormGroup = new FormGroup({
-    skill: new FormControl('',[Validators.required]),
-    year: new FormControl('',[Validators.required]),
-    salary: new FormControl('',[Validators.required])
+  expForm: UntypedFormGroup = new UntypedFormGroup({
+    skill: new UntypedFormControl('',[Validators.required]),
+    year: new UntypedFormControl('',[Validators.required]),
+    salary: new UntypedFormControl('',[Validators.required])
   })
   ngOnInit(): void {
     this.ac.paramMap.subscribe(paramMap => {
@@ -30,10 +30,10 @@ user: User[] = [];
       // @ts-ignore
       this.expService.getById(this.id).subscribe(result => {
           this.exp = result;
-          this.expForm = new FormGroup({
-            skill: new FormControl(this.exp.skill,[Validators.required]),
-            year: new FormControl(this.exp.year,[Validators.required]),
-            salary: new FormControl(this.exp.salary,[Validators.required])
+          this.expForm = new UntypedFormGroup({
+            skill: new UntypedFormControl(this.exp.skill,[Validators.required]),
+            year: new UntypedFormControl(this.exp.year,[Validators.required]),
+            salary: new UntypedFormControl(this.exp.salary,[Validators.required])
           });
           // console.log(result);
         }, error => {

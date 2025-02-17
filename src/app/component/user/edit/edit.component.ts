@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {CompanyService} from '../../../service/company.service';
 import {TokenService} from '../../../service/token.service';
 import {Router} from '@angular/router';
@@ -13,9 +13,9 @@ import {User} from '../../../model/user/user';
 })
 export class EditComponent implements OnInit {
 
-  infoEditForm: FormGroup = new FormGroup({
-    userName: new FormControl(),
-    phone: new FormControl(),
+  infoEditForm: UntypedFormGroup = new UntypedFormGroup({
+    userName: new UntypedFormControl(),
+    phone: new UntypedFormControl(),
   });
   image? = '';
   message = '';
@@ -35,9 +35,9 @@ export class EditComponent implements OnInit {
 
   findById(id: string) {
     return this.userService.findById(id).subscribe(user => {
-      this.infoEditForm = new FormGroup({
-        userName: new FormControl(user.name, [Validators.required]),
-        phone: new FormControl(user.phone, [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
+      this.infoEditForm = new UntypedFormGroup({
+        userName: new UntypedFormControl(user.name, [Validators.required]),
+        phone: new UntypedFormControl(user.phone, [Validators.required, Validators.pattern(/^\+84\d{9}$/)]),
       });
     }, error => {
       console.log(error);

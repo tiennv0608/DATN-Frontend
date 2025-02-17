@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 import {JwtResponse} from '../../../model/jwt-response';
 import {AuthService} from '../../../service/auth.service';
 import {TokenService} from '../../../service/token.service';
@@ -13,9 +13,9 @@ import {Constant} from '../../../common/constant';
   styleUrls: ['./admin-login.component.scss']
 })
 export class AdminLoginComponent implements OnInit {
-  loginForm = new FormGroup({
-    email: new FormControl(),
-    password: new FormControl(),
+  loginForm = new UntypedFormGroup({
+    email: new UntypedFormControl(),
+    password: new UntypedFormControl(),
   });
   isLogin = false;
   isPassword = 'password';

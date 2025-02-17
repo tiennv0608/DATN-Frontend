@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 import {JwtResponse} from '../../../model/jwt-response';
 import {AuthService} from '../../../service/auth.service';
 import {ResponseBody} from '../../../common/response-body';
@@ -14,9 +14,9 @@ import {Router} from '@angular/router';
 })
 export class LoginFormComponent implements OnInit {
 
-  loginForm = new FormGroup({
-    email: new FormControl(),
-    password: new FormControl(),
+  loginForm = new UntypedFormGroup({
+    email: new UntypedFormControl(),
+    password: new UntypedFormControl(),
   });
   isLogin = false;
   isPassword = 'password';

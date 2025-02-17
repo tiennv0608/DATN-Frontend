@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {ExpService} from "../../../../service/exp.service";
 import {Exp} from "../../../../model/exp";
 import {User} from 'src/app/model/user';
@@ -16,11 +16,11 @@ export class CreateExpComponent implements OnInit {
   }
 
 
-  expForm: FormGroup = new FormGroup({
-    skill: new FormControl('', [Validators.required,Validators.minLength(6)]),
-    year: new FormControl('', [Validators.required]),
-    salary: new FormControl('', [Validators.required]),
-    user: new FormControl()
+  expForm: UntypedFormGroup = new UntypedFormGroup({
+    skill: new UntypedFormControl('', [Validators.required,Validators.minLength(6)]),
+    year: new UntypedFormControl('', [Validators.required]),
+    salary: new UntypedFormControl('', [Validators.required]),
+    user: new UntypedFormControl()
   })
 
   ngOnInit() {

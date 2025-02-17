@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {JwtResponse} from '../../../model/jwt-response';
 import {AuthService} from '../../../service/auth.service';
 import {TokenService} from '../../../service/token.service';
@@ -14,9 +14,9 @@ import {CompanyLoginForm} from '../../../model/company/company-login-form';
   styleUrls: ['./company-login.component.scss']
 })
 export class CompanyLoginComponent implements OnInit {
-  loginForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
+  loginForm = new UntypedFormGroup({
+    email: new UntypedFormControl(''),
+    password: new UntypedFormControl(''),
   });
   isLogin = false;
   isPassword = 'password';

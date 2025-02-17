@@ -3,7 +3,7 @@ import {TokenService} from '../../../service/token.service';
 import {Router} from '@angular/router';
 import {Company} from '../../../model/company/company';
 import {CompanyService} from '../../../service/company.service';
-import {FormControl, FormGroup} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 import {CvService} from '../../../service/cv.service';
 import {MatMenuTrigger} from '@angular/material/menu';
 
@@ -19,10 +19,10 @@ export class NavbarComponent implements OnInit {
   name?: string;
   linkCv? = '';
   checkValid = false;
-  UpCVForm: FormGroup = new FormGroup({
-    user: new FormControl(),
-    link: new FormControl(),
-    nameCV: new FormControl(),
+  UpCVForm: UntypedFormGroup = new UntypedFormGroup({
+    user: new UntypedFormControl(),
+    link: new UntypedFormControl(),
+    nameCV: new UntypedFormControl(),
   });
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger | undefined;
 

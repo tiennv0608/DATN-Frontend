@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {Category} from '../../../model/post/category';
 import {Gender} from '../../../model/post/gender';
 import {WorkForm} from '../../../model/post/work-form';
@@ -31,19 +31,19 @@ export class PostEditComponent implements OnInit {
   category?: Category;
   post?: Post;
   id: any;
-  postForm: FormGroup = new FormGroup({
-    title: new FormControl(),
-    category: new FormControl(),
-    salary: new FormControl(),
-    address: new FormControl(),
-    position: new FormControl(),
-    exp: new FormControl(),
-    workForm: new FormControl(),
-    expiredDate: new FormControl(),
-    description: new FormControl(),
-    quantity: new FormControl(),
-    gender: new FormControl(),
-    city: new FormControl()
+  postForm: UntypedFormGroup = new UntypedFormGroup({
+    title: new UntypedFormControl(),
+    category: new UntypedFormControl(),
+    salary: new UntypedFormControl(),
+    address: new UntypedFormControl(),
+    position: new UntypedFormControl(),
+    exp: new UntypedFormControl(),
+    workForm: new UntypedFormControl(),
+    expiredDate: new UntypedFormControl(),
+    description: new UntypedFormControl(),
+    quantity: new UntypedFormControl(),
+    gender: new UntypedFormControl(),
+    city: new UntypedFormControl()
   });
 
   constructor(private categoryService: CategoryService,
@@ -71,19 +71,19 @@ export class PostEditComponent implements OnInit {
 
   findPostById(id: any) {
     this.postService.findById(id).subscribe(result => {
-      this.postForm = new FormGroup({
-        title: new FormControl(result.title),
-        category: new FormControl(result.category?.id),
-        salary: new FormControl(result.salary),
-        address: new FormControl(result.address),
-        position: new FormControl(result.position),
-        exp: new FormControl(result.exp),
-        workForm: new FormControl(result.workForm?.id),
-        expiredDate: new FormControl(result.expiredDate),
-        description: new FormControl(result.description),
-        quantity: new FormControl(result.quantity, [Validators.required]),
-        gender: new FormControl(result.gender?.id),
-        city: new FormControl(result.city?.id)
+      this.postForm = new UntypedFormGroup({
+        title: new UntypedFormControl(result.title),
+        category: new UntypedFormControl(result.category?.id),
+        salary: new UntypedFormControl(result.salary),
+        address: new UntypedFormControl(result.address),
+        position: new UntypedFormControl(result.position),
+        exp: new UntypedFormControl(result.exp),
+        workForm: new UntypedFormControl(result.workForm?.id),
+        expiredDate: new UntypedFormControl(result.expiredDate),
+        description: new UntypedFormControl(result.description),
+        quantity: new UntypedFormControl(result.quantity, [Validators.required]),
+        gender: new UntypedFormControl(result.gender?.id),
+        city: new UntypedFormControl(result.city?.id)
       });
     });
   }

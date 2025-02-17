@@ -3,7 +3,7 @@ import {CompanyService} from '../../../service/company.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {Company} from '../../../model/company/company';
 import {TokenService} from '../../../service/token.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../service/auth.service';
 import {Constant} from '../../../common/constant';
 
@@ -17,7 +17,7 @@ export class CompanyEditAccountComponent implements OnInit {
   companyName?: string = '';
   isPassword = 'password';
   isConfirmedPassword = 'password';
-  passwordForm = new FormGroup({});
+  passwordForm = new UntypedFormGroup({});
   currentCompany?: Company = {};
   message?: string = '';
   isUpdated?: boolean = false;
@@ -30,10 +30,10 @@ export class CompanyEditAccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInfo();
-    this.passwordForm = new FormGroup({
-      currentPassword: new FormControl(''),
-      newPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
-      confirmedPassword: new FormControl('', [Validators.required])
+    this.passwordForm = new UntypedFormGroup({
+      currentPassword: new UntypedFormControl(''),
+      newPassword: new UntypedFormControl('', [Validators.required, Validators.minLength(8)]),
+      confirmedPassword: new UntypedFormControl('', [Validators.required])
     });
     const id = this.tokenService.getToken().id;
     this.findById(id);

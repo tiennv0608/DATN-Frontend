@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Constant} from '../../../common/constant';
 import {ResponseBody} from '../../../common/response-body';
 import {AuthService} from '../../../service/auth.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
 @Component({
@@ -14,13 +14,13 @@ export class CompanyRegisterComponent implements OnInit {
   message = '';
   isRegistered = false;
 
-  registerForm: FormGroup = new FormGroup({
-    companyName: new FormControl('', [Validators.required]),
-    shortName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    confirmedPassword: new FormControl('', [Validators.required]),
-    description: new FormControl('', [Validators.required]),
+  registerForm: UntypedFormGroup = new UntypedFormGroup({
+    companyName: new UntypedFormControl('', [Validators.required]),
+    shortName: new UntypedFormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+    email: new UntypedFormControl('', [Validators.required, Validators.email]),
+    password: new UntypedFormControl('', [Validators.required, Validators.minLength(8)]),
+    confirmedPassword: new UntypedFormControl('', [Validators.required]),
+    description: new UntypedFormControl('', [Validators.required]),
   });
 
   isPassword = 'password';

@@ -7,7 +7,7 @@ import {Category} from '../../../model/post/category';
 import {Gender} from '../../../model/post/gender';
 import {WorkForm} from '../../../model/post/work-form';
 import {Router} from '@angular/router';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {Post} from '../../../model/post/post';
 import {Company} from '../../../model/company/company';
 import {TokenService} from '../../../service/token.service';
@@ -33,19 +33,19 @@ export class PostCreateComponent implements OnInit {
   post?: Post;
   isUpdated = false;
   message = '';
-  postForm: FormGroup = new FormGroup({
-    title: new FormControl(''),
-    category: new FormControl('1'),
-    salary: new FormControl(''),
-    address: new FormControl(''),
-    position: new FormControl(''),
-    exp: new FormControl(''),
-    workForm: new FormControl('1'),
-    expiredDate: new FormControl(''),
-    description: new FormControl(''),
-    quantity: new FormControl('', [Validators.required]),
-    gender: new FormControl('3'),
-    city:new FormControl('1')
+  postForm: UntypedFormGroup = new UntypedFormGroup({
+    title: new UntypedFormControl(''),
+    category: new UntypedFormControl('1'),
+    salary: new UntypedFormControl(''),
+    address: new UntypedFormControl(''),
+    position: new UntypedFormControl(''),
+    exp: new UntypedFormControl(''),
+    workForm: new UntypedFormControl('1'),
+    expiredDate: new UntypedFormControl(''),
+    description: new UntypedFormControl(''),
+    quantity: new UntypedFormControl('', [Validators.required]),
+    gender: new UntypedFormControl('3'),
+    city:new UntypedFormControl('1')
   });
 
 
