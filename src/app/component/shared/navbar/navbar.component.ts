@@ -5,7 +5,6 @@ import {Company} from '../../../model/company/company';
 import {CompanyService} from '../../../service/company.service';
 import {UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 import {CvService} from '../../../service/cv.service';
-import {MatLegacyMenuTrigger as MatMenuTrigger} from '@angular/material/legacy-menu';
 
 @Component({
     selector: 'app-navbar',
