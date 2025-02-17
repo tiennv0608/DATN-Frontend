@@ -82,18 +82,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-DATN-fontend:build"
+            "buildTarget": "angular-DATN-fontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-DATN-fontend:build:production"
+              "buildTarget": "angular-DATN-fontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-DATN-fontend:build"
+            "buildTarget": "angular-DATN-fontend:build"
           }
         },
         "test": {
