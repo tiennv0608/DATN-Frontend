@@ -6,11 +6,8 @@ import {AppRoutingModule} from './app-routing.module';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { SearchbarComponent } from './component/shared/searchbar/searchbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatLegacySelectModule as MatSelectModule} from '@angular/material/legacy-select';
-import {MatLegacyOptionModule as MatOptionModule} from '@angular/material/legacy-core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PostSearchComponent } from './component/post/post-search/post-search.component';
-import {MatLegacyPaginatorModule as MatPaginatorModule} from '@angular/material/legacy-paginator';
 import {environment} from '../environments/environment.prod';
 import {MainComponent} from './component/main/main.component';
 // @ts-ignore
@@ -37,7 +34,6 @@ import { ListExpComponent } from './component/user/page/list-exp/list-exp.compon
 // @ts-ignore
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import {CarouselModule} from 'ngx-owl-carousel-o';
-import {MatLegacyMenuModule as MatMenuModule} from '@angular/material/legacy-menu';
 // @ts-ignore
 import {SearchAdvancedComponent} from './component/shared/search-advanced/search-advanced.component';
 import {RecommendedPostComponent} from './component/post/recommended-post/recommended-post.component';
@@ -93,11 +89,8 @@ import { EditComponent } from './component/user/edit/edit.component';
         JwPaginationModule,
         NgxPaginationModule,
         BrowserAnimationsModule,
-        MatSelectModule,
-        MatOptionModule,
         FormsModule,
         ReactiveFormsModule,
-        MatMenuModule,
         CarouselModule,
         IvyCarouselModule,
         SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
