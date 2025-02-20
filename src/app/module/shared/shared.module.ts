@@ -11,8 +11,8 @@ import {SearchAdvancedComponent} from '../../component/shared/search-advanced/se
 import {UploadComponent} from '../../component/upload/upload.component';
 import {AdvancedComponent} from '../../component/advanced/advanced.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import {FormsModule} from '@angular/forms';
 import {UnderConstructionComponent} from '../../component/shared/under-construction/under-construction.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import {UnderConstructionComponent} from '../../component/shared/under-construct
     CommonModule,
     NgxPaginationModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     UploadComponent,

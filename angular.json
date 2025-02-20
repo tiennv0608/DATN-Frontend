@@ -1,7 +1,10 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "a188864d-7b1e-465e-ba2b-82ac26da36ec"
+    "analytics": "a188864d-7b1e-465e-ba2b-82ac26da36ec",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -45,7 +48,7 @@
               "node_modules/jquery/dist/jquery.min.js"
             ],
             "extractLicenses": false,
-            "sourceMap": true,
+            "sourceMap": false,
             "optimization": false,
             "namedChunks": true,
             "browser": "src/main.ts"
@@ -124,6 +127,15 @@
             "production": {
               "devServerTarget": "angular-DATN-fontend:serve:production"
             }
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }

@@ -3,8 +3,7 @@ import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import {Exp} from "../../../../model/exp";
 import {ExpService} from "../../../../service/exp.service";
-import firebase from "firebase";
-import User = firebase.User;
+import { User } from "firebase/auth";
 import {TokenService} from "../../../../service/token.service";
 
 @Component({
@@ -14,9 +13,9 @@ import {TokenService} from "../../../../service/token.service";
     standalone: false
 })
 export class EditExpComponent implements OnInit {
-user: User[] = [];
+  user: User | null = null;
   exp: Exp | undefined;
-  id: string | undefined;
+  id: string | null | undefined;
   constructor(private expService: ExpService, private ac: ActivatedRoute, private token: TokenService) {
   }
   expForm: UntypedFormGroup = new UntypedFormGroup({
@@ -26,10 +25,8 @@ user: User[] = [];
   })
   ngOnInit(): void {
     this.ac.paramMap.subscribe(paramMap => {
-       // @ts-ignore
       this.id = paramMap.get('id');
-      // @ts-ignore
-      this.expService.getById(this.id).subscribe(result => {
+      this.expService.getById(this.id!).subscribe(result => {
           this.exp = result;
           this.expForm = new UntypedFormGroup({
             skill: new UntypedFormControl(this.exp.skill,[Validators.required]),
@@ -49,22 +46,28 @@ user: User[] = [];
     }
   }
   updateExp(){
-    const user_id = this.token.getToken().id;
+    const user = this.token.getToken(); // Giả sử token chứa thông tin user
+    if (!user || !user.id) {
+      console.error("User không hợp lệ!");
+      return;
+    }
+
     const exp = {
       skill: this.expForm.value.skill,
       year: this.expForm.value.year,
       salary: this.expForm.value.salary,
-      user: this.user = {
-        // @ts-ignore
-        id: user_id
+      user: {
+        id: user.id // Lấy ID đúng của user
       }
-    }
-    console.log(exp)
+    };
 
-    // @ts-ignore
-    this.expService.update(this.id,exp).subscribe(abc =>{
-      alert('Edit Ok')
-      history.back()
-    })
+    console.log(exp);
+
+    this.expService.update(this.id!, exp).subscribe(() => {
+      alert('Edit thành công!');
+      history.back();
+    }, error => {
+      console.error("Lỗi cập nhật:", error);
+    });
   }
 }
